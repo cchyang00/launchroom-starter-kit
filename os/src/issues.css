@@ -1,0 +1,101 @@
+/* The strict method (Oct 1): the Issues panel on Find and "The gate for this
+   step" on every step page. Prefix mv-is- (LS-067); Ink tokens only. */
+.mv-is,.mv-is-gate-card{padding:16px 18px;margin-bottom:16px;min-width:0}
+.mv-is-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.mv-is-head>div:first-child{min-width:0;flex:1 1 260px}
+.mv-is-head h2{margin:2px 0 2px}
+.mv-is-head p{margin:0}
+.mv-is-head .mv-eyebrow{display:inline-flex;align-items:center;gap:5px}
+.mv-is-head-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.mv-is-note{margin:10px 0 0}
+.mv-is-note.is-warn{color:var(--highlight-text)}
+
+.mv-is-list{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.mv-is-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2)}
+.mv-is-row.is-open{border-style:dashed;background:var(--surface)}
+.mv-is-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;margin-top:1px}
+.mv-is-row.is-passed .mv-is-mark{background:var(--success-soft);color:var(--success-text)}
+.mv-is-row.is-open .mv-is-mark{background:var(--highlight-soft);color:var(--highlight-text)}
+.mv-is-main{min-width:0;display:grid;gap:3px}
+.mv-is-title{all:unset;cursor:pointer;font:600 14px/1.35 var(--sans);color:var(--text);overflow-wrap:anywhere}
+.mv-is-title:hover{text-decoration:underline;text-underline-offset:3px}
+.mv-is-title:focus-visible{outline:2px solid var(--info);outline-offset:2px;border-radius:4px}
+.mv-is-meta{font:500 12px/1.35 var(--sans);color:var(--muted);overflow-wrap:anywhere}
+.mv-is-side{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.mv-is-gate{display:inline-flex;align-items:center;gap:4px;border:0;border-radius:999px;padding:4px 10px;font:700 12px/1.2 var(--sans);cursor:pointer;white-space:nowrap}
+.mv-is-gate.is-passed{background:var(--success-soft);color:var(--success-text)}
+.mv-is-gate.is-open{background:var(--highlight-soft);color:var(--highlight-text)}
+.mv-is-gate:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.mv-is-items{list-style:none;margin:8px 0 2px;padding:0;display:grid;gap:6px}
+.mv-is-items>li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px;align-items:start;font:500 13px/1.4 var(--sans);color:var(--text-2)}
+.mv-is-items>li b{display:block;font-weight:600;color:var(--text)}
+.mv-is-items>li small{display:block;color:var(--muted);font-size:12px;overflow-wrap:anywhere}
+.mv-is-tick{display:grid;place-items:center;margin-top:2px;color:var(--highlight-text)}
+.mv-is-items>li.is-done .mv-is-tick{color:var(--success-text)}
+.mv-is-short{color:var(--highlight-text)}
+
+.mv-is-gsecs{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:12px}
+.mv-is-gsecs.is-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mv-is-gsec{min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--surface-2)}
+.mv-is-ghead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.mv-is-gname{display:flex;align-items:center;gap:7px;margin:0;font:700 14px/1.2 var(--sans);color:var(--text)}
+.mv-is-gname i{font-style:normal;font:700 11px/1 var(--sans);padding:4px 6px;border-radius:6px;background:var(--strong);color:var(--on-strong)}
+.mv-is-gintro{margin:0 0 8px}
+.mv-is-glist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.mv-is-glist>li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px;align-items:start}
+.mv-is-gid{display:inline-grid;place-items:center;min-width:26px;height:22px;padding:0 5px;border-radius:6px;border:1px solid var(--line-2);background:var(--surface);font:700 11px/1 var(--sans);color:var(--text-2)}
+.mv-is-gtext{min-width:0;font:500 13px/1.45 var(--sans);color:var(--text-2);overflow-wrap:anywhere}
+.mv-is-gtext b{color:var(--text);font-weight:650}
+.mv-is-gtext ul{margin:4px 0 0;padding-left:18px;display:grid;gap:2px}
+.mv-is-gfoot{margin:10px 0 0;display:flex;gap:6px;align-items:center}
+
+/* The round's issue on the Pipeline header. */
+.mv-is-roundissue{display:inline-flex;justify-self:start;width:fit-content;align-items:center;gap:6px;margin-top:2px;max-width:100%;border:0;background:var(--info-soft);color:var(--info-text);border-radius:999px;padding:4px 10px;font:600 12px/1.25 var(--sans);cursor:pointer;text-align:left}
+.mv-is-roundissue span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-is-roundissue.is-none{background:var(--bg-2);color:var(--muted);cursor:default}
+.mv-is-roundissue:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+
+@media (max-width:760px){
+  .mv-is-gsecs.is-two{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .mv-is,.mv-is-gate-card{padding:14px}
+  .mv-is-head-side{align-items:flex-start}
+  .mv-is-row{grid-template-columns:auto minmax(0,1fr)}
+  .mv-is-side{grid-column:2;justify-content:flex-start}
+}
+
+/* The issue library as one quiet reference link on the Pipeline page (Oct 2: not a step). */
+.mv-is-lib{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;max-width:420px;min-width:0;padding:8px 12px;border:1px dashed var(--line-2);border-radius:var(--r-sm);background:var(--surface);color:inherit;font:inherit;text-align:left;cursor:pointer}
+.mv-is-lib:hover{border-color:var(--info);background:var(--surface-2)}
+.mv-is-lib:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.mv-is-lib-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--info-soft);color:var(--info-text)}
+.mv-is-lib-text{display:grid;gap:2px;min-width:0}
+.mv-is-lib-text b{font:650 13px/1.25 var(--sans);color:var(--text)}
+.mv-is-lib-text small{font:500 11.5px/1.3 var(--sans);color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-is-lib-go{color:var(--muted)}
+.mv-is-page-back{margin-top:14px}
+@media (max-width:560px){
+  .mv-is-lib{max-width:none;width:100%}
+}
+
+/* Step 2 · Buyers on its step page: each saved card with its three gate lines (A1-A3), read-only. */
+.mv-by{display:grid;gap:12px;min-width:0}
+.mv-by-intro{margin:0}
+.mv-by-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.mv-by-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);min-width:0}
+.mv-by-name{display:flex;align-items:baseline;gap:8px;min-width:0;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.mv-by-name b{flex:none;font:700 12px/1.2 var(--sans);color:var(--muted)}
+.mv-by-name span{font:650 13.5px/1.3 var(--sans);color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-by-name:hover span{text-decoration:underline}
+.mv-by-lines{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.mv-by-pill{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:99px;font:600 11.5px/1 var(--sans);white-space:nowrap;border:1px dashed var(--line-2);color:var(--muted);background:var(--surface)}
+.mv-by-pill i{font-style:normal;font-weight:750}
+.mv-by-pill.is-passed{border:0;background:var(--success-soft);color:var(--success-text)}
+.mv-by-pill.is-failed{border:0;background:var(--danger-soft);color:var(--danger-text)}
+.mv-by-lib{display:flex}
+@media (max-width:640px){
+  .mv-by-row{grid-template-columns:minmax(0,1fr)}
+  .mv-by-lines{justify-content:flex-start}
+}
+.mv-is-lib.is-owner{border-color:color-mix(in srgb,var(--warning) 45%,var(--line));background:var(--warning-soft)}

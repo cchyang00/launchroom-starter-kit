@@ -1,0 +1,21 @@
+import { createServer } from 'vite';
+import { createLaunchroom } from './launchroom.mjs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { createApi } from './api.mjs';
+import { createRunner } from './runner.mjs';
+import { createHub } from './hub.mjs';
+import { createScripts } from './scripts.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const workspaceRoot = process.env.MERRIVY_WORKSPACE_ROOT || path.resolve(root, '..');
+const port = Number(process.env.PORT || 3000);
+const launchroom = await createLaunchroom({workspaceRoot,port,development:true,openLocal:true});
+const runner = await createRunner({ workspaceRoot, port });
+const hub = await createHub({ workspaceRoot, port });
+const api = await createApi({ workspaceRoot, storeMap: hub.storeMap });
+const scripts = await createScripts({ workspaceRoot, port });
+const server = await createServer({ root, configFile: false, server: { host: '127.0.0.1', port, strictPort: true, fs: { strict: true, allow: [root] } }, plugins: [{ name: 'merrivy-local-api', configureServer(vite) { vite.middlewares.use(launchroom); vite.middlewares.use(hub); vite.middlewares.use(scripts.middleware); vite.middlewares.use(runner.middleware); vite.middlewares.use(api); } }] });
+await server.listen();
+console.log(`Launchroom is ready at http://localhost:${port}`);
+for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, async () => { await scripts.close(); await runner.close(); await server.close(); process.exit(0); });

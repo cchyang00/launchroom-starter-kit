@@ -1,0 +1,200 @@
+{
+  "revision": 1,
+  "lessons": [
+    {
+      "id": "LS-001",
+      "rule": "Numbers-First Reverse Engineering on Kalodata US before any eye test: require 2+ dated revenue/sales points and download the #1 top-revenue video first.",
+      "why": "Organic feed scrolling wastes time on low-intent entertainment; Kalodata US revenue rankings prove real buyer wallet intent.",
+      "scope": "scout",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "workflow/CHECKS.md",
+        "resources/notes/2026-11-04-q4-world-trends-and-kalodata-keyword-bible.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-002",
+      "rule": "Enforce the 4-Way Unbiased Market Pricing & <35% Landed Cost Gate across CJdropshipping/HyperSKU, Amazon US (/dp/B0...), legitimate Shopify stores, and scam-store detection.",
+      "why": "Healthy Meta CBO unit economics require at least a 3x markup (<35% landed cost) and a verified $22-$30+ break-even CPA.",
+      "scope": "checker",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "workflow/CHECKS.md",
+        "resources/notes/2026-11-03-shaunns-kpi-calculator-and-scaling.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-003",
+      "rule": "Run Two-Layer Meta Competitor & Mechanism Research: check both direct exact-SKU competitors and 2+ same-category alternative mechanisms on Meta Ad Library.",
+      "why": "Buyers compare mechanisms (e.g. automated electric vs manual hand tools); proving why our physical mechanism is in its own lane creates the angle gap.",
+      "scope": "buyer-researcher",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "workflow/CHECKS.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-004",
+      "rule": "Never use search-result URLs for suppliers or competitors; always save exact product detail URLs (/product/detail, /dp/B0...) and a clean supplier photo in resources/sourcing/.",
+      "why": "Exact links and saved supplier photos make sourcing quotes and verification 100% repeatable with zero broken references.",
+      "scope": "everyone",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "AGENTS.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-005",
+      "rule": "Split Website Headlines vs Meta Ad Hooks: keep the storefront product title clean and boutique-grade while putting viral scroll-stopper hooks in Meta ads and purchase.hook.",
+      "why": "Cold scrollers need an visceral hook to click the ad, but once on the product page they need high-trust retail clarity to check out.",
+      "scope": "copywriter",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "resources/copywriting/WHATS-GOOD.md",
+        "store/PAGE-BLUEPRINT.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-006",
+      "rule": "Deconstruct the #1 viral video into 20 4:5 static ads (10 Problem-Aware + 10 Solution-Aware) paired with the 5x5 sbc-statics-2.0 copy pack and real product truth photos.",
+      "why": "One reference layout per static ad plus concrete domino-chain copy lets Meta test 20 distinct angles simultaneously on Day 1.",
+      "scope": "image-maker",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "resources/notes/2026-11-05-viral-video-to-20-statics-playbook.md",
+        "agents/image-generator/references/REFERENCE-TO-AD.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-007",
+      "rule": "Clone base-theme.json for every new product store and configure 2 Kits Only (1-Kit + paid shipping vs 2-Kit SAVE 15% + Free Shipping) plus the $4.99 Shipping Protection toggle.",
+      "why": "2-Kit pricing lifts AOV without 3-Kit decision fatigue, and cloning base-theme.json preserves our 375px mobile conversion layout.",
+      "scope": "store-builder",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "store/HYDROGEN-POPULATION.md",
+        "workflow/LAUNCH-CHECKLIST.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-008",
+      "rule": "Launch in a $50/day CBO with a $50 first-test loss limit, hold the 4-Day Meta Algorithm Priming window, and enforce the End-of-Day 3 Kill Gate if 0 sales and weak ATC/IC.",
+      "why": "Clear pre-launch guardrails protect downside capital while giving Meta enough signal to find buyers before scaling winners.",
+      "scope": "ad-manager",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "resources/notes/2026-11-03-shaunns-kpi-calculator-and-scaling.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    },
+    {
+      "id": "LS-009",
+      "rule": "Keep Launchroom as the single source of truth: run os.mjs status and os.mjs doctor at session start, and save every product, check, creative, and store edit where Launchroom reads it.",
+      "why": "Work that is not saved in Launchroom cannot be seen by the owner or built on by the next subagent.",
+      "scope": "manager",
+      "status": "proven",
+      "source": "seed",
+      "proposedBy": "manager",
+      "learnedOn": "2026-11-05",
+      "learnedFrom": "Day-1 Dropshipping Foundation",
+      "statusNote": "",
+      "references": [
+        "AGENTS.md",
+        "os/AGENT-BRIDGE.md"
+      ],
+      "uses": 1,
+      "helped": 1,
+      "lastUsed": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "statusChangedOn": "2026-11-05"
+    }
+  ]
+}

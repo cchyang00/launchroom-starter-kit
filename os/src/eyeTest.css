@@ -1,0 +1,40 @@
+/* The owner's eye test (Oct 3): one tap decides; optional quick-reason chips and a
+   collapsed note; the 5-second Undo toast. Prefix mv-et- (and mv-toast- for the toast).
+   Colours come only from tokens.css. */
+.mv-et-noreason{margin:10px 0 0}
+.mv-et-why{margin:4px 0 10px;padding:12px 12px 10px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line)}
+.mv-et-label{margin:0 0 9px;font:600 12.5px/1.3 var(--sans);color:var(--text-2)}
+.mv-et-label span{font-weight:500;color:var(--muted)}
+.mv-et-chips{display:flex;flex-wrap:wrap;gap:8px}
+.mv-et-chip{display:inline-flex;align-items:center;gap:5px;min-height:38px;padding:0 14px;border-radius:99px;border:1.5px solid var(--line-2);background:var(--surface);color:var(--text-2);font:600 13px/1.1 var(--sans);cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.mv-et-chip:hover{border-color:var(--text-2)}
+.mv-et-chip:focus-visible,.mv-et-note summary:focus-visible,.mv-toast-undo:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.mv-et-chip[aria-pressed="true"]{border-color:var(--accent-text);background:var(--accent-soft);color:var(--text)}
+.mv-et-chip.is-plus[aria-pressed="true"]{border-color:var(--success);background:var(--success-soft);color:var(--success-text)}
+.mv-et-note{margin-top:8px}
+.mv-et-note summary{display:inline-flex;align-items:center;min-height:36px;font:600 12.5px/1 var(--sans);color:var(--accent-text);cursor:pointer;list-style-position:inside}
+.mv-et-note textarea{display:block;width:100%;margin-top:4px}
+
+/* Toasts are portalled into an open drawer or the body, so they carry their own font. */
+.mv-toast{font-family:var(--sans);width:max-content;max-width:calc(100vw - 32px)}
+.mv-toast-undoable{overflow:hidden;padding:8px 8px 8px 16px}
+.mv-toast-undoable>span:first-of-type{min-width:0}
+.mv-toast-undo{display:inline-flex;align-items:center;gap:6px;flex:none;min-height:38px;padding:0 14px;border:0;border-radius:9px;background:color-mix(in srgb,var(--on-strong) 16%,transparent);color:var(--on-strong);font:700 13.5px/1 var(--sans);cursor:pointer}
+.mv-toast-undo:hover{background:color-mix(in srgb,var(--on-strong) 26%,transparent)}
+.mv-toast-timer{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--accent);transform-origin:left;animation:mv-toast-timer 5s linear forwards}
+@keyframes mv-toast-timer{to{transform:scaleX(0)}}
+
+@media (max-width:560px){
+  .mv-et-chip{min-height:42px;padding:0 15px;font-size:13.5px}
+  .mv-toast{bottom:16px}
+}
+/* A decision said in chat (Oct 3): the owner's words, who recorded it, and one-tap Undo. */
+.mv-et-said{display:flex;align-items:flex-start;gap:10px;margin:0 0 10px;padding:10px 12px;border-radius:12px;background:var(--info-soft);color:var(--info-text)}
+.mv-et-said>svg{flex:none;margin-top:2px}
+.mv-et-said>div{display:grid;gap:3px;flex:1;min-width:0}
+.mv-et-said b{font:700 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.04em}
+.mv-et-said span{color:var(--text);font-size:14px;line-height:1.45}
+.mv-et-said small{color:var(--text-2);font-size:12px;line-height:1.4}
+.mv-et-said .mv-btn{flex:none;align-self:center}
+@media (max-width:560px){.mv-et-said{flex-wrap:wrap}.mv-et-said .mv-btn{width:100%;justify-content:center;min-height:40px}}
+.mv-pl-said{margin:0 0 14px}

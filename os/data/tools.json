@@ -1,0 +1,630 @@
+{
+  "revision": 1,
+  "tools": [
+    {
+      "id": "merrivy-os",
+      "name": "Launchroom",
+      "purpose": "Our shared work app: to-dos, memory, product cards, agents and the six-step line.",
+      "signIn": "No sign-in, local",
+      "limits": "Must be running on this computer; the OS serves its built files, so rebuild after code changes.",
+      "url": "http://localhost:3000/",
+      "steps": [
+        "issue",
+        "product",
+        "prove",
+        "create",
+        "build",
+        "launch",
+        "learn"
+      ],
+      "group": "local",
+      "opensIn": "local",
+      "agents": [
+        "scout",
+        "checker",
+        "buyer-researcher",
+        "copywriter",
+        "image-maker",
+        "store-builder",
+        "os-builder"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.107Z",
+      "updatedAt": "2026-10-02T07:29:04.131Z"
+    },
+    {
+      "id": "merrivy-store-demo",
+      "name": "Merrivy Hydrogen Storefront (local preview)",
+      "purpose": "Local preview of the Hydrogen storefront (base-theme.json, 52 palettes, and per-product /products/<handle> pages) embedded inside Store (#/build), Checklist (#/checklist), and Manage (#/manage).",
+      "signIn": "No sign-in, local",
+      "limits": "Runs on localhost:3021 (proxied over HTTPS via /api/store-preview on mobile NetBird). Local previews never fire the live Meta Pixel.",
+      "url": "http://localhost:3021/",
+      "steps": [
+        "build",
+        "launch"
+      ],
+      "group": "local",
+      "opensIn": "local",
+      "agents": [
+        "store-builder"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.124Z",
+      "updatedAt": "2026-11-05T21:32:55.076Z"
+    },
+    {
+      "id": "kalodata",
+      "name": "Kalodata",
+      "purpose": "Primary Numbers-First Reverse Engineering engine: query our 200-Keyword Q4 Bible across US TikTok Shop for rising 30d/7d revenue AND Multi-Video US Viral Density (>= 5 active viral videos across >= 3 US creators).",
+      "signIn": "Owner's Google login in Chrome (trial account); the course also includes Kalodata through the Luxury app",
+      "limits": "Always query with US headers (country: US, currency: USD, pageSize: 100) so results are 100% US TikTok Shop and never Singapore SG.",
+      "url": "https://www.kalodata.com/product",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "scout",
+        "checker"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.133Z",
+      "updatedAt": "2026-11-05T21:32:55.076Z"
+    },
+    {
+      "id": "pipiads",
+      "name": "Pipiads",
+      "purpose": "Cross-check a named product against TikTok and Meta ads, advertisers and destination pages.",
+      "signIn": "Through the Luxury desktop app (brother's course access); the link above is only the public vendor page",
+      "limits": "Owner only: agents can't drive Luxury's DICloak browser (LS-006), so it is never offered to agents for a step. Targeted cross-check only; never copy logins between profiles.",
+      "url": "https://www.pipiads.com/ad-library",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "research",
+      "opensIn": "luxury-desktop",
+      "agents": [],
+      "source": "agents/validation/references/TOOLS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": true,
+      "createdAt": "2026-10-01T07:56:35.144Z",
+      "updatedAt": "2026-10-02T07:29:04.764Z"
+    },
+    {
+      "id": "trendtrack",
+      "name": "Trendtrack",
+      "purpose": "Map competing Meta ads, shops and traffic for one product in one country.",
+      "signIn": "Owner signs in once in Chrome; the saved workspace link sends you to sign-in if the session ended",
+      "limits": "An empty search means limited visibility, not no competitors; keep existing trackers and pick the country mode deliberately.",
+      "url": "https://app.trendtrack.io/en/workspace/w-shaunns-workspace-LBrRNoz/ads",
+      "steps": [
+        "prove",
+        "launch"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "checker"
+      ],
+      "source": "agents/validation/references/TOOLS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": true,
+      "createdAt": "2026-10-01T07:56:35.154Z",
+      "updatedAt": "2026-10-02T07:29:04.966Z"
+    },
+    {
+      "id": "luxury-dicloak",
+      "name": "Luxury (DICloak browser)",
+      "purpose": "Course-included desktop browser that holds the Pipiads session and lists the Luxury Extras tool catalog.",
+      "signIn": "Through the Luxury desktop app (DICloak, course access); owner signs in again if it says the session expired",
+      "limits": "Owner only: agents can't drive Luxury's DICloak browser (LS-006), so it is never offered to agents for a step. Catalog listing is not proof of access to any tool in it.",
+      "url": "https://luxuryextras.online/panel1.php",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "research",
+      "opensIn": "luxury-desktop",
+      "agents": [],
+      "source": "resources/LUXURY-TOOLS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": true,
+      "createdAt": "2026-10-01T07:56:35.166Z",
+      "updatedAt": "2026-10-02T07:29:05.171Z"
+    },
+    {
+      "id": "aliexpress",
+      "name": "AliExpress",
+      "purpose": "Find the exact supplier listing, variant, price and delivery to the selling country.",
+      "signIn": "Browse in Chrome; the owner's open AliExpress tab has worked for image search",
+      "limits": "Official homepage, not a recorded working link. A site safety block means stop and record the missing source; never work around it, and a thumbnail or welcome price is not a quote.",
+      "url": "https://www.aliexpress.com/",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "sourcing",
+      "opensIn": "chrome",
+      "agents": [
+        "checker"
+      ],
+      "source": "agents/validation/references/TOOLS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": true,
+      "createdAt": "2026-10-01T07:56:35.177Z",
+      "updatedAt": "2026-10-02T07:29:05.389Z"
+    },
+    {
+      "id": "cj-dropshipping",
+      "name": "CJ Dropshipping",
+      "purpose": "Check whether the exact item is available, with delivered cost to the country, before deep research.",
+      "signIn": "No account recorded; public listings open in Chrome",
+      "limits": "Official homepage, not a recorded working link. Owner-named sourcing route; check the exact variant and delivered cost, and do not contact or order without approval.",
+      "url": "https://cjdropshipping.com/",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "sourcing",
+      "opensIn": "chrome",
+      "agents": [
+        "checker"
+      ],
+      "source": "memory/START-HERE.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.189Z",
+      "updatedAt": "2026-10-02T07:29:05.588Z"
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba",
+      "purpose": "Second owner-named place to find the exact item and a supplier quote for a saved product.",
+      "signIn": "No account recorded; public listings open in Chrome",
+      "limits": "Official homepage, not a recorded working link. A listing is not a confirmed quote or delivery route; never message a supplier without owner approval.",
+      "url": "https://www.alibaba.com/",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "sourcing",
+      "opensIn": "chrome",
+      "agents": [
+        "checker"
+      ],
+      "source": "memory/START-HERE.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.201Z",
+      "updatedAt": "2026-10-02T07:29:05.795Z"
+    },
+    {
+      "id": "shopify-admin",
+      "name": "Shopify admin (Merrivy)",
+      "purpose": "Store settings, products, payments, shipping, policies, domain and notifications for ndfdtc-br.myshopify.com.",
+      "signIn": "Owner's Shopify account in Chrome (store owner)",
+      "limits": "Owner enters identity, tax and bank fields; no publishing, domain, payment or live-setting changes without approval.",
+      "url": "https://admin.shopify.com/",
+      "steps": [
+        "build",
+        "launch",
+        "learn"
+      ],
+      "group": "store",
+      "opensIn": "chrome",
+      "agents": [
+        "store-builder"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.213Z",
+      "updatedAt": "2026-10-02T07:29:06.005Z"
+    },
+    {
+      "id": "shopify-hydrogen-oxygen",
+      "name": "Shopify Hydrogen / Oxygen",
+      "purpose": "See storefront deployments and environments that host the custom Merrivy site.",
+      "signIn": "Owner's Shopify account in Chrome",
+      "limits": "Deploys are manual and need owner approval; a GitHub push alone does not update the live site.",
+      "url": "https://admin.shopify.com/store/ndfdtc-br/hydrogen/1000181179",
+      "steps": [
+        "build",
+        "launch"
+      ],
+      "group": "store",
+      "opensIn": "chrome",
+      "agents": [
+        "store-builder"
+      ],
+      "source": "store/2026-09-28-OXYGEN-CONNECTION.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.223Z",
+      "updatedAt": "2026-10-02T07:29:06.215Z"
+    },
+    {
+      "id": "merrivy-live-store",
+      "name": "merrivy.com (live site)",
+      "purpose": "Production Merrivy storefront (merrivy.com/products/<handle>) with 1-Product Brand Illusion per product packet, 2-Kit selector, and .99 Shipping Protection.",
+      "signIn": "No sign-in, public",
+      "limits": "Deploys to Shopify Oxygen wait for owner approval.",
+      "url": "https://merrivy.com/",
+      "steps": [
+        "build",
+        "launch"
+      ],
+      "group": "store",
+      "opensIn": "chrome",
+      "agents": [
+        "store-builder"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.234Z",
+      "updatedAt": "2026-11-05T21:32:55.076Z"
+    },
+    {
+      "id": "github-storefront",
+      "name": "GitHub storefront repo",
+      "purpose": "Private source code for the Hydrogen storefront.",
+      "signIn": "Owner's GitHub account in Chrome",
+      "limits": "Commit, push and redeploy wait for owner approval; only the storefront source belongs here, never research, keys or the OS.",
+      "url": "https://github.com/cchyang00/merrivy-storefront",
+      "steps": [
+        "build"
+      ],
+      "group": "store",
+      "opensIn": "chrome",
+      "agents": [
+        "store-builder"
+      ],
+      "source": "store/2026-09-29-PUBLIC-DEMO-RELEASE.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.244Z",
+      "updatedAt": "2026-10-02T07:29:06.624Z"
+    },
+    {
+      "id": "meta-ads-manager",
+      "name": "Meta Ads Manager (Cha Yang account)",
+      "purpose": "Where ads for Merrivy will run and be read: ad account 9818342388208988 in portfolio Bm ads 223.",
+      "signIn": "Owner's Facebook login in Chrome; check the account picker shows Cha Yang under Bm ads 223",
+      "limits": "Link built from the recorded ad account ID: check it opens the right account on first use. Shared with the owner's brother, so leave his campaigns alone; no campaign, budget or spend without approval.",
+      "url": "https://adsmanager.facebook.com/adsmanager/manage/campaigns",
+      "steps": [
+        "launch",
+        "learn"
+      ],
+      "group": "ads",
+      "opensIn": "chrome",
+      "agents": [
+        "checker"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.254Z",
+      "updatedAt": "2026-10-02T07:29:06.826Z"
+    },
+    {
+      "id": "meta-shopify-app",
+      "name": "Meta connection in Shopify",
+      "purpose": "Facebook and Instagram app in Shopify admin where catalog, pixel and data sharing get connected.",
+      "signIn": "Owner's Shopify and Facebook logins in Chrome",
+      "limits": "Not connected yet; terms, new assets and data-sharing choices need owner approval, and do not reuse the brother's pixels or catalogs.",
+      "url": "https://admin.shopify.com/store/ndfdtc-br/apps/facebook-ads/shopify_app/",
+      "steps": [
+        "launch",
+        "learn"
+      ],
+      "group": "ads",
+      "opensIn": "chrome",
+      "agents": [
+        "store-builder"
+      ],
+      "source": "store/TRANSFER.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.265Z",
+      "updatedAt": "2026-10-02T07:29:07.041Z"
+    },
+    {
+      "id": "meta-ad-library",
+      "name": "Meta Ad Library",
+      "purpose": "Find products stable or rising on Meta (Find filter F1-F5: advertisers, longest active ad, live ads), then check the opening at Validate.",
+      "signIn": "No sign-in needed, public library",
+      "limits": "Shows ads, not sales or profit. Ad age alone is a weak signal: count different stores and live ads. Free and public; no login.",
+      "url": "https://www.facebook.com/ads/library",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "scout",
+        "checker",
+        "buyer-researcher"
+      ],
+      "source": "workflow/CHECKS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.275Z",
+      "updatedAt": "2026-10-02T07:29:07.270Z"
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok (original posts)",
+      "purpose": "Open original creator posts, comments and Shop listings to verify real demonstrations and buyer talk.",
+      "signIn": "No sign-in needed for public posts",
+      "limits": "Official homepage, not a recorded working link. Pages can say unavailable in country or show a security check; do not solve CAPTCHAs, and record the gap as unverified.",
+      "url": "https://www.tiktok.com/",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "scout",
+        "checker"
+      ],
+      "source": "workflow/PLAYBOOK.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": true,
+      "createdAt": "2026-10-01T07:56:35.286Z",
+      "updatedAt": "2026-10-02T07:29:07.483Z"
+    },
+    {
+      "id": "reddit-forums",
+      "name": "Reddit and buyer forums",
+      "purpose": "Read real discussions to find who needs a product and in what situation.",
+      "signIn": "No sign-in needed for public threads",
+      "limits": "Official homepage, not a recorded working link. Reddit is one source among hobby, owner and support forums; save quotes with links, and some forums return 403.",
+      "url": "https://www.reddit.com/",
+      "steps": [
+        "issue",
+        "prove"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "buyer-researcher"
+      ],
+      "source": "workflow/CHECKS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.297Z",
+      "updatedAt": "2026-10-02T07:29:07.703Z"
+    },
+    {
+      "id": "zoho-mail",
+      "name": "Zoho Mail (support inbox)",
+      "purpose": "The support@merrivy.com mailbox for customer questions and Shopify sender verification.",
+      "signIn": "Owner signs in once in Chrome (Mail Free plan, sender Merrivy Support)",
+      "limits": "Do not send or reply to anyone without owner approval, and keep passwords and message contents out of records.",
+      "url": "https://mail.zoho.com/zm/",
+      "steps": [
+        "launch",
+        "learn"
+      ],
+      "group": "email",
+      "opensIn": "chrome",
+      "agents": [
+        "store-builder"
+      ],
+      "source": "store/EMAIL.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.308Z",
+      "updatedAt": "2026-10-02T07:29:07.917Z"
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter (video generation)",
+      "purpose": "Paid image-to-video service for short store and ad clips through our generate-video script.",
+      "signIn": "Owner adds the API key to their Windows environment themselves; never paste it in chat",
+      "limits": "Paid and not set up yet: dry run by default, and any run needs owner approval, --confirm and --max-cost.",
+      "url": "https://openrouter.ai/docs/guides/overview/multimodal/video-generation",
+      "steps": [
+        "create"
+      ],
+      "group": "creative",
+      "opensIn": "chrome",
+      "agents": [
+        "image-maker"
+      ],
+      "source": "memory/START-HERE.md",
+      "retired": true,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-01T07:56:35.319Z",
+      "updatedAt": "2026-11-05T21:32:55.076Z"
+    },
+    {
+      "id": "gemini-deep-research",
+      "name": "Gemini Deep Research",
+      "purpose": "Wide research with Deep Research: issue research first (Step 1a), then product and avatar questions; agents verify every quote.",
+      "signIn": "The owner's Gemini Pro is signed in in the shared built-in browser; agents work in that session.",
+      "limits": "Model 3.8 Flash, never 3.1 Pro. One run at a time. A report is a lead list: verify every quote and link before using it. Upload terms (Agree) are the owner's.",
+      "url": "https://gemini.google.com/app",
+      "steps": [
+        "issue",
+        "product"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "buyer-researcher",
+        "scout"
+      ],
+      "source": "workflow/CHECKS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-02T04:52:14.515Z",
+      "updatedAt": "2026-10-02T07:29:08.332Z"
+    },
+    {
+      "id": "echotik",
+      "name": "EchoTik",
+      "purpose": "TikTok Shop sales numbers: top products, units sold and sales trend in the US, to prove a product sells (Step 2 statistics).",
+      "signIn": "Owner signed in once in the built-in browser (Oct 2); agents use that session, never sign in themselves",
+      "limits": "Estimated from public TikTok Shop signals (a cross-check, not proof on its own). Free plan about 50 searches a day.",
+      "url": "https://echotik.live/board",
+      "steps": [
+        "product",
+        "buyers"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "scout",
+        "checker"
+      ],
+      "source": "resources/research/2026-10-02-research-tools/TOOLS-COMPARISON.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-02T13:33:56.763Z",
+      "updatedAt": "2026-10-02T22:35:44.458Z"
+    },
+    {
+      "id": "amazon-reviews",
+      "name": "Amazon (read-only reviews)",
+      "purpose": "Read full product reviews (2-3 star filters), ratings, Q&A and 'bought in past month' badges for the Buyers step: avatars, pain points, copy. A cross-check for product demand, never proof alone.",
+      "signIn": "The owner signs in once in the built-in browser (spare account, no card saved); agents use that session",
+      "limits": "READ-ONLY. Never add to cart, buy, use 1-Click, post reviews or questions, or change any account setting (owner, Oct 3: 'please do not do any cart buys'). Read at a human pace, a handful of products at a time.",
+      "url": "https://www.amazon.com/",
+      "steps": [
+        "product",
+        "buyers"
+      ],
+      "group": "research",
+      "opensIn": "chrome",
+      "agents": [
+        "scout",
+        "buyer-researcher",
+        "checker",
+        "copywriter"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "",
+      "optional": false,
+      "createdAt": "2026-10-03T05:10:14.829Z",
+      "updatedAt": "2026-10-03T05:10:14.829Z"
+    },
+    {
+      "id": "google-flow",
+      "name": "Google Flow (Image & Veo 3.1 Video Studio)",
+      "purpose": "Primary engine for ALL store gallery images (#/build), 4:5 DR static ads (#/create & #/assets), and Day 4+ custom 9:16 Veo 3.1 video ads — combining real product truth photos with one static_01..50.png reference layout.",
+      "signIn": "Owner's Google account signed in inside Chrome (unlimited generation, zero Antigravity credit drain)",
+      "limits": "Always open a Flow tab in Chrome (via browser-use / CDP 9222 or Chrome MCP) for image and video generation; NEVER use Antigravity's built-in image-generator tool.",
+      "url": "https://labs.google/fx/tools/flow",
+      "steps": [
+        "create",
+        "build",
+        "learn"
+      ],
+      "group": "creative",
+      "opensIn": "chrome",
+      "agents": [
+        "image-maker"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "2026-11-05",
+      "optional": false,
+      "createdAt": "2026-11-05T21:32:55.076Z",
+      "updatedAt": "2026-11-05T21:32:55.076Z"
+    },
+    {
+      "id": "hypersku",
+      "name": "HyperSKU",
+      "purpose": "Primary 1-piece dropship sourcing check alongside CJ & Alibaba/AliExpress: verify exact SKU match, weight <1 kg, 7–12d air-shipped DDP cost (<35% of retail), and >= – break-even CPA floor.",
+      "signIn": "Owner's Chrome session",
+      "limits": "Read-only during verification; never place orders or message suppliers without owner approval.",
+      "url": "https://www.hypersku.com/",
+      "steps": [
+        "product",
+        "prove"
+      ],
+      "group": "sourcing",
+      "opensIn": "chrome",
+      "agents": [
+        "checker"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "2026-11-05",
+      "optional": false,
+      "createdAt": "2026-11-05T21:32:55.076Z",
+      "updatedAt": "2026-11-05T21:32:55.076Z"
+    },
+    {
+      "id": "gdrive-merrivy",
+      "name": "Google Drive Shared Workspace (gdrive:merrivy)",
+      "purpose": "Shared 30 TB Google Drive folder for owner and brother: syncs Launchroom state, research, products, creatives, storefront packets, skills, and subagents (`node scripts/sync_gdrive.mjs push|pull`).",
+      "signIn": "Authenticated via rclone (`gdrive:merrivy`) and owner's Google account in Chrome",
+      "limits": "Excludes .env secrets, node_modules, and build caches (.rclone-filter.txt). Run `node scripts/sync_gdrive.mjs pull` before starting on another PC and `push` after finishing.",
+      "url": "https://drive.google.com/drive/folders/1z8Y2hTIbaXd-3x4zYi6N_VwFAQCVdEja",
+      "steps": [
+        "issue",
+        "product",
+        "prove",
+        "create",
+        "build",
+        "launch",
+        "learn"
+      ],
+      "group": "local",
+      "opensIn": "chrome",
+      "agents": [
+        "os-builder",
+        "store-builder",
+        "scout",
+        "checker",
+        "buyer-researcher",
+        "copywriter",
+        "image-maker"
+      ],
+      "source": "AGENTS.md",
+      "retired": false,
+      "signedInNoted": "2026-11-05",
+      "optional": false,
+      "createdAt": "2026-11-06T00:48:00.000Z",
+      "updatedAt": "2026-11-06T00:48:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "revision": 1,
+  "tasks": [
+    {
+      "id": "T-day1-01",
+      "title": "Step 1 · Open Connect (#/connect), start the Agent Browser (port 9222), and sign into your 12 dropshipping tools",
+      "date": "2026-11-05",
+      "status": "todo",
+      "focus": true,
+      "assignee": "owner",
+      "agent": "",
+      "agents": [],
+      "step": "",
+      "product": "",
+      "nextAction": "Click Connect in the top-left sidebar, press Start Agent Browser, sign into Kalodata, TikTok, Amazon, CJdropshipping, Meta Ads Manager & Shopify Admin, then run os.mjs connect check.",
+      "notes": "Once connected, the sidebar badge turns green and agents can work directly inside your authenticated tabs.",
+      "references": [
+        "AGENTS.md"
+      ],
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "completedAt": null
+    },
+    {
+      "id": "T-day1-02",
+      "title": "Step 2 · Configure your Store Brand & Shopify/Meta credentials in USER.md and hydrogen-storefront/.env",
+      "date": "2026-11-05",
+      "status": "todo",
+      "focus": true,
+      "assignee": "shared",
+      "agent": "store-builder",
+      "agents": [
+        "store-builder"
+      ],
+      "step": "build",
+      "product": "",
+      "nextAction": "Copy hydrogen-storefront/.env.example to .env, add your Shopify Storefront/Admin API tokens & Meta Pixel ID, and update USER.md with your store name and budget rules.",
+      "notes": "Launchroom runs at http://localhost:3000/p/merrivy/ and the live Hydrogen storefront preview runs at http://localhost:3021.",
+      "references": [
+        "USER.md",
+        "store/HYDROGEN-POPULATION.md"
+      ],
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "completedAt": null
+    },
+    {
+      "id": "T-day1-03",
+      "title": "Step 3 · Run Step 1 · Product (#/find) using the 200-Keyword Kalodata Bible to scrape & filter winning candidates",
+      "date": "2026-11-05",
+      "status": "todo",
+      "focus": true,
+      "assignee": "shared",
+      "agent": "scout",
+      "agents": [
+        "scout",
+        "buyer-researcher"
+      ],
+      "step": "product",
+      "product": "",
+      "nextAction": "Ask your agent in chat: \"Run a Kalodata US product discovery round from the Keyword Bible and save passing candidates to #/find.\"",
+      "notes": "Enforces F1-F6: 2+ dated revenue points, dropshippable physical product, 3+ avatars, and downloaded #1-#3 viral .mp4 videos + .jpg thumbnails.",
+      "references": [
+        "resources/notes/2026-11-04-q4-world-trends-and-kalodata-keyword-bible.md",
+        "workflow/CHECKS.md"
+      ],
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "completedAt": null
+    },
+    {
+      "id": "T-day1-04",
+      "title": "Step 4 · Run Step 2 · Verify (#/verify) & approve your first Winner on #/winners",
+      "date": "2026-11-05",
+      "status": "todo",
+      "focus": false,
+      "assignee": "shared",
+      "agent": "checker",
+      "agents": [
+        "checker",
+        "buyer-researcher"
+      ],
+      "step": "prove",
+      "product": "",
+      "nextAction": "Have checker run the 5-Gate Hard Verification Funnel (Two-Layer Meta Competitor check, 4-Way Pricing <35% landed cost, CJ supplier link + saved photo), then click Approve & Build Store on #/winners.",
+      "notes": "90% of scraped products get filtered out here so only pre-validated winners reach your eye test.",
+      "references": [
+        "workflow/CHECKS.md"
+      ],
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "completedAt": null
+    },
+    {
+      "id": "T-day1-05",
+      "title": "Step 5 · Build your Storefront on #/build (clone base-theme.json, 2-Kit pricing + $4.99 Shipping Protection)",
+      "date": "2026-11-05",
+      "status": "todo",
+      "focus": false,
+      "assignee": "shared",
+      "agent": "store-builder",
+      "agents": [
+        "store-builder",
+        "copywriter"
+      ],
+      "step": "build",
+      "product": "",
+      "nextAction": "Clone base-theme.json in #/build, populate the 5-section Grimoire copy and store gallery, set 1-Kit vs 2-Kit (SAVE 15% + Free Shipping), and send the supplier photo for a fulfillment quote.",
+      "notes": "Review the live 375px mobile preview on the right side of #/build as you edit.",
+      "references": [
+        "store/HYDROGEN-POPULATION.md",
+        "store/PAGE-BLUEPRINT.md"
+      ],
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "completedAt": null
+    },
+    {
+      "id": "T-day1-06",
+      "title": "Step 6 · Generate your Ad Pack on #/create (#1 Kalodata video + 20 4:5 Static Ads + 5x5 Copy Pack)",
+      "date": "2026-11-05",
+      "status": "todo",
+      "focus": false,
+      "assignee": "shared",
+      "agent": "image-maker",
+      "agents": [
+        "image-maker",
+        "copywriter"
+      ],
+      "step": "create",
+      "product": "",
+      "nextAction": "Prep the #1 top-revenue viral video (9:16) and generate 20 4:5 static ads (10 Problem-Aware + 10 Solution-Aware) using the 50 reference layouts in agents/image-generator/references/.",
+      "notes": "Approve your final creatives and 5 evergreen captions + 5 headlines on #/create.",
+      "references": [
+        "resources/notes/2026-11-05-viral-video-to-20-statics-playbook.md",
+        "agents/image-generator/references/REFERENCE-TO-AD.md"
+      ],
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "completedAt": null
+    },
+    {
+      "id": "T-day1-07",
+      "title": "Step 7 · Complete the 7/7 Pre-Launch Checklist (#/checklist), launch your $50/day CBO (#/launch), and monitor #/manage",
+      "date": "2026-11-05",
+      "status": "todo",
+      "focus": false,
+      "assignee": "owner",
+      "agent": "",
+      "agents": [],
+      "step": "launch",
+      "product": "",
+      "nextAction": "Verify all 7 pre-launch checks on #/checklist, set your $50/day CBO budget and $50 first-test loss limit on #/launch, and track 15-minute live Meta + Shopify sync in #/manage.",
+      "notes": "Hold the 4-Day Meta Algorithm Priming window and follow the End-of-Day 3 Kill / Day 4+ Scale rules.",
+      "references": [
+        "workflow/LAUNCH-CHECKLIST.md",
+        "resources/notes/2026-11-03-shaunns-kpi-calculator-and-scaling.md"
+      ],
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z",
+      "completedAt": null
+    }
+  ],
+  "deleted": []
+}

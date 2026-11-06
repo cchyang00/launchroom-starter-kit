@@ -1,0 +1,108 @@
+/* Winners (#/winners). The owner, Nov 5: "the video is sticky ... it follows and cover some of the text ...
+   make it very easy for me to see if its a winner, and all the different links to every single thing that
+   has been checked." Classes start with mv-wn-; colours are tokens only. */
+
+.mv-wn{display:grid;gap:18px;min-width:0}
+.mv-wn>*{min-width:0}
+.mv-wn-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mv-wn-head .mv-h1{margin:4px 0 2px}
+.mv-wn-head p{margin:0;font-size:14px;color:var(--text-2)}
+.mv-wn .mv-cd-picks{margin:0}
+.mv-wn .mv-cd-pick{grid-template-columns:56px minmax(0,1fr)}
+
+/* ---------- The product: video beside the verdict. The video stays put when the page scrolls. ---------- */
+.mv-wn-hero{display:grid;grid-template-columns:minmax(0,270px) minmax(0,1fr);gap:22px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:22px;background:var(--surface);box-shadow:var(--shadow-1)}
+.mv-wn-hero .mv-pp-media{position:static}
+.mv-wn-main{display:grid;gap:14px;min-width:0}
+.mv-wn-title{display:grid;gap:4px;min-width:0}
+.mv-wn-title small{font:600 11px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mv-wn-title h2{margin:0;font:600 clamp(20px,2.4vw,26px)/1.18 var(--display);letter-spacing:-.015em;color:var(--text);overflow-wrap:anywhere}
+
+/* The seven checks at a glance */
+.mv-wn-score{display:grid;gap:8px}
+.mv-wn-score header{display:flex;align-items:center;gap:8px;font:600 13px/1.2 var(--sans);color:var(--text)}
+.mv-wn-score header.is-pass{color:var(--success-text)}
+.mv-wn-score header.is-open{color:var(--warning-text)}
+.mv-wn-score div{display:flex;flex-wrap:wrap;gap:6px}
+.mv-wn-mark{display:inline-flex;align-items:center;gap:5px;min-height:30px;padding:0 10px 0 7px;border:1px solid var(--line);border-radius:999px;background:var(--bg-1);font:600 12px/1 var(--sans);color:var(--text);cursor:pointer;transition:transform .15s,border-color .15s}
+.mv-wn-mark:hover{transform:translateY(-1px);border-color:var(--line-2)}
+.mv-wn-mark i{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--bg-2);color:var(--muted);font-style:normal}
+.mv-wn-mark.is-pass i{background:var(--success);color:var(--on-success)}
+.mv-wn-mark.is-fail i{background:var(--danger);color:var(--on-danger)}
+.mv-wn-main .mv-pp-stats{margin:0}
+
+/* Your call */
+.mv-wn-decide{display:flex;flex-wrap:wrap;gap:8px}
+.mv-wn-decide .mv-btn.primary{flex:1 1 230px;justify-content:center}
+
+/* Jump straight to a source */
+.mv-wn-jump{display:flex;flex-wrap:wrap;gap:6px}
+.mv-wn-jump a,.mv-wn-jump button{display:inline-flex;align-items:center;gap:5px;min-height:30px;padding:0 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface);font:600 12px/1 var(--sans);color:var(--text);text-decoration:none;cursor:pointer}
+.mv-wn-jump a:hover,.mv-wn-jump button:hover{border-color:var(--line-2);background:var(--bg-1)}
+
+/* ---------- Why it could win ---------- */
+.mv-wn-angle{display:grid;align-content:start;gap:6px;padding:12px 14px;border-radius:14px;background:var(--strong);color:var(--on-strong)}
+.mv-wn-angle small{font:600 11px/1.2 var(--sans);letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.mv-wn-angle .mv-cd-more p,.mv-wn-angle p{margin:0;font:500 13px/1.4 var(--sans);color:inherit}
+.mv-wn-angle .mv-cd-more button{color:inherit}
+.mv-wn-avatars{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.mv-wn-avatar{display:grid;align-content:start;gap:4px;padding:12px 14px;border-radius:16px;background:var(--tile-bg);color:var(--tile-ink)}
+.mv-wn-avatar strong{font:600 13.5px/1.25 var(--display)}
+.mv-wn-avatar p{margin:0;font-size:12px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ---------- The proof: one card per check ---------- */
+.mv-wn-section{display:grid;gap:10px;min-width:0}
+.mv-wn-proof{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:12px}
+.mv-wn-card{display:grid;align-content:start;gap:8px;min-width:0;padding:14px;border:1px solid var(--line);border-radius:18px;background:var(--surface);scroll-margin-top:72px;transition:box-shadow .2s,border-color .2s}
+.mv-wn-card.is-flash{border-color:var(--accent-text);box-shadow:var(--shadow-2)}
+.mv-wn-card>header{display:flex;align-items:center;gap:7px;font:600 13px/1.2 var(--sans);color:var(--text)}
+.mv-wn-card>header i{display:grid;place-items:center;flex:none;width:18px;height:18px;border-radius:50%;background:var(--bg-2);color:var(--muted);font-style:normal}
+.mv-wn-card.is-pass>header i{background:var(--success);color:var(--on-success)}
+.mv-wn-card.is-fail>header i{background:var(--danger);color:var(--on-danger)}
+.mv-wn-card>header time{margin-left:auto;font:500 11px/1 var(--sans);color:var(--faint);white-space:nowrap}
+.mv-wn-fact{display:grid;gap:2px}
+.mv-wn-fact b{font:600 26px/1.05 var(--display);letter-spacing:-.02em;color:var(--text);overflow-wrap:anywhere}
+.mv-wn-fact small{font:500 12px/1.3 var(--sans);color:var(--muted)}
+.mv-wn-card .mv-cd-more p,.mv-wn-card>p{margin:0;font-size:12.5px;line-height:1.45;color:var(--text-2);overflow-wrap:anywhere}
+.mv-wn-rule{margin:0;font-size:12px;line-height:1.4;color:var(--muted)}
+.mv-wn-card-links{display:grid;gap:4px;margin-top:2px}
+
+/* One link */
+.mv-wn-link{display:flex;align-items:center;gap:6px;min-width:0;min-height:30px;width:100%;padding:4px 8px;border:1px solid var(--line);border-radius:9px;background:var(--bg-1);font:600 12px/1.25 var(--sans);color:var(--text);text-align:left;text-decoration:none;cursor:pointer}
+.mv-wn-link:hover{border-color:var(--line-2);background:var(--surface)}
+.mv-wn-link>svg{flex:none;color:var(--muted)}
+.mv-wn-link>span{display:grid;gap:1px;flex:1 1 auto;min-width:0}
+.mv-wn-link>span b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-wn-link>span i{font:500 11px/1.25 var(--sans);font-style:normal;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv-wn-link em{flex:none;padding:3px 6px;border-radius:6px;background:var(--bg-2);font:600 10px/1 var(--sans);font-style:normal;color:var(--muted)}
+.mv-wn-link.is-off{border-color:var(--warning-text)}
+.mv-wn-link.is-off em{background:var(--warning);color:var(--on-warning)}
+
+/* ---------- Every link, by what it is ---------- */
+.mv-wn-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:12px}
+.mv-wn-group{display:grid;align-content:start;gap:8px;min-width:0;padding:14px;border-radius:18px;background:var(--tile-bg);color:var(--tile-ink)}
+.mv-wn-group>header{display:flex;align-items:center;gap:7px;font:600 13.5px/1.2 var(--display)}
+.mv-wn-group>header b{margin-left:auto;font:600 13px/1 var(--sans)}
+.mv-wn-group .mv-wn-link{background:var(--surface)}
+.mv-wn-more{justify-self:start;font-size:12px}
+
+/* ---------- Go deeper ---------- */
+.mv-wn .mv-stage-tabs{margin:0}
+.mv-wn-deep{display:grid;gap:18px}
+.mv-wn-deep h3{margin:0 0 10px}
+.mv-wn-divider{padding-top:16px;border-top:1px solid var(--line)}
+.mv-wn-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}
+.mv-wn-bucket{display:grid;align-content:start;gap:8px;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--bg-1)}
+.mv-wn-bucket>div{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mv-wn-bucket strong{font-size:13.5px}
+.mv-wn-bucket ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:13px;line-height:1.45}
+.mv-wn-reviews{display:flex;justify-content:flex-end}
+
+@media (prefers-reduced-motion:reduce){
+  .mv-wn-mark,.mv-wn-card{transition:none}
+}
+@media (max-width:720px){
+  .mv-wn-hero{grid-template-columns:minmax(0,1fr);padding:12px;gap:14px}
+  .mv-wn-hero .mv-pp-stage{max-height:62vh;aspect-ratio:auto;height:62vh}
+  .mv-wn-decide .mv-btn{flex:1 1 auto;justify-content:center}
+}

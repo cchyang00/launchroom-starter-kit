@@ -1,0 +1,361 @@
+/* Launchroom colour tokens: the ONLY file in os/src with literal colours.
+   Every component reads semantic tokens (var(--surface), var(--text), var(--accent) ...).
+   Appearance = a scheme (data-scheme) x a mode (data-mode="light"|"dark") on <html>.
+   The Settings page previews a scheme by putting the same two attributes on a swatch card.
+
+   To add a scheme: copy one light block and one dark block below, give them a new
+   data-scheme id, change the seed colours, and add the id to SCHEMES in appearance.mjs.
+   server/tokens.test.mjs checks every scheme x mode for the full seed set and WCAG AA.
+
+   Seeds every scheme block sets (light and dark):
+     --bg --surface --text --muted --line
+     --sidebar --sidebar-text --sidebar-muted
+     --hero --hero-text --hero-muted
+     --accent --on-accent --accent-text
+     --highlight --on-highlight --strong --on-strong --shadow-rgb
+   Everything else is derived below or comes from the mode block (status colours). */
+
+/* ---------- Derived tokens (recomputed on every element that carries a scheme) ---------- */
+:root,[data-scheme]{
+  --bg-2:color-mix(in srgb,var(--text) 5%,var(--bg));
+  --surface-2:color-mix(in srgb,var(--text) 3%,var(--surface));
+  --text-2:color-mix(in srgb,var(--text) 72%,var(--muted));
+  --faint:color-mix(in srgb,var(--muted) 92%,var(--surface));
+  --line-2:color-mix(in srgb,var(--text) 10%,var(--line));
+  --sidebar-hover:color-mix(in srgb,var(--sidebar-text) 6%,transparent);
+  --sidebar-active:color-mix(in srgb,var(--sidebar-text) 10%,transparent);
+  --sidebar-chip:color-mix(in srgb,var(--sidebar-text) 10%,transparent);
+  --sidebar-line:color-mix(in srgb,var(--sidebar-text) 11%,transparent);
+  --sidebar-mark:var(--accent-text);
+  --sidebar-done:var(--success);
+  --sidebar-owner:var(--warning-text);
+  --hero-2:color-mix(in srgb,var(--hero-text) 8%,var(--hero));
+  --hero-line:color-mix(in srgb,var(--hero-text) 18%,transparent);
+  --hero-chip:color-mix(in srgb,var(--hero-text) 9%,transparent);
+  --hero-done:var(--success);
+  --hero-info:var(--info-text);
+  --hero-accent:var(--accent-text);
+  --hero-owner:color-mix(in srgb,var(--warning-text) 85%,var(--text));
+  --accent-hover:color-mix(in srgb,var(--accent) 86%,var(--text));
+  --accent-soft:color-mix(in srgb,var(--accent) 24%,var(--surface));
+  --highlight-soft:color-mix(in srgb,var(--highlight) 45%,var(--surface));
+  --strong-hover:color-mix(in srgb,var(--strong) 86%,var(--surface));
+  --success-soft:color-mix(in srgb,var(--success) 14%,var(--surface));
+  --warning-soft:color-mix(in srgb,var(--warning) 14%,var(--surface));
+  --info-soft:color-mix(in srgb,var(--info) 14%,var(--surface));
+  --danger-soft:color-mix(in srgb,var(--danger) 13%,var(--surface));
+  --special-soft:color-mix(in srgb,var(--special) 13%,var(--surface));
+  --success-hover:color-mix(in srgb,var(--success) 86%,var(--text));
+  --warning-hover:color-mix(in srgb,var(--warning) 86%,var(--text));
+  --info-hover:color-mix(in srgb,var(--info) 86%,var(--text));
+  --danger-hover:color-mix(in srgb,var(--danger) 86%,var(--text));
+  --special-hover:color-mix(in srgb,var(--special) 86%,var(--text));
+  --scrim:rgb(var(--shadow-rgb) / .38);
+  --focus:var(--accent-text);
+  --shadow-1:0 1px 2px rgb(var(--shadow-rgb) / .05),0 1px 1px rgb(var(--shadow-rgb) / .03);
+  --shadow-2:0 12px 32px -14px rgb(var(--shadow-rgb) / .28);
+  --shadow-3:0 28px 70px -20px rgb(var(--shadow-rgb) / .38);
+  color-scheme:light;
+}
+
+/* ---------- Mode: light (status colours, shared by every scheme) ---------- */
+:root,[data-scheme]{
+  --success:#1f7a52;--success-text:#1c7049;--on-success:#ffffff;
+  --warning:#bb4a1c;--warning-text:#a8421a;--on-warning:#ffffff;
+  --info:#3a5fb5;--info-text:#3356a6;--on-info:#ffffff;
+  --danger:#ad362c;--danger-text:#a03128;--on-danger:#ffffff;
+  --special:#9c4376;--special-text:#8f3d6c;--on-special:#ffffff;
+  --highlight-text:#6f5300;
+  /* Agent and chart colours: fills behind white initials. */
+  --role-manager:#4a4f5c;--role-research:#3a5fb5;--role-creative:#9c4376;--role-store:#1b7479;--role-owner:#bb4a1c;--role-other:#5f6862;
+  --chart-1:#8c6b4a;--chart-2:#a3a38c;--chart-3:#d9c3a0;--chart-4:#2f7a62;
+  --on-media:#ffffff;--media-scrim:rgb(20 18 28 / .72);
+}
+/* ---------- Mode: dark ---------- */
+[data-mode="dark"]{
+  --success:#79d3a5;--success-text:#86dcb0;--on-success:#0c2a1b;
+  --warning:#f5a27c;--warning-text:#f7ae8c;--on-warning:#3a1606;
+  --info:#9ab7f5;--info-text:#a9c2f7;--on-info:#0f1f45;
+  --danger:#f2958b;--danger-text:#f4a59c;--on-danger:#3d0d08;
+  --special:#e3a1c8;--special-text:#e9b2d3;--on-special:#3a0f27;
+  --highlight-text:#f0d77a;
+  --role-manager:#5d6377;--role-other:#687268;
+  --hero-accent:var(--highlight);
+  --success-soft:color-mix(in srgb,var(--success) 16%,var(--surface));
+  --warning-soft:color-mix(in srgb,var(--warning) 16%,var(--surface));
+  --info-soft:color-mix(in srgb,var(--info) 16%,var(--surface));
+  --danger-soft:color-mix(in srgb,var(--danger) 15%,var(--surface));
+  --special-soft:color-mix(in srgb,var(--special) 15%,var(--surface));
+  --highlight-soft:color-mix(in srgb,var(--highlight) 16%,var(--surface));
+  --accent-soft:color-mix(in srgb,var(--accent) 18%,var(--surface));
+  --success-hover:color-mix(in srgb,var(--success) 86%,var(--surface));
+  --warning-hover:color-mix(in srgb,var(--warning) 86%,var(--surface));
+  --info-hover:color-mix(in srgb,var(--info) 86%,var(--surface));
+  --danger-hover:color-mix(in srgb,var(--danger) 86%,var(--surface));
+  --special-hover:color-mix(in srgb,var(--special) 86%,var(--surface));
+  --accent-hover:color-mix(in srgb,var(--accent) 86%,var(--surface));
+  --scrim:rgb(0 0 0 / .55);
+  --shadow-1:0 1px 2px rgb(0 0 0 / .3);
+  --shadow-2:0 14px 34px -14px rgb(0 0 0 / .6);
+  --shadow-3:0 28px 70px -20px rgb(0 0 0 / .7);
+  color-scheme:dark;
+}
+
+/* ---------- The Shared library is always blue ("Shared with everyone") ---------- */
+:root,[data-scheme]{--shared:#a9cdf2;--shared-soft:#eef5fd;--shared-line:#c7ddf6;--shared-ink:#1f4f86;--shared-chip:#dbe9fb}
+[data-mode="dark"]{--shared:#a9cdf2;--shared-soft:#17263a;--shared-line:#2c4563;--shared-ink:#a9cdf2;--shared-chip:#1e3350}
+
+/* ---------- Project marks (pastel tiles with dark ink: readable in both modes) ---------- */
+:root{
+  --mark-1:#c9b8f2;--mark-1-ink:#2b1f4a;--mark-2:#f6c3a1;--mark-2-ink:#4a2512;
+  --mark-3:#a9cdf2;--mark-3-ink:#132f4f;--mark-4:#f3dc8a;--mark-4-ink:#4a3a05;
+  --mark-5:#f2b8c6;--mark-5-ink:#4d1828;--mark-6:#a8dcc5;--mark-6-ink:#123d2c;
+  --mark-7:#d8c4a8;--mark-7-ink:#3b2a14;--mark-8:#bfc7f5;--mark-8-ink:#1c2453;
+  --mark-merrivy:#f0c95a;--mark-merrivy-ink:#17171b;
+}
+
+/* ---------- Pastel tiles (Nov 4: big-number cards, "cards instead of text"): built on the marks, soft in dark mode ---------- */
+:root,[data-scheme]{
+  --tile-1:color-mix(in srgb,var(--mark-1) 38%,var(--surface));--tile-1-ink:var(--mark-1-ink);
+  --tile-2:color-mix(in srgb,var(--mark-2) 38%,var(--surface));--tile-2-ink:var(--mark-2-ink);
+  --tile-3:color-mix(in srgb,var(--mark-3) 38%,var(--surface));--tile-3-ink:var(--mark-3-ink);
+  --tile-4:color-mix(in srgb,var(--mark-4) 45%,var(--surface));--tile-4-ink:var(--mark-4-ink);
+  --tile-5:color-mix(in srgb,var(--mark-5) 38%,var(--surface));--tile-5-ink:var(--mark-5-ink);
+  --tile-6:color-mix(in srgb,var(--mark-6) 42%,var(--surface));--tile-6-ink:var(--mark-6-ink);
+}
+[data-mode="dark"]{
+  --tile-1:color-mix(in srgb,var(--mark-1) 16%,var(--surface));--tile-1-ink:var(--mark-1);
+  --tile-2:color-mix(in srgb,var(--mark-2) 15%,var(--surface));--tile-2-ink:var(--mark-2);
+  --tile-3:color-mix(in srgb,var(--mark-3) 15%,var(--surface));--tile-3-ink:var(--mark-3);
+  --tile-4:color-mix(in srgb,var(--mark-4) 14%,var(--surface));--tile-4-ink:var(--mark-4);
+  --tile-5:color-mix(in srgb,var(--mark-5) 15%,var(--surface));--tile-5-ink:var(--mark-5);
+  --tile-6:color-mix(in srgb,var(--mark-6) 15%,var(--surface));--tile-6-ink:var(--mark-6);
+}
+
+/* =====================  Soft schemes: light sidebar in light mode  ===================== */
+
+/* Lavender & Butter: the store's palette. The default. */
+:root:not([data-scheme]),[data-scheme="lavender"]{
+  --bg:#fdfaf4;--surface:#ffffff;--text:#2e2546;--muted:#625979;--line:#ebe4f0;
+  --sidebar:#f5f0fb;--sidebar-text:#2e2546;--sidebar-muted:#5f5677;
+  --hero:#efe7ff;--hero-text:#2e2546;--hero-muted:#574d70;
+  --accent:#c7b3ff;--on-accent:#2e2546;--accent-text:#6347cf;
+  --highlight:#fff0b8;--on-highlight:#2e2546;--strong:#2e2546;--on-strong:#fdfaf4;
+  --shadow-rgb:46 37 70;
+  --sidebar-active:#e9e0ff;
+}
+[data-scheme="lavender"][data-mode="dark"],:root[data-mode="dark"]:not([data-scheme]){
+  --bg:#17141e;--surface:#211d2b;--text:#ece7f6;--muted:#aaa2bd;--line:#332d40;
+  --sidebar:#1c1825;--sidebar-text:#e6e0f2;--sidebar-muted:#a59db9;
+  --hero:#2b2440;--hero-text:#f0ebfa;--hero-muted:#bbb1d2;
+  --accent:#c7b3ff;--on-accent:#241c3a;--accent-text:#c9b8ff;
+  --highlight:#f3dd8a;--on-highlight:#2a2210;--strong:#e9e2fb;--on-strong:#1c1825;
+  --shadow-rgb:0 0 0;
+  --sidebar-active:color-mix(in srgb,var(--accent) 16%,transparent);
+}
+
+/* Sky & Apricot */
+[data-scheme="sky"]{
+  --bg:#f8fbfd;--surface:#ffffff;--text:#1e3352;--muted:#52667f;--line:#e1eaf3;
+  --sidebar:#edf4fb;--sidebar-text:#1e3352;--sidebar-muted:#4f637d;
+  --hero:#e1eefb;--hero-text:#1e3352;--hero-muted:#475c78;
+  --accent:#b6d5f6;--on-accent:#1e3352;--accent-text:#275aab;
+  --highlight:#ffe2c6;--on-highlight:#1e3352;--strong:#1e3352;--on-strong:#f8fbfd;
+  --shadow-rgb:30 51 82;
+  --sidebar-active:#dcebfa;
+}
+[data-scheme="sky"][data-mode="dark"]{
+  --bg:#121820;--surface:#1a222d;--text:#e4ecf6;--muted:#9fb1c6;--line:#2a3542;
+  --sidebar:#151c25;--sidebar-text:#dfe8f3;--sidebar-muted:#9aacc2;
+  --hero:#1d2a3b;--hero-text:#eaf2fb;--hero-muted:#adc0d6;
+  --accent:#a9cdf2;--on-accent:#132f4f;--accent-text:#a3caf5;
+  --highlight:#f5c8a0;--on-highlight:#3a2210;--strong:#e2edf9;--on-strong:#151c25;
+  --shadow-rgb:0 0 0;
+  --sidebar-active:color-mix(in srgb,var(--accent) 16%,transparent);
+}
+
+/* Sand & Lilac */
+[data-scheme="sand"]{
+  --bg:#fbf7f0;--surface:#fffdf9;--text:#3a2f28;--muted:#6a5d53;--line:#ece3d5;
+  --sidebar:#f5eee3;--sidebar-text:#3a2f28;--sidebar-muted:#665a50;
+  --hero:#f1e6d4;--hero-text:#3a2f28;--hero-muted:#5f5348;
+  --accent:#e2cba9;--on-accent:#3a2f28;--accent-text:#85532f;
+  --highlight:#e6e0f7;--on-highlight:#3a2f28;--strong:#3a2f28;--on-strong:#fbf7f0;
+  --shadow-rgb:58 47 40;
+  --sidebar-active:#ecdfca;
+}
+[data-scheme="sand"][data-mode="dark"]{
+  --bg:#1a1612;--surface:#241f1a;--text:#f1e9de;--muted:#b6a999;--line:#362e26;
+  --sidebar:#1f1a15;--sidebar-text:#ece3d6;--sidebar-muted:#afa190;
+  --hero:#2e261e;--hero-text:#f5ede2;--hero-muted:#c4b6a5;
+  --accent:#e2cba9;--on-accent:#3a2a18;--accent-text:#e8c9a0;
+  --highlight:#cbbff0;--on-highlight:#241d3a;--strong:#f1e9de;--on-strong:#1f1a15;
+  --shadow-rgb:0 0 0;
+  --sidebar-active:color-mix(in srgb,var(--accent) 15%,transparent);
+}
+
+/* Rose & Cream */
+[data-scheme="rose"]{
+  --bg:#fff8f7;--surface:#ffffff;--text:#3a2734;--muted:#6f5a67;--line:#f3e2e4;
+  --sidebar:#fdeff1;--sidebar-text:#3a2734;--sidebar-muted:#6b5663;
+  --hero:#fbe3e8;--hero-text:#3a2734;--hero-muted:#664f5d;
+  --accent:#f5c3cf;--on-accent:#3a2734;--accent-text:#933a6c;
+  --highlight:#f6e7c8;--on-highlight:#3a2734;--strong:#3a2734;--on-strong:#fff8f7;
+  --shadow-rgb:58 39 52;
+  --sidebar-active:#fadbe2;
+}
+[data-scheme="rose"][data-mode="dark"]{
+  --bg:#1c1519;--surface:#261d22;--text:#f5e8ee;--muted:#bda5b2;--line:#3a2b33;
+  --sidebar:#20181c;--sidebar-text:#f0e2e9;--sidebar-muted:#b59cab;
+  --hero:#33222b;--hero-text:#f8ecf1;--hero-muted:#cbb1be;
+  --accent:#f5c3cf;--on-accent:#3a1828;--accent-text:#f2abc6;
+  --highlight:#ecd9a8;--on-highlight:#2e2410;--strong:#f5e8ee;--on-strong:#20181c;
+  --shadow-rgb:0 0 0;
+  --sidebar-active:color-mix(in srgb,var(--accent) 15%,transparent);
+}
+
+/* Sage & Linen (a soft sage, never the old forest green) */
+[data-scheme="sage"]{
+  --bg:#f8f8f3;--surface:#fffffc;--text:#263330;--muted:#566561;--line:#e4e8df;
+  --sidebar:#eff3ec;--sidebar-text:#263330;--sidebar-muted:#53625e;
+  --hero:#e2ede5;--hero-text:#263330;--hero-muted:#4d5d58;
+  --accent:#bcd6c6;--on-accent:#263330;--accent-text:#33605a;
+  --highlight:#f2ecd8;--on-highlight:#263330;--strong:#263330;--on-strong:#f8f8f3;
+  --shadow-rgb:38 51 48;
+  --sidebar-active:#dde9e1;
+}
+[data-scheme="sage"][data-mode="dark"]{
+  --bg:#141917;--surface:#1c2320;--text:#e6eee9;--muted:#a3b4ac;--line:#2c3632;
+  --sidebar:#171d1b;--sidebar-text:#e1e9e4;--sidebar-muted:#9eafa7;
+  --hero:#22302b;--hero-text:#ebf3ee;--hero-muted:#b1c4ba;
+  --accent:#bcd6c6;--on-accent:#1d302a;--accent-text:#abd5c0;
+  --highlight:#e6dcb5;--on-highlight:#2a2510;--strong:#e6eee9;--on-strong:#171d1b;
+  --shadow-rgb:0 0 0;
+  --sidebar-active:color-mix(in srgb,var(--accent) 14%,transparent);
+}
+
+/* Slate & Ice */
+[data-scheme="slate"]{
+  --bg:#f7f8fa;--surface:#ffffff;--text:#1f2933;--muted:#535f6b;--line:#e3e7ec;
+  --sidebar:#eef1f5;--sidebar-text:#1f2933;--sidebar-muted:#505c68;
+  --hero:#e4e9f0;--hero-text:#1f2933;--hero-muted:#4a5664;
+  --accent:#c9d6e6;--on-accent:#1f2933;--accent-text:#2d5a86;
+  --highlight:#dbe9f5;--on-highlight:#1f2933;--strong:#1f2933;--on-strong:#f7f8fa;
+  --shadow-rgb:31 41 51;
+  --sidebar-active:#dfe6ef;
+}
+[data-scheme="slate"][data-mode="dark"]{
+  --bg:#13161a;--surface:#1b1f25;--text:#e5e9ee;--muted:#a2abb6;--line:#2c323a;
+  --sidebar:#16191e;--sidebar-text:#e0e5eb;--sidebar-muted:#9ca6b1;
+  --hero:#222831;--hero-text:#eaeef3;--hero-muted:#acb6c2;
+  --accent:#9fb7d3;--on-accent:#142233;--accent-text:#a2c3e7;
+  --highlight:#c7dbef;--on-highlight:#142233;--strong:#e5e9ee;--on-strong:#16191e;
+  --shadow-rgb:0 0 0;
+  --sidebar-active:color-mix(in srgb,var(--accent) 15%,transparent);
+}
+
+/* =====================  Deep schemes: the original themes, deep sidebar  ===================== */
+
+/* Ink: charcoal and gold */
+[data-scheme="ink"]{
+  --bg:#f6f4ef;--surface:#fffefb;--text:#1b1b1f;--muted:#5d5d66;--line:#e5e2da;
+  --sidebar:#17171b;--sidebar-text:#efece6;--sidebar-muted:#a9a6a0;
+  --hero:#17171b;--hero-text:#fbf7ee;--hero-muted:#bfbbb3;
+  --accent:#2a2a30;--on-accent:#fbf7ee;--accent-text:#3d3d46;
+  --highlight:#f0c95a;--on-highlight:#1b1b1f;--strong:#1b1b1f;--on-strong:#fbf7ee;
+  --shadow-rgb:23 23 27;
+  --sidebar-mark:#f0c95a;--sidebar-done:#8fd3ae;--sidebar-owner:#f3a883;--hero-done:#8fd3ae;--hero-info:#c9d7ff;--hero-accent:var(--highlight);--hero-owner:var(--sidebar-owner);
+}
+[data-scheme="ink"][data-mode="dark"]{
+  --bg:#141416;--surface:#1d1d21;--text:#ecebe8;--muted:#a8a7a3;--line:#2e2e33;
+  --sidebar:#18181b;--sidebar-text:#ecebe8;--sidebar-muted:#a09f9b;
+  --hero:#24242a;--hero-text:#f4f2ee;--hero-muted:#b6b3ae;
+  --accent:#e8e4dc;--on-accent:#1b1b1f;--accent-text:#f0c95a;
+  --highlight:#f0c95a;--on-highlight:#1b1b1f;--strong:#ecebe8;--on-strong:#18181b;
+  --shadow-rgb:0 0 0;
+  --sidebar-mark:#f0c95a;--sidebar-done:var(--success);--sidebar-owner:var(--warning-text);--hero-done:var(--success);--hero-info:var(--info-text);
+}
+
+/* Midnight: navy and gold */
+[data-scheme="midnight"]{
+  --bg:#f3f5f9;--surface:#ffffff;--text:#141b2d;--muted:#576075;--line:#e1e6ee;
+  --sidebar:#111829;--sidebar-text:#e7ebf4;--sidebar-muted:#9ca5ba;
+  --hero:#111829;--hero-text:#f2f5fb;--hero-muted:#acb5c9;
+  --accent:#1b2440;--on-accent:#f2f5fb;--accent-text:#33426a;
+  --highlight:#f5c451;--on-highlight:#141b2d;--strong:#141b2d;--on-strong:#f3f5f9;
+  --shadow-rgb:17 24 41;
+  --sidebar-mark:#f5c451;--sidebar-done:#7fd8c4;--sidebar-owner:#f6ab8f;--hero-done:#7fd8c4;--hero-info:#c9d7ff;--hero-accent:var(--highlight);--hero-owner:var(--sidebar-owner);
+}
+[data-scheme="midnight"][data-mode="dark"]{
+  --bg:#10141e;--surface:#171c29;--text:#e6eaf3;--muted:#a3abbe;--line:#283044;
+  --sidebar:#131826;--sidebar-text:#e1e6f0;--sidebar-muted:#9aa3b8;
+  --hero:#1d2540;--hero-text:#eef1f8;--hero-muted:#b0b8cd;
+  --accent:#aebcf0;--on-accent:#111829;--accent-text:#b0bff3;
+  --highlight:#f5c451;--on-highlight:#141b2d;--strong:#e6eaf3;--on-strong:#131826;
+  --shadow-rgb:0 0 0;
+  --sidebar-mark:#f5c451;--sidebar-done:var(--success);--sidebar-owner:var(--warning-text);--hero-done:var(--success);--hero-info:var(--info-text);
+}
+
+/* Espresso: warm brown and gold */
+[data-scheme="espresso"]{
+  --bg:#f7f2ea;--surface:#fffcf7;--text:#2a201b;--muted:#685a51;--line:#e8dfd1;
+  --sidebar:#271d18;--sidebar-text:#f3ebe0;--sidebar-muted:#b5a799;
+  --hero:#271d18;--hero-text:#f8f1e7;--hero-muted:#c6b8a9;
+  --accent:#5c473b;--on-accent:#f8f1e7;--accent-text:#6c4c39;
+  --highlight:#e8c36a;--on-highlight:#2a201b;--strong:#2a201b;--on-strong:#f7f2ea;
+  --shadow-rgb:39 29 24;
+  --sidebar-mark:#e8c36a;--sidebar-done:#9ed3b4;--sidebar-owner:#f0ad8a;--hero-done:#9ed3b4;--hero-info:#c9d7ff;--hero-accent:var(--highlight);--hero-owner:var(--sidebar-owner);
+}
+[data-scheme="espresso"][data-mode="dark"]{
+  --bg:#171310;--surface:#211b17;--text:#f0e8de;--muted:#b4a799;--line:#352c25;
+  --sidebar:#1b1612;--sidebar-text:#ece3d7;--sidebar-muted:#ab9d8e;
+  --hero:#2c231d;--hero-text:#f5ede3;--hero-muted:#c2b4a4;
+  --accent:#e8c36a;--on-accent:#2a201b;--accent-text:#e8c36a;
+  --highlight:#e8c36a;--on-highlight:#2a201b;--strong:#f0e8de;--on-strong:#1b1612;
+  --shadow-rgb:0 0 0;
+  --sidebar-mark:#e8c36a;--sidebar-done:var(--success);--sidebar-owner:var(--warning-text);--hero-done:var(--success);--hero-info:var(--info-text);
+}
+
+/* Plum: aubergine and gold */
+[data-scheme="plum"]{
+  --bg:#f7f4f2;--surface:#fffdfb;--text:#271c2e;--muted:#63566b;--line:#e8e0dd;
+  --sidebar:#271a30;--sidebar-text:#f1eaf3;--sidebar-muted:#b3a4bc;
+  --hero:#271a30;--hero-text:#f7f1f8;--hero-muted:#c4b5cb;
+  --accent:#5a4468;--on-accent:#f7f1f8;--accent-text:#694a7d;
+  --highlight:#ecc66d;--on-highlight:#271c2e;--strong:#271c2e;--on-strong:#f7f4f2;
+  --shadow-rgb:39 26 48;
+  --sidebar-mark:#ecc66d;--sidebar-done:#95d6bd;--sidebar-owner:#f3ad8e;--hero-done:#95d6bd;--hero-info:#c9d7ff;--hero-accent:var(--highlight);--hero-owner:var(--sidebar-owner);
+}
+[data-scheme="plum"][data-mode="dark"]{
+  --bg:#17121a;--surface:#211a25;--text:#efe7f2;--muted:#b4a6bb;--line:#352a3a;
+  --sidebar:#1b151f;--sidebar-text:#eae1ee;--sidebar-muted:#ab9db3;
+  --hero:#2e2236;--hero-text:#f4edf6;--hero-muted:#c2b2ca;
+  --accent:#d7b8ea;--on-accent:#271a30;--accent-text:#d7b9ec;
+  --highlight:#ecc66d;--on-highlight:#271c2e;--strong:#efe7f2;--on-strong:#1b151f;
+  --shadow-rgb:0 0 0;
+  --sidebar-mark:#ecc66d;--sidebar-done:var(--success);--sidebar-owner:var(--warning-text);--hero-done:var(--success);--hero-info:var(--info-text);
+}
+
+/* Forest: the original green, kept only as an option (never the default) */
+[data-scheme="forest"]{
+  --bg:#f5f1e8;--surface:#fffcf6;--text:#1c3229;--muted:#5a645a;--line:#e4ddcc;
+  --sidebar:#16302a;--sidebar-text:#ece6d8;--sidebar-muted:#a5afa1;
+  --hero:#16302a;--hero-text:#f4efe3;--hero-muted:#b7bfad;
+  --accent:#2a5145;--on-accent:#f4efe3;--accent-text:#2b6249;
+  --highlight:#e6d38a;--on-highlight:#1c3229;--strong:#1c3229;--on-strong:#f5f1e8;
+  --shadow-rgb:22 48 42;
+  --sidebar-mark:#e6d38a;--sidebar-done:#9fd0ae;--sidebar-owner:#f0ad8a;--hero-done:#9fd0ae;--hero-info:#c9d7ff;--hero-accent:var(--highlight);--hero-owner:var(--sidebar-owner);
+}
+[data-scheme="forest"][data-mode="dark"]{
+  --bg:#121815;--surface:#1a221e;--text:#e6ece6;--muted:#a4b0a7;--line:#2b3530;
+  --sidebar:#151c19;--sidebar-text:#e1e8e2;--sidebar-muted:#9ca99f;
+  --hero:#1f2e28;--hero-text:#ebf1ec;--hero-muted:#afbdb3;
+  --accent:#9fd0ae;--on-accent:#16302a;--accent-text:#a2d3b1;
+  --highlight:#e6d38a;--on-highlight:#1c3229;--strong:#e6ece6;--on-strong:#151c19;
+  --shadow-rgb:0 0 0;
+  --sidebar-mark:#e6d38a;--sidebar-done:var(--success);--sidebar-owner:var(--warning-text);--hero-done:var(--success);--hero-info:var(--info-text);
+}
+
+/* The page itself */
+html{background:var(--bg);color:var(--text)}
+body{background:var(--bg);color:var(--text)}

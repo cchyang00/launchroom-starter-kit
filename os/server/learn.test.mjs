@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {parseLearningCatalog,contribution} from '../src/learnModel.mjs';
+const lesson={id:'offers',topic:'Offers',title:'Room for ads',takeaway:'Compare contribution',alt:'Two offers',caption:'Hypothetical',question:'Which?',answer:'Compare costs',next:'Source costs',image:'resources/learning/a.png',document:'resources/learning/a.md',points:['A comparison'],sources:[{title:'Study',scope:'Read abstract',url:'https://example.org/study'}]};
+const doc=lessons=>'```json\n'+JSON.stringify({lessons})+'\n```';
+test('learning catalog rejects missing, duplicated and unsafe inputs without silently serving partial lessons',()=>{assert.equal(parseLearningCatalog(doc([lesson])).lessons.length,1);assert.throws(()=>parseLearningCatalog('Nothing'));assert.throws(()=>parseLearningCatalog(doc([lesson,lesson])));assert.throws(()=>parseLearningCatalog(doc([{...lesson,image:'resources/../private.png'}])));assert.throws(()=>parseLearningCatalog(doc([{...lesson,sources:[{title:'x',scope:'x',url:'javascript:alert(1)'}]}])));});
+test('offer comparison includes all supplied costs and retains losses',()=>{const base={price:39,units:1,unitCost:9,shipping:6,feePercent:3,refundReserve:2};assert.equal(contribution(base).available,20.83);assert.ok(Math.abs(contribution({...base,units:2,price:59}).available-31.23)<1e-9);assert.ok(contribution({...base,price:10,units:3}).available<0);assert.equal(contribution({...base,price:NaN}),null);});

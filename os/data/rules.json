@@ -1,0 +1,281 @@
+{
+  "revision": 1,
+  "updatedAt": "2026-11-06T02:23:57.372Z",
+  "rules": [
+    {
+      "id": "statsMinPoints",
+      "group": "product",
+      "label": "Statistics: dated points at least",
+      "value": 2,
+      "unit": "points in time",
+      "by": "owner",
+      "whose": "Owner, October 2: \"you have to bring in their statistics\"; two points show rising, stable or falling",
+      "note": "Launchroom checks this on every card (os/src/researchView.mjs STATS_MIN_POINTS); ask the OS builder before changing it."
+    },
+    {
+      "id": "trendBandPercent",
+      "group": "product",
+      "label": "Statistics: rising or falling beyond",
+      "value": 15,
+      "unit": "percent between the oldest and newest point",
+      "by": "starting",
+      "whose": "Launchroom's own rule (ours), not from the research",
+      "note": "Inside the band the trend reads as stable. Checked in code (TREND_BAND_PERCENT); ask the OS builder before changing it."
+    },
+    {
+      "id": "avatarsMinimum",
+      "group": "product",
+      "label": "Angles and avatars to target",
+      "value": 3,
+      "unit": "avatars or angles",
+      "by": "owner",
+      "whose": "Owner, October 2: \"various different angles and avatars to target\"",
+      "note": "The main audience plus two others (AVATARS_MINIMUM in code)."
+    },
+    {
+      "id": "maxWeightLb",
+      "group": "product",
+      "label": "Dropshippable: heavier than this fails",
+      "value": 2,
+      "unit": "lb",
+      "by": "owner",
+      "whose": "Owner, October 2: heavy or bulky items (over about 2 lb or oversized) fail F2",
+      "note": ""
+    },
+    {
+      "id": "firstTestLossLimit",
+      "group": "launch",
+      "label": "First test loss limit",
+      "value": 50,
+      "unit": "usd",
+      "by": "owner",
+      "whose": "Owner, October 2 (memory/JOURNAL.md)",
+      "note": "The most the first test may spend before we decide. It buys a signal, not a verdict."
+    },
+    {
+      "id": "conceptsPerTest",
+      "group": "launch",
+      "label": "Concepts per test",
+      "value": 3,
+      "max": 5,
+      "unit": "concepts",
+      "by": "starting",
+      "whose": "Gemini (Dara Denney), research A and C: 3-5 distinct concepts",
+      "note": "Start at the low end when the loss limit is small."
+    },
+    {
+      "id": "formatsPerConcept",
+      "group": "create",
+      "label": "Formats per concept",
+      "value": 2,
+      "max": 3,
+      "unit": "formats",
+      "by": "starting",
+      "whose": "Gemini: ad families, 3-5 concepts x 2-3 formats",
+      "note": ""
+    },
+    {
+      "id": "noEditHours",
+      "group": "launch",
+      "label": "No edits after launch",
+      "value": 72,
+      "unit": "hours",
+      "by": "starting",
+      "whose": "Gemini (72-120 h), Adenslab in research C (72 h)",
+      "note": ""
+    },
+    {
+      "id": "targetCpaPercent",
+      "group": "prove",
+      "label": "Target cost per sale",
+      "value": 55,
+      "unit": "percent of bundle order value",
+      "by": "starting",
+      "whose": "Gemini (Baker): target cost per sale at or below about 55% of bundle order value",
+      "note": "Use the lower of this and break-even."
+    },
+    {
+      "id": "breakEvenFlag",
+      "group": "prove",
+      "label": "Flag a break-even under",
+      "value": 20,
+      "unit": "usd",
+      "by": "starting",
+      "whose": "Ours (CHECKS S4): Meta sales in home categories often cost $20-75; Adenslab in research C: $25-50",
+      "note": ""
+    },
+    {
+      "id": "killMultiple",
+      "group": "learn",
+      "label": "Kill an ad",
+      "value": 3,
+      "unit": "x target cost per sale spent, no sale",
+      "by": "owner",
+      "whose": "Owner, October 2: the patient kill line (Coinis in research A; Gemini says 2x)",
+      "note": "\"Probably have to be more patient due to the algorithm.\""
+    },
+    {
+      "id": "trimSpendMultiple",
+      "group": "learn",
+      "label": "Trim: spend reached",
+      "value": 2,
+      "unit": "x target cost per sale",
+      "by": "starting",
+      "whose": "Gemini",
+      "note": "Together with the next rule."
+    },
+    {
+      "id": "trimCpaMultiple",
+      "group": "learn",
+      "label": "Trim: cost per sale over",
+      "value": 1.5,
+      "unit": "x target",
+      "by": "starting",
+      "whose": "Gemini",
+      "note": ""
+    },
+    {
+      "id": "trimExtraHours",
+      "group": "learn",
+      "label": "Trim: extra time before deciding",
+      "value": 48,
+      "unit": "hours",
+      "by": "starting",
+      "whose": "Gemini: 24-48 h",
+      "note": ""
+    },
+    {
+      "id": "conceptKillAds",
+      "group": "learn",
+      "label": "Kill a concept when this many of its ads hit the kill line",
+      "value": 2,
+      "unit": "ads",
+      "by": "starting",
+      "whose": "Gemini: 2 of 4 ads",
+      "note": ""
+    },
+    {
+      "id": "scaleHoldHours",
+      "group": "learn",
+      "label": "Scale: holds the target for",
+      "value": 72,
+      "unit": "hours",
+      "by": "starting",
+      "whose": "Gemini",
+      "note": ""
+    },
+    {
+      "id": "scalePercent",
+      "group": "learn",
+      "label": "Scale: budget step, at most",
+      "value": 20,
+      "unit": "percent",
+      "by": "starting",
+      "whose": "Gemini, Adenslab and RoasPig in research C; Meta's learning resets above about 20-25% (second-hand)",
+      "note": ""
+    },
+    {
+      "id": "scaleEveryHours",
+      "group": "learn",
+      "label": "Scale: at most once every",
+      "value": 48,
+      "unit": "hours",
+      "by": "starting",
+      "whose": "Gemini: 24-48 h; Adenslab: 2-3 days",
+      "note": ""
+    },
+    {
+      "id": "earlyImpressions",
+      "group": "learn",
+      "label": "Early signals: judge after",
+      "value": 3000,
+      "unit": "impressions",
+      "by": "starting",
+      "whose": "RoasPig in research C",
+      "note": "A small budget is judged by early signals (owner, October 2)."
+    },
+    {
+      "id": "ctrFloorPercent",
+      "group": "learn",
+      "label": "Early signals: weak click rate under",
+      "value": 1,
+      "unit": "percent",
+      "by": "starting",
+      "whose": "Howland in research B (under 1%); Adenslab average 1.49% in research C",
+      "note": "Weak click rate points at the picture or hook."
+    },
+    {
+      "id": "clicksNoSale",
+      "group": "learn",
+      "label": "Early signals: link clicks with no purchase",
+      "value": 30,
+      "unit": "clicks",
+      "by": "starting",
+      "whose": "RoasPig in research C ($50 spent, 30+ link clicks, no purchase)",
+      "note": "Points at the page or the offer."
+    }
+  ],
+  "hardLimits": [
+    {
+      "id": "audio",
+      "label": "Earbuds, headphones and Bluetooth audio",
+      "by": "owner",
+      "whose": "Owner, October 2: \"earbuds arent something we can dropship\""
+    },
+    {
+      "id": "app-electronics",
+      "label": "Complex or app-paired electronics",
+      "by": "owner",
+      "whose": "Owner, October 2"
+    },
+    {
+      "id": "branded",
+      "label": "Branded or patented items",
+      "by": "owner",
+      "whose": "Owner, October 2"
+    },
+    {
+      "id": "fragile",
+      "label": "Fragile items",
+      "by": "owner",
+      "whose": "Owner, October 2"
+    },
+    {
+      "id": "heavy",
+      "label": "Heavy or bulky items (over about 2 lb or oversized)",
+      "by": "owner",
+      "whose": "Owner, October 2"
+    },
+    {
+      "id": "sized",
+      "label": "High-return sized items",
+      "by": "owner",
+      "whose": "Owner, October 2"
+    },
+    {
+      "id": "battery",
+      "label": "Battery-core products",
+      "by": "owner",
+      "whose": "Owner, October 2"
+    },
+    {
+      "id": "eaten",
+      "label": "Anything eaten, drunk or put on skin; liquids and powders",
+      "by": "owner",
+      "whose": "Owner, October 1 (workflow/CHECKS.md, Hard limits)"
+    },
+    {
+      "id": "medical",
+      "label": "Devices that need FDA clearance or claim to treat a condition",
+      "by": "starting",
+      "whose": "Research, October 1 (resources/research/2026-10-01-product-filter/C-hard-limits-and-tools.md)"
+    },
+    {
+      "id": "restricted",
+      "label": "Weapons, adult, children's and baby products, loose magnets, power banks, recalled items and lookalikes",
+      "by": "starting",
+      "whose": "Research, October 1 (C-hard-limits-and-tools.md)"
+    }
+  ],
+  "history": []
+}

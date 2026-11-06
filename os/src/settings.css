@@ -1,0 +1,66 @@
+/* Settings · Appearance (Oct 2). Prefix mv-st-. Colours only from tokens.css. */
+.mv-st{display:grid;gap:18px;max-width:1040px}
+.mv-st-panel{padding:20px 22px;display:grid;gap:14px}
+.mv-st-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mv-st-badge{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:99px;background:var(--accent-soft);color:var(--accent-text);font:600 12.5px/1 var(--sans)}
+
+.mv-st-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mv-st-mode{position:relative;display:flex;align-items:center;gap:12px;min-width:0;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);text-align:left;cursor:pointer;transition:border-color .15s,background-color .15s,transform .12s}
+.mv-st-mode:hover{border-color:var(--line-2);background:var(--surface-2)}
+.mv-st-mode:active{transform:translateY(1px)}
+.mv-st-mode.is-on{border-color:var(--accent-text);background:var(--accent-soft)}
+.mv-st-mode-art{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line)}
+.mv-st-mode-art.is-light{background:var(--highlight);color:var(--on-highlight)}
+.mv-st-mode-art.is-dark{background:var(--strong);color:var(--on-strong)}
+.mv-st-mode-art.is-device{background:linear-gradient(135deg,var(--highlight) 0 50%,var(--strong) 50% 100%);color:var(--text)}
+.mv-st-mode-art.is-device svg{background:var(--surface);border-radius:6px;padding:2px;box-sizing:content-box}
+.mv-st-mode-text{display:grid;gap:3px;min-width:0}
+.mv-st-mode-text strong{font:600 14px/1.2 var(--sans)}
+.mv-st-mode-text small{font-size:12px;color:var(--muted);line-height:1.35}
+.mv-st-tick{margin-left:auto;color:var(--accent-text);flex:none}
+
+.mv-st-group{display:grid;gap:10px}
+.mv-st-group+.mv-st-group{margin-top:6px}
+.mv-st-group-title{margin:0;font:600 11px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mv-st-schemes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.mv-st-scheme{position:relative;display:grid;gap:9px;min-width:0;padding:8px 8px 11px;border:1.5px solid var(--line);border-radius:16px;background:var(--surface);color:var(--text);text-align:left;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .12s}
+.mv-st-scheme:hover{border-color:var(--line-2);box-shadow:var(--shadow-2)}
+.mv-st-scheme:active{transform:translateY(1px)}
+.mv-st-scheme.is-on{border-color:var(--accent-text);box-shadow:0 0 0 3px var(--accent-soft)}
+.mv-st-scheme-text{display:grid;gap:2px;padding:0 4px;min-width:0}
+.mv-st-scheme-text strong{font:600 13.5px/1.25 var(--sans);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mv-st-scheme-text em{font:600 10.5px/1 var(--sans);font-style:normal;padding:3px 6px;border-radius:99px;background:var(--highlight);color:var(--on-highlight)}
+.mv-st-scheme-text small{font-size:12px;color:var(--muted);line-height:1.35}
+.mv-st-scheme-tick{position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--accent-text);color:var(--surface);box-shadow:0 0 0 2px var(--surface)}
+
+/* The mini app: real tokens, because the card carries data-scheme and data-mode. */
+.mv-st-mini{display:grid;grid-template-columns:30% minmax(0,1fr);height:104px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+.mv-st-mini-side{display:flex;flex-direction:column;gap:6px;padding:9px 7px;background:var(--sidebar);border-right:1px solid var(--line)}
+.mv-st-mini-side i{display:block;height:6px;border-radius:4px;background:var(--sidebar-text);opacity:.22}
+.mv-st-mini-side i.is-brand{width:14px;height:14px;border-radius:5px;background:var(--highlight);opacity:1;margin-bottom:2px}
+.mv-st-mini-side i.is-on{height:10px;background:var(--sidebar-active);opacity:1;box-shadow:inset 3px 0 0 var(--sidebar-mark)}
+.mv-st-mini-main{display:grid;grid-template-rows:auto 1fr;gap:6px;padding:8px}
+.mv-st-mini-hero{display:grid;gap:4px;padding:6px 7px;border-radius:7px;background:var(--hero)}
+.mv-st-mini-hero i{display:block;height:5px;width:70%;border-radius:3px;background:var(--hero-text);opacity:.75}
+.mv-st-mini-hero i.is-short{width:42%;opacity:.4}
+.mv-st-mini-card{display:grid;align-content:start;gap:4px;padding:6px 7px;border-radius:7px;background:var(--surface);border:1px solid var(--line)}
+.mv-st-mini-card>i{display:block;height:5px;width:80%;border-radius:3px;background:var(--text);opacity:.7}
+.mv-st-mini-card>i.is-short{width:55%;background:var(--muted);opacity:.6}
+.mv-st-mini-row{display:flex;gap:4px;margin-top:2px}
+.mv-st-mini-row b{display:block;height:11px;border-radius:5px}
+.mv-st-mini-row b.is-accent{width:46%;background:var(--accent)}
+.mv-st-mini-row b.is-butter{width:22%;background:var(--highlight)}
+
+.mv-st-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px}
+
+/* In a sheet (Launchroom home): one column of modes, smaller cards. */
+.mv-st.is-compact .mv-st-panel{padding:0;border:0;box-shadow:none;background:transparent}
+.mv-st.is-compact .mv-st-schemes{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+
+@media (max-width:640px){
+  .mv-st-panel{padding:16px 14px}
+  .mv-st-modes{grid-template-columns:minmax(0,1fr)}
+  .mv-st-schemes{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .mv-st-mini{height:84px}
+  .mv-st-scheme-tick{top:12px;right:12px}
+}

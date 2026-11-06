@@ -1,0 +1,239 @@
+{
+  "revision": 1,
+  "entries": [
+    {
+      "id": "K-001",
+      "title": "Q4 World Trends & 200-Keyword Kalodata Bible",
+      "learned": "200 high-converting Kalodata search keywords across 8 buyer buckets plus numbers-first discovery rules: query Kalodata US by keyword and download top #1-#3 revenue videos first.",
+      "kind": "research",
+      "topics": [
+        "product-research",
+        "buyer-angles"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "resources/notes/2026-11-04-q4-world-trends-and-kalodata-keyword-bible.md",
+      "sources": [
+        "resources/notes/2026-11-04-q4-world-trends-and-kalodata-keyword-bible.md"
+      ],
+      "forAgents": [
+        "scout",
+        "checker",
+        "buyer-researcher"
+      ],
+      "lessons": [
+        "LS-001"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    },
+    {
+      "id": "K-002",
+      "title": "Viral Video to 20 Static Ads Playbook (10 Problem-Aware + 10 Solution-Aware)",
+      "learned": "Step-by-step system to deconstruct the #1 viral video into 20 4:5 static ads (10 Problem-Aware + 10 Solution-Aware) paired with static_01..50.png reference layouts and a 5x5 copy pack.",
+      "kind": "method",
+      "topics": [
+        "images-ads",
+        "copywriting"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "resources/notes/2026-11-05-viral-video-to-20-statics-playbook.md",
+      "sources": [
+        "resources/notes/2026-11-05-viral-video-to-20-statics-playbook.md"
+      ],
+      "forAgents": [
+        "image-maker",
+        "copywriter",
+        "ad-manager"
+      ],
+      "lessons": [
+        "LS-006"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    },
+    {
+      "id": "K-003",
+      "title": "KPI Calculator, Unit Economics & 4-Day Meta CBO Scaling Rules",
+      "learned": "Break-even ROAS, <35% landed cost math, 4-day Meta algorithm priming window, and End-of-Day 3 kill / Day 4+ scale rules.",
+      "kind": "method",
+      "topics": [
+        "testing",
+        "sourcing"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "resources/notes/2026-11-03-shaunns-kpi-calculator-and-scaling.md",
+      "sources": [
+        "resources/notes/2026-11-03-shaunns-kpi-calculator-and-scaling.md"
+      ],
+      "forAgents": [
+        "checker",
+        "ad-manager",
+        "manager"
+      ],
+      "lessons": [
+        "LS-002",
+        "LS-008"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    },
+    {
+      "id": "K-004",
+      "title": "What Good Copy & Ads Look Like (WHATS-GOOD.md)",
+      "learned": "Concrete domino-chain copywriting rules, 3-7 word hooks, and Website vs Meta Ad headline split: keep website product titles boutique-grade while putting viral hooks in Meta ads.",
+      "kind": "guide",
+      "topics": [
+        "copywriting",
+        "images-ads"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "resources/copywriting/WHATS-GOOD.md",
+      "sources": [
+        "resources/copywriting/WHATS-GOOD.md"
+      ],
+      "forAgents": [
+        "copywriter",
+        "image-maker",
+        "store-builder"
+      ],
+      "lessons": [
+        "LS-005"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    },
+    {
+      "id": "K-005",
+      "title": "Reference-to-Ad Method & 50 Static Ad Layouts",
+      "learned": "How to turn a single reference ad from static_01..50.png + real product truth photos into a scroll-stopping 4:5 static ad.",
+      "kind": "guide",
+      "topics": [
+        "images-ads"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "agents/image-generator/references/REFERENCE-TO-AD.md",
+      "sources": [
+        "agents/image-generator/references/REFERENCE-TO-AD.md"
+      ],
+      "forAgents": [
+        "image-maker"
+      ],
+      "lessons": [
+        "LS-006"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    },
+    {
+      "id": "K-006",
+      "title": "Hydrogen Storefront Population & 2-Kit Architecture Guide",
+      "learned": "How to clone base-theme.json, configure 1-Kit vs 2-Kit (SAVE 15% + Free Shipping) + $4.99 Shipping Protection, and run packet-tools.mjs check.",
+      "kind": "guide",
+      "topics": [
+        "store"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "store/HYDROGEN-POPULATION.md",
+      "sources": [
+        "store/HYDROGEN-POPULATION.md"
+      ],
+      "forAgents": [
+        "store-builder"
+      ],
+      "lessons": [
+        "LS-007"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    },
+    {
+      "id": "K-007",
+      "title": "The Full Verification Method & Step Gates (CHECKS.md)",
+      "learned": "Complete specification of gates I1-I7, F1-F6, A1-A3, P1-P5, C1-C4, B1-B5, L1-L5, and R1-R3 so no step starts until the gate before it turns green.",
+      "kind": "method",
+      "topics": [
+        "product-research",
+        "operations"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "workflow/CHECKS.md",
+      "sources": [
+        "workflow/CHECKS.md"
+      ],
+      "forAgents": [
+        "scout",
+        "checker",
+        "buyer-researcher",
+        "copywriter",
+        "image-maker",
+        "store-builder",
+        "ad-manager"
+      ],
+      "lessons": [
+        "LS-001",
+        "LS-002",
+        "LS-003"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    },
+    {
+      "id": "K-008",
+      "title": "7-Point Pre-Launch Checklist (LAUNCH-CHECKLIST.md)",
+      "learned": "The 7 mandatory storefront, copy, 2-Kit pricing, QoL, Shopify Admin, Meta Pixel, and supplier checks before launching any product.",
+      "kind": "guide",
+      "topics": [
+        "store",
+        "testing"
+      ],
+      "trust": "tested",
+      "status": "learned",
+      "path": "workflow/LAUNCH-CHECKLIST.md",
+      "sources": [
+        "workflow/LAUNCH-CHECKLIST.md"
+      ],
+      "forAgents": [
+        "store-builder",
+        "ad-manager",
+        "manager"
+      ],
+      "lessons": [
+        "LS-007",
+        "LS-008"
+      ],
+      "askedBy": "manager",
+      "requestedOn": "2026-11-05",
+      "learnedOn": "2026-11-05",
+      "createdAt": "2026-11-06T02:23:57.372Z",
+      "updatedAt": "2026-11-06T02:23:57.372Z"
+    }
+  ]
+}

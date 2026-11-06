@@ -1,0 +1,79 @@
+import React,{useState,useEffect,useRef,useLayoutEffect} from 'react';
+import {Plus,Minus,Maximize,MousePointer2,GitBranch,ArrowUpRight,FileText,Lightbulb,HelpCircle,Play,Users,CheckCircle2,Link2,X,Trash2,Search} from 'lucide-react';
+import {api,Modal,Field,ErrorText,Submit,roleNames} from './ui.jsx';
+import {chooseMap,currentMap} from './mindmapModel.mjs';
+import './mindmap.css';
+
+const WIDTH=224,HEIGHT=110;
+const kinds={agent:Users,stage:GitBranch,evidence:FileText,decision:CheckCircle2,idea:Lightbulb,question:HelpCircle,action:Play};
+const statuses={open:'Open','in-progress':'In progress','needs-review':'Review together',verified:'Reviewed',blocked:'Blocked'};
+const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+function curve(a,b){const right=b.x>=a.x;const x1=a.x+(right?WIDTH:0),x2=b.x+(right?0:WIDTH),bend=Math.max(45,Math.abs(x2-x1)*.5);return `M${x1},${a.y+HEIGHT/2} C${x1+(right?bend:-bend)},${a.y+HEIGHT/2} ${x2+(right?-bend:bend)},${b.y+HEIGHT/2} ${x2},${b.y+HEIGHT/2}`;}
+
+export function WorkflowMap({data,hub,notify,openDoc}){
+ const [mapId,setMapId]=useState(()=>sessionStorage.getItem('os.map.id')||''),[saved,setSaved]=useState(null),[selection,setSelection]=useState(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[create,setCreate]=useState(false),[linking,setLinking]=useState(false),[query,setQuery]=useState('');
+ const maps=hub?.maps||[];
+ const remote=chooseMap(maps,mapId);
+ // The first render comes before /api/hub answers (no maps yet, nothing saved).
+ const map=currentMap(saved,remote);
+ const canvas=useRef(null);
+ useEffect(()=>{if(map){sessionStorage.setItem('os.map.id',map.id);}},[map?.id]);
+ async function patch(input,revision=map.revision){setBusy(true);setError('');try{const updated=await api('/api/maps/'+map.id,{revision,...input},'PATCH');setSaved(updated);notify('Mind map saved.');return updated;}catch(e){setError(e.message);throw e;}finally{setBusy(false);}}
+ function select(node){setSelection({node:{...node,status:node.status||'open'},revision:map.revision,isNew:false});setError('');}
+ function add(){const parent=selection?.node;setSelection({node:{id:crypto.randomUUID(),title:'',note:'',kind:'idea',status:'open',x:parent?parent.x+290:80,y:parent?parent.y+145:80},revision:map.revision,isNew:true,parentId:parent?.id});}
+ const changeMap=id=>{setMapId(id);setSaved(null);setSelection(null);setError('');setQuery('');};
+ return <section className="visual-map-page">
+  <div className="map-page-heading"><div><h1>Mind map</h1><p>Our agents, working process, and the evidence we build together.</p></div><button className="btn" onClick={()=>setCreate(true)}><Plus size={14}/>New map</button></div>
+  <div className="visual-map-toolbar"><select aria-label="Choose mind map" value={map?.id||''} onChange={e=>changeMap(e.target.value)}>{!map&&<option value="">No saved maps</option>}{maps.map(m=><option key={m.id} value={m.id}>{m.title}</option>)}</select><div className="map-find"><Search size={14}/><input aria-label="Find a map node" placeholder="Find in map…" value={query} onChange={e=>setQuery(e.target.value)}/></div><div className="map-tool-actions"><button className="btn" disabled={!map||busy} onClick={()=>setLinking(true)}><Link2 size={14}/>Connect</button><button className="btn primary" disabled={!map||busy} onClick={add}><Plus size={14}/>{selection?'Add branch':'Add node'}</button></div></div>
+  <ErrorText error={error}/>
+  {map?<div className={`visual-map-layout ${selection?'has-inspector':''}`}>
+   <MapCanvas key={map.id} map={map} selected={selection?.node.id} query={query} busy={busy} onSelect={select} canvasApi={canvas} onMove={async(node,revision)=>{try{const updated=await patch({node},revision);setSelection(s=>s&&s.revision===revision?{...s,revision:updated.revision,node:s.node.id===node.id?{...s.node,x:node.x,y:node.y}:s.node}:s);}catch{}}}/>
+   {selection&&<aside className="map-inspector"><div className="map-inspector-heading"><strong>{selection.isNew?'New branch':'Node details'}</strong><button className="icon-button" aria-label="Close node details" onClick={()=>setSelection(null)}><X size={16}/></button></div>
+    <form onSubmit={async e=>{e.preventDefault();try{const n=selection.node;const input=selection.isNew?{nodes:[...map.nodes,n],edges:[...map.edges,...(selection.parentId?[{from:selection.parentId,to:n.id}]:[])]}:{node:n};const updated=await patch(input,selection.revision);setSelection({node:updated.nodes.find(x=>x.id===n.id),revision:updated.revision,isNew:false});}catch{}}}>
+     {selection.revision!==map.revision&&<p className="map-edit-conflict">The map changed while this panel was open. <button type="button" onClick={()=>{const n=map.nodes.find(n=>n.id===selection.node.id);if(n)select(n);else setSelection(null);}}>Load current node</button></p>}
+     <Field label="Title"><input autoFocus required maxLength={200} value={selection.node.title} onChange={e=>setSelection({...selection,node:{...selection.node,title:e.target.value}})}/></Field>
+     <div className="map-field-pair"><Field label="Type"><select value={selection.node.kind} onChange={e=>setSelection({...selection,node:{...selection.node,kind:e.target.value}})}>{Object.keys(kinds).map(k=><option key={k} value={k}>{k[0].toUpperCase()+k.slice(1)}</option>)}</select></Field><Field label="Review state"><select value={selection.node.status} onChange={e=>setSelection({...selection,node:{...selection.node,status:e.target.value}})}>{Object.entries(statuses).map(([id,t])=><option key={id} value={id}>{t}</option>)}</select></Field></div>
+     <Field label="Notes and findings"><textarea rows={5} maxLength={10000} value={selection.node.note} onChange={e=>setSelection({...selection,node:{...selection.node,note:e.target.value}})} placeholder="What do we know? What needs an eye test or more evidence?"/></Field>
+     <Field label="Responsible agent"><select value={selection.node.role||''} onChange={e=>{const node={...selection.node};if(e.target.value)node.role=e.target.value;else delete node.role;setSelection({...selection,node});}}><option value="">Unassigned</option>{Object.entries(roleNames).map(([id,name])=><option key={id} value={id}>{name}</option>)}</select></Field>
+     <Field label="Source URL or workspace file"><input value={selection.node.reference||''} onChange={e=>{const node={...selection.node};if(e.target.value)node.reference=e.target.value;else delete node.reference;setSelection({...selection,node});}} placeholder="agents/validation/WORKFLOW.md"/></Field>
+     {selection.node.reference&&(/^https?:\/\//.test(selection.node.reference)?<a className="text-link" href={selection.node.reference} target="_blank" rel="noreferrer">Open source<ArrowUpRight size={13}/></a>:<button className="text-link" type="button" onClick={()=>openDoc(selection.node.reference)}>Open workspace file<ArrowUpRight size={13}/></button>)}
+     <div className="map-save-row"><Submit busy={busy}>Save node</Submit><button className="btn" type="button" onClick={()=>canvas.current?.focus(selection.node)}>Focus</button></div>
+    </form>
+    {!selection.isNew&&<div className="map-connections"><strong>Connected branches</strong>{map.edges.filter(e=>e.from===selection.node.id||e.to===selection.node.id).map(e=>{const other=map.nodes.find(n=>n.id===(e.from===selection.node.id?e.to:e.from));return <div key={e.from+e.to}><button onClick={()=>select(other)}>{other.title}</button><button className="icon-button" aria-label={`Disconnect ${other.title}`} disabled={busy} onClick={()=>patch({removeEdge:e}).then(updated=>setSelection(s=>({...s,revision:updated.revision}))).catch(()=>{})}><X size={12}/></button></div>})}<button className="text-link" onClick={()=>setLinking(true)}><Link2 size={13}/>Connect another node</button></div>}
+    <p className="map-proof-note">Map states organize our review. Product evidence checks remain the authority for readiness.</p>
+    {!selection.isNew&&<button className="text-link map-remove" disabled={busy} onClick={()=>patch({removeNode:selection.node.id},selection.revision).then(()=>setSelection(null)).catch(()=>{})}><Trash2 size={13}/>Remove node</button>}
+   </aside>}
+  </div>:<div className="live-empty"><GitBranch size={28}/><h2>Make the process visible</h2><p>Create a map and build connected agents, steps and findings.</p></div>}
+  <footer className="visual-map-footer"><span><span className="connected-dot"/> Shared file · {map?`Revision ${map.revision} · ${map.nodes.length} nodes`:''}</span><span>Codex maintains the map as we work. You review the connections and evidence.</span></footer>
+  {create&&<NewMap onClose={()=>setCreate(false)} onSave={async title=>{const m=await api('/api/maps',{title});setSaved(m);setMapId(m.id);setCreate(false);setSelection(null);notify('Mind map created.');}}/>}
+  {linking&&map&&<ConnectMap map={map} from={selection?.node.id} onClose={()=>setLinking(false)} onSave={async edge=>{const updated=await patch({edge});setLinking(false);setSelection(s=>s?{...s,revision:updated.revision}:null);}}/>}
+ </section>;
+}
+
+function MapCanvas({map,selected,query,busy,onSelect,onMove,canvasApi}){
+ const viewport=useRef(null),gesture=useRef(null),[size,setSize]=useState({w:0,h:0}),[view,setView]=useState({x:40,y:40,z:1}),[moving,setMoving]=useState(null),[panning,setPanning]=useState(false);
+ const nodes=map.nodes.map(n=>moving?.id===n.id?{...n,...moving}:n);
+ function fit(){if(!map.nodes.length)return;const minX=Math.min(...map.nodes.map(n=>n.x)),minY=Math.min(...map.nodes.map(n=>n.y)),w=Math.max(...map.nodes.map(n=>n.x+WIDTH))-minX,h=Math.max(...map.nodes.map(n=>n.y+HEIGHT))-minY;const z=clamp(Math.min((size.w-80)/w,(size.h-90)/h),.2,1.1);setView({x:(size.w-w*z)/2-minX*z,y:(size.h-h*z)/2-minY*z,z});}
+ function focus(n){const z=1;setView({x:size.w/2-(n.x+WIDTH/2)*z,y:size.h/2-(n.y+HEIGHT/2)*z,z});}
+ function zoom(factor){setView(v=>{const z=clamp(v.z*factor,.2,2);return {z,x:size.w/2-(size.w/2-v.x)*z/v.z,y:size.h/2-(size.h/2-v.y)*z/v.z};});}
+ useLayoutEffect(()=>{const observer=new ResizeObserver(entries=>{const {width,height}=entries[0].contentRect;setSize({w:width,h:height});});observer.observe(viewport.current);return()=>observer.disconnect();},[]);
+ useEffect(()=>{if(!size.w||!size.h)return;const node=map.nodes.find(n=>n.id===selected);if(node)focus(node);else fit();},[size.w,size.h,selected,map.nodes.length]);
+ useEffect(()=>{canvasApi.current={focus,fit};return()=>{canvasApi.current=null;};});
+ function down(e,node){if(e.button!==0||busy)return;e.stopPropagation();e.currentTarget.setPointerCapture(e.pointerId);gesture.current={id:node?.id,startX:e.clientX,startY:e.clientY,view,node,revision:map.revision,moved:false};if(!node)setPanning(true);}
+ function move(e){const g=gesture.current;if(!g)return;const dx=e.clientX-g.startX,dy=e.clientY-g.startY;if(Math.abs(dx)+Math.abs(dy)>4)g.moved=true;if(!g.moved)return;if(g.node)setMoving({id:g.id,x:Math.round(g.node.x+dx/g.view.z),y:Math.round(g.node.y+dy/g.view.z)});else setView({...g.view,x:g.view.x+dx,y:g.view.y+dy});}
+ function up(e){const g=gesture.current;if(!g)return;gesture.current=null;setPanning(false);if(g.node){if(g.moved){const dx=e.clientX-g.startX,dy=e.clientY-g.startY;onMove({...g.node,x:Math.round(g.node.x+dx/g.view.z),y:Math.round(g.node.y+dy/g.view.z)},g.revision);}else onSelect(g.node);}setMoving(null);}
+ const matching=map.nodes.filter(n=>`${n.title} ${n.note} ${n.role||''}`.toLowerCase().includes(query.toLowerCase()));
+ return <div className={`graph-viewport ${panning?'panning':''}`} ref={viewport} tabIndex={0} role="region" aria-label="Interactive mind map canvas" onPointerDown={e=>down(e)} onPointerMove={move} onPointerUp={up} onPointerCancel={()=>{gesture.current=null;setMoving(null);setPanning(false);}} onWheel={e=>{if(e.ctrlKey||e.metaKey){zoom(e.deltaY<0?1.08:1/1.08);}}} onKeyDown={e=>{if(e.target!==e.currentTarget)return;if(e.key==='+'||e.key==='=')zoom(1.2);if(e.key==='-')zoom(1/1.2);if(e.key==='0')fit();const d={ArrowLeft:[35,0],ArrowRight:[-35,0],ArrowUp:[0,35],ArrowDown:[0,-35]}[e.key];if(d){e.preventDefault();setView(v=>({...v,x:v.x+d[0],y:v.y+d[1]}));}}}>
+  <div className="graph-canvas-label"><GitBranch size={14}/>{map.title}<span>{busy?'Saving…':'Live workspace'}</span></div>
+  <div className="graph-world" style={{transform:`translate(${view.x}px,${view.y}px) scale(${view.z})`}}>
+   <svg className="graph-wires" aria-hidden="true"><defs><marker id="graph-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" style={{fill:'var(--line-2)'}}/></marker></defs>{map.edges.map(e=>{const a=nodes.find(n=>n.id===e.from),b=nodes.find(n=>n.id===e.to);return a&&b?<path key={e.from+e.to} className={selected&&(selected===a.id||selected===b.id)?'selected':''} d={curve(a,b)} markerEnd="url(#graph-arrow)"/>:null;})}</svg>
+   {nodes.map(node=>{const Icon=kinds[node.kind]||Lightbulb;return <button key={node.id} className={`graph-node kind-${node.kind} state-${node.status||'open'} ${selected===node.id?'selected':''} ${query&&!matching.some(n=>n.id===node.id)?'dimmed':''}`} style={{left:node.x,top:node.y,width:WIDTH,height:HEIGHT}} aria-label={`Map node: ${node.title}`} onPointerDown={e=>down(e,node)} onClick={e=>{if(e.detail===0)onSelect(node);}}><span className="graph-node-type"><Icon size={14}/>{node.kind}<span className={`graph-state ${node.status||'open'}`}/></span><strong>{node.title}</strong><small>{node.status==='needs-review'?'Review together':node.role?roleNames[node.role]:statuses[node.status||'open']}{node.reference&&<FileText size={11}/>}</small></button>;})}
+  </div>
+  {query&&<div className="graph-search-results" onPointerDown={e=>e.stopPropagation()}>{matching.length?matching.map(n=><button key={n.id} onClick={()=>{focus(n);onSelect(n);}}>{n.title}<ArrowUpRight size={12}/></button>):<span>No matching nodes</span>}</div>}
+  <div className="graph-controls" onPointerDown={e=>e.stopPropagation()}><button aria-label="Zoom out" onClick={()=>zoom(1/1.2)}><Minus size={15}/></button><span>{Math.round(view.z*100)}%</span><button aria-label="Zoom in" onClick={()=>zoom(1.2)}><Plus size={15}/></button><i/><button aria-label="Fit map to view" onClick={fit}><Maximize size={15}/></button></div>
+  <div className="graph-hint"><MousePointer2 size={12}/>Drag to explore · Select a node to inspect</div>
+  <div className="graph-legend"><span><i className="open"/>Open</span><span><i className="needs-review"/>Review together</span><span><i className="verified"/>Reviewed</span><span><i className="blocked"/>Blocked</span></div>
+ </div>;
+}
+function NewMap({onClose,onSave}){const [title,setTitle]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);return <Modal title="New mind map" onClose={onClose}><form onSubmit={async e=>{e.preventDefault();setBusy(true);try{await onSave(title);}catch(e){setError(e.message);}finally{setBusy(false);}}}><Field label="Map name"><input autoFocus required maxLength={200} value={title} onChange={e=>setTitle(e.target.value)}/></Field><ErrorText error={error}/><Submit busy={busy}>Create map</Submit></form></Modal>;}
+function ConnectMap({map,from,onClose,onSave}){const [a,setA]=useState(from||map.nodes[0]?.id||''),[b,setB]=useState(map.nodes.find(n=>n.id!==(from||map.nodes[0]?.id))?.id||''),[error,setError]=useState(''),[busy,setBusy]=useState(false);return <Modal title="Connect branches" onClose={onClose}><form onSubmit={async e=>{e.preventDefault();setBusy(true);try{await onSave({from:a,to:b});}catch(e){setError(e.message);}finally{setBusy(false);}}}>{[['From',a,setA],['To',b,setB]].map(([label,value,set])=><Field label={label} key={label}><select required value={value} onChange={e=>set(e.target.value)}>{map.nodes.map(n=><option key={n.id} value={n.id}>{n.title}</option>)}</select></Field>)}<ErrorText error={error}/><Submit busy={busy}>Connect</Submit></form></Modal>;}
