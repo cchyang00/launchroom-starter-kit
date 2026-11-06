@@ -30,7 +30,7 @@ export const useChecklists = () => useContext(ChecklistContext);
 export const DISPLAY_ICONS = { product: Search, verify: ShieldCheck, winners: Trophy, build: Store, creatives: Images, checklist: ListChecks, launch: Rocket, improve: TrendingUp };
 
 const AGENT_LABELS = {
-  manager: 'Claude (Manager)',
+  manager: 'Manager',
   'deep-researcher': 'Deep Researcher',
   'buyer-researcher': 'Buyer Researcher',
   scout: 'Scout',
@@ -106,7 +106,7 @@ function PipelineSkillSheet({ skill, stepSpec, team, onClose, onEdit, onOpenAgen
             const agent = (team?.agents || []).find(a => a.id === id);
             return id === 'manager' ? (
               <span key={id} className="mv-sa-person">
-                <Avatar role="manager" size={20} />Claude (Manager)
+                <Avatar role="manager" size={20} />Manager
               </span>
             ) : (
               <button
@@ -276,7 +276,7 @@ function PipelineSkillBuilderSheet({ initialSkill, stepSpec, team, onClose, onSa
           </span>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
             <button type="button" className={`mv-btn sm ${assigned.has('manager') ? 'primary' : 'ghost'}`} onClick={() => toggleAgent('manager')}>
-              Claude (Manager)
+              Manager
             </button>
             {(team?.agents || []).map(a => (
               <button type="button" key={a.id} className={`mv-btn sm ${assigned.has(a.id) ? 'primary' : 'ghost'}`} onClick={() => toggleAgent(a.id)}>

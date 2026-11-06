@@ -309,8 +309,8 @@ export function createStoreEditor({ workspaceRoot, notes = null, now = () => new
         const seen = new Set();
         const changes = input.changes.map(change => {
           const field = fields.get(change?.path);
-          if (!field) fail(`${change?.path || 'That field'} is not something the Store editor changes. Layout, section order, theme and offer numbers stay with Claude.`, 'FIELD_NOT_EDITABLE', 400);
-          if (field.kind === 'fixed') fail(`${fieldName(field)} is read-only here: ${field.note || 'ask Claude to change it.'}`, change.path.startsWith('reviews.') ? 'REVIEW_NOT_SAMPLE' : 'FIELD_READ_ONLY', 400);
+          if (!field) fail(`${change?.path || 'That field'} is not something the Store editor changes. Layout, section order, theme and offer numbers are synced with Shopify Admin and the Store Builder.`, 'FIELD_NOT_EDITABLE', 400);
+          if (field.kind === 'fixed') fail(`${fieldName(field)} is read-only here: ${field.note || 'edit it in Shopify Admin.'}`, change.path.startsWith('reviews.') ? 'REVIEW_NOT_SAMPLE' : 'FIELD_READ_ONLY', 400);
           if (seen.has(change.path)) fail(`${fieldName(field)} is listed twice.`, 'INVALID_INPUT', 400);
           seen.add(change.path);
           if (field.kind === 'palette') {
@@ -338,7 +338,7 @@ export function createStoreEditor({ workspaceRoot, notes = null, now = () => new
         const target = record.saves.find(item => item.id === input.saveId && item.packet === file);
         if (!target) fail('That save is not in this page\'s history.', 'NOT_FOUND', 404);
         if (target.undoneAt || target.undoOf) fail('That save was already undone.', 'UNDO_DONE', 409);
-        if (!undoable(record, file, packet, UNDO_LIMIT).some(item => item.id === target.id)) fail(`Only the last ${UNDO_LIMIT} saves can be undone here; ask Claude for older ones.`, 'UNDO_TOO_OLD', 409);
+        if (!undoable(record, file, packet, UNDO_LIMIT).some(item => item.id === target.id)) fail(`Only the last ${UNDO_LIMIT} saves can be undone here; ask your agent for older ones.`, 'UNDO_TOO_OLD', 409);
         const stale = target.changes.filter(change => !sameValue(getAt(packet, change.path), change.after));
         if (stale.length) fail(`${stale.map(change => `${change.section} · ${change.label}`).join(', ')} changed after that save, so it can't be undone automatically. Edit it by hand instead.`, 'UNDO_STALE', 409);
         return commit({ file, hash: input.hash, changes: target.changes.map(change => ({ path: change.path, value: change.before, label: change.label, section: change.section })), by, who, undoOf: target.id });
@@ -353,7 +353,7 @@ export function createStoreEditor({ workspaceRoot, notes = null, now = () => new
       const request = await withWorkspaceLock(lockKey, async () => {
         const record = await readEdits();
         const state = await publishState(record);
-        if (state.pending) fail(`You already asked Claude to publish (${state.pending.at}). It is still waiting; anything you save now goes out with it.`, 'PUBLISH_PENDING', 409, { noteId: state.pending.noteId });
+        if (state.pending) fail(`You already asked the Store Builder to publish (${state.pending.at}). It is still waiting; anything you save now goes out with it.`, 'PUBLISH_PENDING', 409, { noteId: state.pending.noteId });
         if (!notes?.add) fail('Publish requests need the workspace notes, which are unavailable.', 'NOTES_UNAVAILABLE', 503);
         const names = state.changes.map(change => `${change.label} (${change.packet})`);
         const text = `Publish to merrivy.com (Store editor): please deploy the store. ${names.length ? `Changed since the last publish request: ${names.slice(0, 20).join('; ')}${names.length > 20 ? `; and ${names.length - 20} more` : ''}.` : 'No Store editor changes since the last publish request.'}${file ? ` Packet: ${file}.` : ''}`;

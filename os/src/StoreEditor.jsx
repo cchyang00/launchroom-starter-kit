@@ -24,11 +24,11 @@ const short = (value,n=90) => {const text = valueText(value).replace(/\s+/g,' ')
 
 function errorWords(error) {
   switch (error?.code) {
-    case 'PACKET_CHANGED': return 'Claude or an agent saved this page while you were editing. Your edits are still here: load the latest, then save again.';
+    case 'PACKET_CHANGED': return 'An agent saved this page while you were editing. Your draft was kept on screen; reload before saving.';
     case 'NOTHING_CHANGED': return 'Nothing to save: those fields already say that.';
     case 'IMAGE_NOT_IN_STORE': return 'Pick a picture from the store’s images. Uploading comes later.';
-    case 'PUBLISH_PENDING': return 'You already asked Claude to publish. It’s still waiting; anything you save now goes out with it.';
-    case 'CHECK_UNAVAILABLE': return 'The store check is missing, so nothing can be saved right now. Ask Claude to look at it.';
+    case 'PUBLISH_PENDING': return 'You already asked the Store Builder to publish. Wait for that to finish.';
+    case 'CHECK_UNAVAILABLE': return 'The store check is missing, so nothing can be saved right now. Ask your agent to look at it.';
     default: return error?.message || 'That didn’t save. Try again.';
   }
 }
@@ -72,7 +72,7 @@ function groupFields(fields) {
 
 function ColorsSection({section,colors,pendingTheme,owner,previewId,onPreview,onUse,busy}) {
   const field = section?.fields?.[0] || {};
-  if (!colors?.count) return <p className="mv-se-hint">No palettes found in app/content/palettes.ts. Ask Claude to add them.</p>;
+  if (!colors?.count) return <p className="mv-se-hint">No palettes found in app/content/palettes.ts. Ask your agent to add them.</p>;
   const all = colors.groups.flatMap(group=>group.palettes);
   const current = all.find(p=>p.id===colors.current);
   const previewing = all.find(p=>p.id===previewId);
@@ -457,7 +457,7 @@ export function StoreEditor({isMerrivy=true, notify, mode='hub', current, hub, g
   }
   async function publish() {
     setBusy('publish');setFailure(null);
-    try {const result = await api('/api/store-editor/publish',{packet:view.packet.file});setView(result);setPublishOpen(false);notify?.('Publishing approved. Claude gets a line and it shows on Today.');}
+    try {const result = await api('/api/store-editor/publish',{packet:view.packet.file});setView(result);setPublishOpen(false);notify?.('Publishing approved. Recorded on Today.');}
     catch (error) {setFailure(error);setPublishOpen(false);} finally {setBusy('');}
   }
   async function loadLatest() {const next = await load(view?.packet?.file);if(next)setFailure(null);}
@@ -466,7 +466,7 @@ export function StoreEditor({isMerrivy=true, notify, mode='hub', current, hub, g
   if (!isMerrivy) return <div className="mv-empty">This project has no store yet. The Store editor works on a project with a Hydrogen storefront.</div>;
   if (loadError&&!view) return <div className="mv-error">{loadError}</div>;
   if (!view) return <div className="mv-loading"><LoaderCircle className="mv-spin" size={22}/>Opening the store…</div>;
-  if (!view.packet) return <div className="mv-empty">No product packet in hydrogen-storefront/app/content yet. Ask Claude to create one.</div>;
+  if (!view.packet) return <div className="mv-empty">No product packet in hydrogen-storefront/app/content yet. Ask the Store Builder to create one.</div>;
 
   const publishState = view.publish||{};
   const problems = view.problems;
@@ -746,9 +746,9 @@ export function StoreEditor({isMerrivy=true, notify, mode='hub', current, hub, g
     </div></div>}
 
     {picker&&<ImagePicker field={picker} images={view.images||[]} onPick={change} onClose={()=>setPicker(null)}/>}
-    {publishOpen&&<Sheet title="Publish to merrivy.com" subtitle="You approve it here. Claude does the deploy." onClose={()=>setPublishOpen(false)}>
+    {publishOpen&&<Sheet title="Publish to merrivy.com" subtitle="You approve it here. The Store Builder deploys it." onClose={()=>setPublishOpen(false)}>
       <div className="mv-se-publish">
-        <p>Nothing goes live until Claude deploys it, and Claude tells you when it’s done.</p>
+        <p>Nothing goes live until the Store Builder deploys it, and your agent tells you when it’s done.</p>
         <h4>{publishState.changes?.length?`What changed since the last publish (${publishState.changes.length})`:'No editor changes since the last publish'}</h4>
         {publishState.changes?.length>0&&<ul>{publishState.changes.slice(0,30).map(item=><li key={`${item.packet}:${item.path}`}><strong>{item.section}</strong> · {item.label}<small>{item.by==='owner'?'you':'an agent'} · {timeAgo(item.at)}</small></li>)}</ul>}
         {pending.size>0&&<p className="mv-se-warn"><AlertTriangle size={13}/>You have {pending.size} unsaved {pending.size===1?'edit':'edits'}. Save first if you want them published.</p>}

@@ -126,7 +126,7 @@ export function EvidenceFlags({flags}) {
       <span><strong>{flags.length} piece{flags.length===1?'':'s'} of evidence look copied</strong><small>Check these before trusting the numbers</small></span>
       <ChevronDown size={15} className={open?'is-flipped':''}/>
     </button>
-    {open&&<ul>{flags.map(flag=><li key={flag.id}>{flag.text}</li>)}<li className="is-next">Ask Claude to re-check this product.</li></ul>}
+    {open&&<ul>{flags.map(flag=><li key={flag.id}>{flag.text}</li>)}<li className="is-next">Ask your agent to re-check this product.</li></ul>}
   </section>;
 }
 

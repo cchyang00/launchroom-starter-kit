@@ -154,12 +154,12 @@ export function ToolsView({tools,setTools,loadTools,toolsError,current,route,not
 
   const notReady = toolsError?(/route not found/i.test(toolsError)?'The Tools page needs the updated OS server. Ask the manager to restart the OS, then reload.':toolsError):'';
   return <section className="mv-tl">
-    <div className="mv-page-head"><div><span className="mv-eyebrow">One click to open</span><h1 className="mv-h1">Tools</h1><p className="mv-sub">Every outside tool we use. You and Claude open the same links in the same signed-in browser.</p></div>
+    <div className="mv-page-head"><div><span className="mv-eyebrow">One click to open</span><h1 className="mv-h1">Tools</h1><p className="mv-sub">Every outside tool we use. You and your agents open the same links in the same signed-in browser.</p></div>
       <div className="mv-page-actions"><button className="mv-btn" disabled={!tools} onClick={()=>setAdding(true)}><Plus size={15}/>Add a tool</button></div></div>
 
     {notReady&&<div className="mv-error" role="alert" style={{marginBottom:14}}>{notReady}</div>}
     {!tools&&!notReady&&<div className="mv-card mv-empty">Opening the tool list…</div>}
-    {tools&&!list.length&&<div className="mv-card mv-empty"><Wrench size={26}/><strong>No tools listed yet.</strong><span className="mv-small">Claude adds them with <code>os.mjs tools import</code>, or add one yourself.</span></div>}
+    {tools&&!list.length&&<div className="mv-card mv-empty"><Wrench size={26}/><strong>No tools listed yet.</strong><span className="mv-small">Agents add them with <code>os.mjs tools import</code>, or add one yourself.</span></div>}
 
     {tools&&list.length>0&&<>
       <section className="mv-card mv-tl-step" aria-label="Tools for a step">
@@ -168,10 +168,10 @@ export function ToolsView({tools,setTools,loadTools,toolsError,current,route,not
           <div className="mv-step-pick mv-tl-pick" role="group" aria-label="Show the tools for a step">{STEP_IDS.map((id,i)=><button key={id} aria-pressed={pick===id} onClick={()=>{setFollowed(false);setPick(id);}}><i>{i+1}</i>{STEP_NAMES[i]}{i===hereIndex&&<span className="mv-here-dot" title="The pipeline's focus step"/>}</button>)}</div>
         </div>
         {stepTools.length?<div className="mv-tl-big-grid">{stepTools.map(tool=><BigCard key={tool.id} tool={tool} onToggle={toggleSignedIn} busy={busy===tool.id} flash={flash===tool.id}/>)}</div>
-        :<p className="mv-tl-none">No tools are tagged for {STEP_NAMES[pickIndex]} yet. Add one, or ask Claude to tag the right ones.</p>}
+        :<p className="mv-tl-none">No tools are tagged for {STEP_NAMES[pickIndex]} yet. Add one, or ask your agent to tag the right ones.</p>}
       </section>
 
-      <div className="mv-section-head mv-tl-all-head"><div><h2 className="mv-h2">All tools</h2><span className="mv-small">{tools.counts?.active??list.length} tools by group · Open goes to the same page Claude opens</span></div></div>
+      <div className="mv-section-head mv-tl-all-head"><div><h2 className="mv-h2">All tools</h2><span className="mv-small">{tools.counts?.active??list.length} tools by group · Open goes to the same page your agents open</span></div></div>
       <nav className="mv-scope-strip mv-tl-jump" aria-label="Jump to a group">{groups.map(group=><button key={group.group} onClick={()=>document.getElementById(`tools-${group.group}`)?.scrollIntoView({behavior:'smooth',block:'start'})}><ToolIcon group={group.group} size={22}/>{group.label}<small>{group.tools.length}</small></button>)}</nav>
       {groups.map(group=><section key={group.group} id={`tools-${group.group}`} className="mv-tl-group">
         <h3 className="mv-tl-group-head"><ToolIcon group={group.group} size={26}/>{GROUP_LABELS[group.group]}<b>{group.tools.length}</b></h3>
@@ -181,7 +181,7 @@ export function ToolsView({tools,setTools,loadTools,toolsError,current,route,not
     </>}
 
     <footer className="mv-tl-rule"><Lock size={16}/><div><b>No passwords here. Sign in once in the browser; agents work in your signed-in session.</b>
-      <span>Claude opens the same links with <code>os.mjs tool &lt;id&gt;</code>. <button className="mv-link" onClick={()=>openDoc('resources/TOOLS.md')}><FileText size={12}/>The list agents read</button></span></div></footer>
+      <span>Agents open the same links with <code>os.mjs tool &lt;id&gt;</code>. <button className="mv-link" onClick={()=>openDoc('resources/TOOLS.md')}><FileText size={12}/>The list agents read</button></span></div></footer>
 
     {adding&&tools&&<AddToolSheet tools={tools} stepId={pick} onClose={()=>setAdding(false)} onSaved={saved=>{setTools(saved);setAdding(false);setFlash(saved.saved);const tool=saved.tools.find(item=>item.id===saved.saved);if(tool&&!tool.steps.includes(pick)){setFollowed(false);setPick(tool.steps[0]);}notify(`${tool?.name||'Tool'} added. Claude can open it with os.mjs tool ${saved.saved}.`);}}/>}
   </section>;

@@ -239,7 +239,7 @@ export default function App({project:projectProp}) {
   }
 
   // Products start from a card the owner saved (agents run os.mjs product start); there is no form for it.
-  const requestProduct = ()=>{setToast('A product starts from a card you saved. Ask Claude: "Start the product record for L###".');go('pipeline');};
+  const requestProduct = ()=>{setToast('A product starts from a card you saved. Ask your agent: "Start the product record for L###".');go('pipeline');};
   const pipeline = current?.pipeline||null;
   // Step 0 · the issue list (owner, Oct 3): how many issues, how many testing, from the saved statuses.
   const issueStation = useMemo(()=>issueStationOf(pipeline),[pipeline]);

@@ -135,7 +135,7 @@ function IssueSheet({entry,onClose,onPick,busy,openDoc,go,pipeline,error}) {
         <div className="mv-il-links">
           {(entry.rounds||[]).map(round=><button key={round.id} type="button" className="mv-il-linkchip" onClick={()=>{onClose();go('pipeline');}}><Workflow size={13}/>Round {round.number}{round.open?' · open':' · reviewed'}</button>)}
           {products.map(item=><button key={item.id} type="button" className="mv-il-linkchip" onClick={()=>{onClose();go(`product/${item.id}`);}}><Package size={13}/>{item.id} · {item.name}<ArrowRight size={12}/></button>)}
-          {!(entry.rounds||[]).length&&!products.length&&<p className="mv-small">{entry.status==='testing'?'No round yet. Ask Claude: “Start a round for this issue.”':'No round or product uses it yet.'}</p>}
+          {!(entry.rounds||[]).length&&!products.length&&<p className="mv-small">{entry.status==='testing'?'No round yet. Ask your agent: “Start a round for this issue.”':'No round or product uses it yet.'}</p>}
         </div>
       </section>
 

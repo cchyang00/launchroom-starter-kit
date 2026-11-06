@@ -58,7 +58,7 @@ export function setAt(value, path, next) {
 
 /* ---------- The form, built from the saved packet ---------- */
 
-const ASK = 'Offer numbers stay with Claude: ask Claude to change them.';
+const ASK = 'Set in Shopify Admin (synced with checkout so prices and variants always match).';
 const LINE_BREAKS = 'A new line here shows as a line break on the page.';
 
 function builder(packet) {
@@ -217,7 +217,7 @@ const SECTIONS = {
       add('guarantee.text', 'What is covered', 'text');
       add('guarantee.linkLabel', 'Link words');
       add('guarantee.note', 'Small note');
-      add('guarantee.days', 'Days to return', 'fixed', { note: 'The days come from the returns policy: ask Claude to change them.' });
+      add('guarantee.days', 'Days to return', 'fixed', { note: 'Set in your store returns policy in Shopify Admin.' });
     },
   },
   specs: {
@@ -269,7 +269,7 @@ const SECTIONS = {
     },
   },
   offer: {
-    title: 'Offer and banners', page: 'Every page', help: 'The words of the offer. Prices, percent off and thresholds stay with Claude.',
+    title: 'Offer and banners', page: 'Every page', help: 'The words of the offer. Prices, percent off and shipping thresholds are set in Shopify Admin so checkout always matches.',
     build(packet, add) {
       list(packet, 'offer.announcements').forEach((_, i) => add(`offer.announcements.${i}`, `Top banner ${i + 1}`, 'line', { hint: 'Words in {braces} fill in by themselves.' }));
       add('offer.sale.label', 'Sale name');

@@ -38,7 +38,7 @@ function ReportAvatar({item,team,size=30}) {
   const agent = agentOf(team,item.agent);
   return agent?<AgentAvatar agent={agent} size={size}/>:<Avatar role={item.agent==='manager'?'manager':item.role} size={size}/>;
 }
-const reporterName = (item,team) => item.agent==='manager'?'Claude (manager)':agentOf(team,item.agent)?.name||roleOf(item.role).name;
+const reporterName = (item,team) => item.agent==='manager'?'Manager':agentOf(team,item.agent)?.name||roleOf(item.role).name;
 
 /** One number tile per role; tapping one filters the reports to it. */
 function RoleTiles({agents,activity,selected,onSelect}) {
@@ -142,7 +142,7 @@ function LiveChanges() {
 const DECISION_TEXT = {
   'eye-test':item=>[leadStatus({waiting:item.count,saved:0,reviewed:0}),'Save, pass or reject each card on the Find page.',Sparkles],
   'build-pick':item=>[`${item.count} product${item.count===1?' is':'s are'} ready to build: pick which one builds next`,'"Build this one" on its page, with your reason. One product builds at a time.',Hammer],
-  launch:item=>[`Approve the test for ${item.ids?.[0]||'the building product'}`,'Going public, the budget and the max loss. Tell Claude in chat; nothing runs from here.',Rocket],
+  launch:item=>[`Approve the test for ${item.ids?.[0]||'the building product'}`,'Going public, the budget and the max loss. Tell your agent in chat; nothing runs from here.',Rocket],
 };
 function DecisionItem({item,pipeline,go}) {
   const rows = (item.ids||[]).map(id=>pipeline?.items?.find(row=>row.id===id)).filter(Boolean).slice(0,4);
@@ -171,10 +171,10 @@ function MemberCard({agent,detail=false,onOpen}) {
   const foot = detail?<>{agent.skills.length?`${agent.skills.length} skill${agent.skills.length===1?'':'s'}`:`${agent.guides.length} guides`}{!agent.installed&&<Chip tone="bad">Not installed</Chip>}</>:undefined;
   return <TeamCard face={<AgentAvatar agent={agent} size={32}/>} name={agent.name} dept={deptName(agent.role)} tile={ROLE_TILE[agent.role]||6} status={agent.status} word={word} text={text} summary={agent.summary} foot={foot} onOpen={onOpen} label={`Open ${agent.name}`}/>;
 }
-/** Claude is the chat itself: it has no subagent sheet, so its card opens its newest report. */
+/** Manager is the chat itself: it has no subagent sheet, so its card opens its newest report. */
 function ManagerCard({manager,reports,live,detail=false,onOpen}) {
   const latest = live||reports[0]||null;
-  return <TeamCard face={<Avatar role="manager" size={32}/>} name="Claude" dept="Manager · your chat" tile={ROLE_TILE.manager} status={live?'working':'idle'} word={live?'Now':latest?'Last':'Ready'} text={latest?(live?latest.title:`${latest.title} · ${timeAgo(latest.updatedAt)}`):'Nothing reported yet'} summary={manager?.summary} foot={detail?'The chat you talk to':undefined} onOpen={latest?()=>onOpen(latest):undefined} label="Open Claude's newest report"/>;
+  return <TeamCard face={<Avatar role="manager" size={32}/>} name="Manager" dept="Manager · your chat" tile={ROLE_TILE.manager} status={live?'working':'idle'} word={live?'Now':latest?'Last':'Ready'} text={latest?(live?latest.title:`${latest.title} · ${timeAgo(latest.updatedAt)}`):'Nothing reported yet'} summary={manager?.summary} foot={detail?'The chat you talk to':undefined} onOpen={latest?()=>onOpen(latest):undefined} label="Open Manager's newest report"/>;
 }
 
 /** Long lists stay short: the first few rows, then "Show N more". */
@@ -206,7 +206,7 @@ function MissionControl({team,board,mc,activity,pipeline,go,openReport,openAgent
     </div>},
     {id:'next',icon:ListTodo,tile:3,title:'Up next',sub:mc.upNext.length?`${mc.upNext.length} queued`:'Nothing queued',node:<div className="mv-ag-panel">
       {mc.upNext.length>0?<div className="mv-mc-list"><Capped limit={6} rows={mc.upNext.map((task,i)=><TaskRow key={task.id} task={task} team={team} go={go} index={i}/>)}/></div>
-        :<p className="mv-small mv-mc-empty">Nothing queued. Claude adds jobs here when you ask for something in chat.</p>}
+        :<p className="mv-small mv-mc-empty">Nothing queued. Your agent adds jobs here when you ask for something in chat.</p>}
       {mc.parked.length>0&&<div className="mv-mc-parked">
         <button className="mv-link" aria-expanded={showParked} onClick={()=>setShowParked(!showParked)}>{showParked?<ChevronUp size={13}/>:<ChevronDown size={13}/>}Parked ({mc.parked.length}): someday jobs, not started</button>
         {showParked&&<div className="mv-mc-list">{mc.parked.map(task=><TaskRow key={task.id} task={task} team={team} go={go}/>)}</div>}
@@ -228,7 +228,7 @@ function MissionControl({team,board,mc,activity,pipeline,go,openReport,openAgent
     <section className="mv-ag-section">
       <SectionHead icon={Loader} tone="live" title="Working now" count={live.length}/>
       {live.length?<div className="mv-ag-live">{live.map(item=><LiveJobRow key={item.id} item={item} team={team} onOpen={openReport}/>)}</div>
-      :<p className="mv-ag-quiet">Nobody is reporting work right now. Tell Claude what you need in chat, and it shows up here.</p>}
+      :<p className="mv-ag-quiet">Nobody is reporting work right now. Tell your agent what you need in chat, and it shows up here.</p>}
     </section>
     <section className="mv-ag-section"><PanelTiles start={decisions?'decide':ready?'ready':'next'} tiles={tiles}/></section>
     {mc.stale.length>0&&<section className="mv-mc-stale">
@@ -511,7 +511,7 @@ export function SkillBuilderSheet({initialSkill,team,onClose,onSaved}) {
       <div>
         <span className="mv-small" style={{display:'block',fontWeight:600,marginBottom:6}}>Assign to Subagents ({assigned.size} selected)</span>
         <div style={{display:'flex',flexWrap:'wrap',gap:6}}>
-          <button type="button" className={`mv-btn sm ${assigned.has('manager')?'primary':'ghost'}`} onClick={()=>toggleAgent('manager')}>Claude (Manager)</button>
+          <button type="button" className={`mv-btn sm ${assigned.has('manager')?'primary':'ghost'}`} onClick={()=>toggleAgent('manager')}>Manager</button>
           {(team?.agents||[]).map(a=><button type="button" key={a.id} className={`mv-btn sm ${assigned.has(a.id)?'primary':'ghost'}`} onClick={()=>toggleAgent(a.id)}>{a.name}</button>)}
         </div>
       </div>
@@ -647,7 +647,7 @@ function SkillLibrary({team,onOpen,onAgent,onNewSkill,go}) {
         </button>
         <footer>
           <small>{whereIs(skill)}</small>
-          <span className="mv-ag-skill-faces">{(skill.usedBy||[]).map(id=>{const agent=agentOf(team,id);return id==='manager'?<span key={id} title="Claude"><Avatar role="manager" size={20}/></span>:<button type="button" key={id} title={agent?.name||id} aria-label={`Open ${agent?.name||id}`} onClick={()=>onAgent(id)}><AgentAvatar agent={agent} size={20}/></button>;})}</span>
+          <span className="mv-ag-skill-faces">{(skill.usedBy||[]).map(id=>{const agent=agentOf(team,id);return id==='manager'?<span key={id} title="Manager"><Avatar role="manager" size={20}/></span>:<button type="button" key={id} title={agent?.name||id} aria-label={`Open ${agent?.name||id}`} onClick={()=>onAgent(id)}><AgentAvatar agent={agent} size={20}/></button>;})}</span>
         </footer>
       </article>)}</div>
     </div>):<div className="mv-card mv-empty"><Search size={22}/><strong>No skill matches.</strong></div>}
@@ -667,7 +667,7 @@ function SkillSheet({skill,team,onClose,onAgent,onEdit}) {
   return <Sheet wide title={skillTitle(skill.name)} subtitle={whereIs(skill)} onClose={onClose} actions={onEdit&&skill.scope!=='personal'?<button className="mv-btn sm" onClick={()=>onEdit(skill)}><Pencil size={13}/>Edit</button>:undefined}>
     <div className="mv-sa-skillsheet">
       {skill.description&&<p className="mv-sa-lead">{skill.description}</p>}
-      <div className="mv-sa-carried"><small>Carried by</small>{usedBy.length?usedBy.map(id=>{const agent=agentOf(team,id);return id==='manager'?<span key={id} className="mv-sa-person"><Avatar role="manager" size={22}/>Claude</span>:<button type="button" key={id} className="mv-sa-person" onClick={()=>onAgent(id)}><AgentAvatar agent={agent} size={22}/>{agent?.name||id}</button>;}):<em>No subagent yet. Any chat can still load it.</em>}</div>
+      <div className="mv-sa-carried"><small>Carried by</small>{usedBy.length?usedBy.map(id=>{const agent=agentOf(team,id);return id==='manager'?<span key={id} className="mv-sa-person"><Avatar role="manager" size={22}/>Manager</span>:<button type="button" key={id} className="mv-sa-person" onClick={()=>onAgent(id)}><AgentAvatar agent={agent} size={22}/>{agent?.name||id}</button>;}):<em>No subagent yet. Any chat can still load it.</em>}</div>
       <code className="mv-sa-path">{skill.path}</code>
       {error&&<div className="mv-error" role="alert">{error}</div>}
       {body?<details open className="mv-sa-full"><summary>Read the whole skill</summary><div className="mv-doc"><Markdown>{body}</Markdown></div></details>:!error&&<p className="mv-small">{full?'This skill has no instructions yet.':'Loading…'}</p>}
@@ -705,7 +705,7 @@ export function AgentsView(props) {
     {team.error&&<div className="mv-error" style={{margin:'14px 0'}}>{team.error}</div>}
     {activityError&&<div className="mv-error" style={{margin:'14px 0'}}>{activityError}</div>}
     {tab==='team'?<div className="mv-ag">
-      <p className="mv-ag-calltip"><MessageSquareText size={15}/><span>In chat, say <b>“have the copywriter write this.”</b> Claude calls the right one.</span></p>
+      <p className="mv-ag-calltip"><MessageSquareText size={15}/><span>Tell your agent in chat which subagent to call, or just ask for the job and the Manager picks the right specialist.</span></p>
       <section className="mv-ag-section">
         <div className="mv-ag-head">
           <SectionHead icon={Users} title="Subagents" count={board.agents.length}/>

@@ -139,7 +139,7 @@ function OwnerMove({item,lead,pipeline,recordDecision,onBuild,onEarly}) {
   if (canLaunchEarly(item,lead)) return <MoveCard icon={Rocket} waiting title="Optional: build it before Prove it is finished" text={taken?`${taken.id} holds the build slot.`:'The checks still open stay listed under Checks.'}>
     <button className="mv-btn" disabled={Boolean(taken)} title={taken?`${taken.name} holds the build slot`:'Put this product in the build slot now'} onClick={onEarly}>{taken?<Lock size={14}/>:<Hammer size={14}/>}Build this one now</button>
   </MoveCard>;
-  if (item.building&&item.who==='owner') return <MoveCard icon={Rocket} title="Approve the test" text="Going public, the budget and the most you'll lose. Tell Claude in chat; nothing runs or spends from this page."/>;
+  if (item.building&&item.who==='owner') return <MoveCard icon={Rocket} title="Approve the test" text="Going public, the budget and the most you'll lose. Tell your agent in chat; nothing runs or spends from this page."/>;
   return null;
 }
 
@@ -331,7 +331,7 @@ export function ProductPage(props) {
           </div>
         </header>
         {item.outcome&&(item.outcome.kind==='failed'?<FailedBanner item={item} reopenProduct={reopenProduct} openDoc={openDoc}/>:<div className="mv-pl-outcome"><OctagonX size={17}/><div><b>Out of the line · {item.outcome.label}{item.outcome.on?` · ${day(item.outcome.on)}`:''}</b><p>{item.outcome.reason||'No reason was saved.'}</p></div></div>)}
-        {item.unlinked&&<div className="mv-pl-outcome is-warn"><Lock size={17}/><div><b>Not started from a card</b><p>Its checks cannot count until it is linked to a card you saved. Ask Claude to fix it.</p></div></div>}
+        {item.unlinked&&<div className="mv-pl-outcome is-warn"><Lock size={17}/><div><b>Not started from a card</b><p>Its checks cannot count until it is linked to a card you saved. Ask your agent to fix it.</p></div></div>}
         <OwnerMove item={item} lead={lead} pipeline={pipeline} recordDecision={recordDecision} onBuild={()=>setBuilding(true)} onEarly={()=>setEarly(true)}/>
         <EvidenceFlags flags={flags}/>
         {campaign&&<OnMetaCard campaign={campaign} go={go}/>}
@@ -344,7 +344,7 @@ export function ProductPage(props) {
         {!item.outcome&&!item.readyToBuild&&item.next&&<p className="mv-pp-next"><b>Next</b><WhoChip who={item.who} team={data.team}/><span>{moveText(item.next)}{stepDone?.total?` · ${stepDone.done}/${stepDone.total} checks`:''}</span></p>}
         {live.length>0&&<LiveNow entries={live} team={data.team} go={go} limit={2}/>}
         <SaidBanner lead={lead} recordDecision={recordDecision}/>
-        {pick&&<div className="mv-pl-pickline"><Hammer size={15}/><span><b>In the build slot{pick.override?' · launched early':''}{pick.source==='owner-chat'?' · said in chat':''}.</b> {pick.source==='owner-chat'?'You said in chat':'Your pick'}{pick.pickedAt?` on ${day(pick.pickedAt)}`:''}: “{pick.reason}”{pick.source==='owner-chat'?' (recorded by Claude)':''}</span></div>}
+        {pick&&<div className="mv-pl-pickline"><Hammer size={15}/><span><b>In the build slot{pick.override?' · launched early':''}{pick.source==='owner-chat'?' · said in chat':''}.</b> {pick.source==='owner-chat'?'You said in chat':'Your pick'}{pick.pickedAt?` on ${day(pick.pickedAt)}`:''}: “{pick.reason}”{pick.source==='owner-chat'?' (recorded by Manager)':''}</span></div>}
       </div>
     </div>
     <PanelTiles key={item.id} start={v?.kalodata?.rawVideos?.length?'numbers':null} tiles={tiles}/>

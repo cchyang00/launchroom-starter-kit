@@ -148,7 +148,7 @@ export function filesMessage(error, action = '') {
     case 'INVALID_INPUT': return action === 'folder' ? 'Use a simple folder name: no / \\ : * ? " < > | and no dot or space at the start or end.' : 'That name or folder isn’t allowed.';
     case 'STORAGE_BUSY': return 'Storage is busy. Try again in a moment.';
     case 'UNTRACKED_FILE': return 'This folder holds files Launchroom didn’t upload, so it can’t be moved from here.';
-    case 'UNSAFE_PATH': case 'CORRUPT_DATA': return 'Launchroom refused this to keep files safe. Ask Claude to check the project’s storage.';
+    case 'UNSAFE_PATH': case 'CORRUPT_DATA': return 'Launchroom refused this to keep files safe. Ask your agent to check the project’s storage.';
     default: break;
   }
   if (error?.network) return 'Connection lost. Check Launchroom is running, then retry.';
