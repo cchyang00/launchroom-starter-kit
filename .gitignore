@@ -1,0 +1,13 @@
+node_modules/
+**/node_modules/
+.env
+.env.*
+!.env.example
+**/dist/
+!os/dist/
+.shopify/
+.react-router/
+os/private/
+os/data/runs/
+*.log
+.DS_Store
