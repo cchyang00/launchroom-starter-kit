@@ -1,0 +1,6 @@
+interface:
+  display_name: "Merrivy Creative Workspace"
+  short_description: "Route creative work to the image generator agent"
+  default_prompt: "Use $merrivy-creative-workspace to create or improve Merrivy image assets using the dedicated agent workflow."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,227 @@
+{
+  "about": "Our Launchroom pipeline: Numbers-First Reverse Engineering (#/find) using the 200-Keyword Q4 Bible & Multi-Video US Viral Density (>=5 videos across >=3 US creators), 5-Point Hard Verification (#/verify -> #/winners), 2-Kit Only + $4.99 Shipping Protection Storefront (#/build), 20 4:5 Static Ads (10 Problem-Aware + 10 Solution-Aware via winning-statics & sbc-statics-2.0) + Top 1-3 Viral Video Ads (#/create), 7-Point Launch Checklist (#/checklist), Meta Campaign Launch (#/launch), and Manage (#/manage: 4-Day Algorithm Priming, End-of-Day 3 Kill Gate & Day 4+ Veo Scale).",
+  "updated": "2026-11-05",
+  "steps": [
+    {
+      "id": "product",
+      "name": "Product",
+      "purpose": "Brute-force reverse-engineer where the sales numbers are hitting on Kalodata US (>=5 viral videos across >=3 US creators), that we can dropship, tied to our issues (#/find).",
+      "startWhen": "A round takes a focus from our 200-keyword Q4 macro-trend pillars.",
+      "doneWhen": "Candidates pass intake filters and the hard test starts on Verify (#/verify).",
+      "ownerPart": "Nothing here: agents scrape and filter; you decide on Winners (#/winners).",
+      "agents": [
+        "scout"
+      ],
+      "stopIf": "Passive marketplace item (<5 US viral videos), commodity slop, or <$24 retail floor.",
+      "prompts": [
+        {
+          "label": "Run Numbers-First Kalodata US wave",
+          "text": "Scout [category] using our 200-Keyword Q4 Bible on Kalodata US (country: US, pageSize: 100): require >=5 active US viral videos across >=3 US creators, download .mp4 videos, and stage into Verify."
+        },
+        {
+          "label": "Audit a video from Drive",
+          "text": "Check this video from my Drive: [file or link]. Pull Kalodata US sales and active creator count, verify HyperSKU/CJ landed cost, and stage into Verify."
+        },
+        {
+          "label": "Filter out commodities",
+          "text": "Find unique problem-solving mechanisms in [niche] with rising 30d US velocity and >=5 viral videos, skipping brick-and-mortar commodities."
+        }
+      ],
+      "playbook": "workflow/CHECKS.md#step-1--product-where-the-sales-numbers-are-hitting"
+    },
+    {
+      "id": "buyers",
+      "name": "Buyers",
+      "purpose": "For a product you saved or staged into Verify, mine 4-5 star Amazon reviews FIRST (3 best features), 15+ quotes, and 3+ avatars.",
+      "startWhen": "You pressed Save or the candidate entered Verify (#/verify).",
+      "doneWhen": "A1-A3 pass: 15+ verbatim quotes, 3+ avatars, and 3 best review features are saved.",
+      "ownerPart": "Nothing to click here; buyer avatars and quotes feed Winners and ad copy.",
+      "agents": [
+        "buyer-researcher"
+      ],
+      "stopIf": "Buyers report severe product defects or high return rates in 2-4 star reviews.",
+      "prompts": [
+        {
+          "label": "Mine 4-5 star Amazon reviews",
+          "text": "Research buyers for [product] ([L###]): mine 4-5 star Amazon reviews first for the top 3 features, then 2-4 star objections and 15+ quotes."
+        },
+        {
+          "label": "Extract avatar hooks",
+          "text": "Pull 15+ verbatim buyer quotes for [product] sorted into trigger moment, relief, objections, and headline hooks."
+        },
+        {
+          "label": "Cross-check forum demand",
+          "text": "Check Reddit and YouTube comments for [product] to validate real-world buying intent."
+        }
+      ],
+      "playbook": "workflow/CHECKS.md#step-2--buyers-who-buys-this-product-in-their-own-words"
+    },
+    {
+      "id": "prove",
+      "name": "Prove it",
+      "purpose": "Verify room on Meta (0-15 ads), exact 1-piece SKU on HyperSKU/CJ (<35% landed cost), and the 2-Kit money line (>= $22-$30 CPA floor) in #/verify.",
+      "startWhen": "Runs automatically in Verify (#/verify) before a card enters Winners.",
+      "doneWhen": "P1-P5 pass with zero evidenceFlags so the verified winner lands on Winners (#/winners).",
+      "ownerPart": "Look at Winners (#/winners) and click Build this one or Reject.",
+      "agents": [
+        "checker"
+      ],
+      "stopIf": "Meta is saturated (20+ advertisers), item is a custom DTC brand, or air-landed cost exceeds 35%.",
+      "prompts": [
+        {
+          "label": "Run 5-point hard verification",
+          "text": "Verify [L###]: check US Meta Ad Library competition, verify exact 1-piece SKU & <35% air-landed cost on HyperSKU/CJ first, and calculate 2-Kit KPIs."
+        },
+        {
+          "label": "Calculate 2-Kit unit economics",
+          "text": "Work out 1-Kit (+ $7.99 shipping) and 2-Kit (Save 15% + Free Shipping) + $4.99 Shipping Protection economics for [product]."
+        },
+        {
+          "label": "Check HyperSKU & CJ shipping",
+          "text": "Verify exact weight, box dimensions, and US/CA/UK/AU air shipping on HyperSKU and CJ for [product] before asking Amy."
+        }
+      ],
+      "playbook": "workflow/CHECKS.md#step-3--prove-it-room-on-meta-the-item-and-the-money"
+    },
+    {
+      "id": "create",
+      "name": "Create",
+      "purpose": "Deconstruct winning viral videos to build 20 4:5 static ads (10 Problem-Aware + 10 Solution-Aware), 5 captions + 5 headlines, and 1-3 viral .mp4 videos (#/create).",
+      "startWhen": "You clicked Build this one on Winners.",
+      "doneWhen": "C1-C4 pass: 20 4:5 statics (10 Problem-Aware + 10 Solution-Aware), 5 captions + 5 headlines, and 1-3 viral videos are ready.",
+      "ownerPart": "Approve the 20 static ads and videos in Creatives (#/create).",
+      "agents": [
+        "copywriter",
+        "image-maker"
+      ],
+      "stopIf": "Statics ignore the viral video, storefront repeats 'You have to get this...', or images use PIL.",
+      "prompts": [
+        {
+          "label": "Build 20 statics from viral video",
+          "text": "Deconstruct the viral video for [product] (3s/7s frames + hook) and build 20 4:5 static ads (10 Problem-Aware + 10 Solution-Aware via winning-statics) + 5 captions & 5 headlines (sbc-statics-2.0)."
+        },
+        {
+          "label": "Write Website vs. Ad Headline Split",
+          "text": "Write urgent reveal hooks for Meta Ads and elevated boutique/hardware titles for hero.headline and purchase.heading on [product]."
+        },
+        {
+          "label": "Generate 8K PDP gallery slides",
+          "text": "Generate 6-7 8K DSLR-contrast gallery slides for [product] combining real video truth frames with static_01..50.png layouts."
+        }
+      ],
+      "playbook": "workflow/CHECKS.md#step-4--create-concepts-not-tweaks-create--assets"
+    },
+    {
+      "id": "build",
+      "name": "Build",
+      "purpose": "Clone base-theme.json + palette into <slug>.json (#/build) with 2 Kits Only (1-Kit + 2-Kit) + $4.99 protection and verify the 7/7 Checklist (#/checklist).",
+      "startWhen": "Store copy and gallery images are ready.",
+      "doneWhen": "B1-B5 and all 7 Checklist items (7/7) pass on localhost:3021 and Shopify Admin.",
+      "ownerPart": "Preview the live store in Store (#/build) and verify the 7/7 Checklist (#/checklist).",
+      "agents": [
+        "store-builder"
+      ],
+      "stopIf": "Page has a 3-Kit tier, companion add-on bundles, or shares a Meta Pixel across unrelated niches.",
+      "prompts": [
+        {
+          "label": "Clone base-theme.json & build store",
+          "text": "Clone base-theme.json for [product] with 2 Kits Only (1-Kit + $7.99 shipping, 2-Kit Save 15% + Free Shipping) + $4.99 protection and sync Shopify Admin."
+        },
+        {
+          "label": "Run 7-Point Launch Checklist (7/7)",
+          "text": "Verify all 7 Launch Checklist items for [product]: 375px mobile, copy angles, 2-Kit + $4.99 math, QoL, Shopify Admin, category Meta Pixel, and supplier."
+        },
+        {
+          "label": "Verify category-isolated Meta Pixel",
+          "text": "Confirm [product] uses its dedicated category Meta Pixel in Shopify Customer Events with one clean Purchase event."
+        }
+      ],
+      "playbook": "workflow/CHECKS.md#step-5--build-a-phone-first-page-that-sells-build--checklist"
+    },
+    {
+      "id": "launch",
+      "name": "Launch",
+      "purpose": "Save the test sheet before any spend, set the $50/day CBO budget and CPA guardrails (#/launch), and launch into Manage (#/manage).",
+      "startWhen": "All 7 Launch Checklist items (7/7) are verified.",
+      "doneWhen": "L1-L5 pass: campaign is launched and the product moves into Manage (#/manage).",
+      "ownerPart": "Confirm the $50/day budget and click Launch in #/launch.",
+      "agents": [
+        "manager",
+        "ad-manager",
+        "store-builder"
+      ],
+      "stopIf": "Duplicate Purchase pixel firing or missing tier-1 market.",
+      "prompts": [
+        {
+          "label": "Prepare $50/day CBO launch",
+          "text": "Stage the $50/day broad CBO across US, CA, UK, AU for [product] with Break-Even and Target CPA guardrails."
+        },
+        {
+          "label": "Verify pixel & checkout",
+          "text": "Verify /products/[handle] checkout and confirm one clean Meta Purchase event before launching."
+        },
+        {
+          "label": "Move launched product to Manage",
+          "text": "Mark [product] launched and sync live Meta & Shopify metrics into Manage (#/manage)."
+        }
+      ],
+      "playbook": "workflow/CHECKS.md#step-6--launch-set-budget-guardrails--launch-launch---jumps-to-manage"
+    },
+    {
+      "id": "learn",
+      "name": "Learn",
+      "purpose": "Manage launched products in #/manage (Day 1-2 priming, End-of-Day 3 kill, fix or scale, and Day 4+ Veo AI videos).",
+      "startWhen": "Product is launched and live in Manage (#/manage).",
+      "doneWhen": "R1-R3 pass: scaled on Day 4+ with Veo videos or cut via Cancel & Wipe at End of Day 3.",
+      "ownerPart": "Review Daily Numbers, Ad Testing, Store & CRO, and Scale or Cut in #/manage.",
+      "agents": [
+        "manager",
+        "ad-manager",
+        "store-builder",
+        "image-maker"
+      ],
+      "stopIf": "Never cut at the start of the day; wait until the END of Day 3.",
+      "prompts": [
+        {
+          "label": "Sync & audit Daily Numbers",
+          "text": "Sync live Meta & Shopify numbers for [product] in #/manage and compare Day 1, Day 2, and Day 3 against our CPA, CTR, and ATC baselines."
+        },
+        {
+          "label": "Run Store & CRO bottleneck fix",
+          "text": "Diagnose the Click -> ATC -> Checkout -> Order bottleneck for [product] in #/manage?tab=store and propose a post-launch CRO tweak."
+        },
+        {
+          "label": "End-of-Day 3 Scale or Cut / Day 4 Veo",
+          "text": "Evaluate [product] at the end of Day 3: recommend either Cancel & Wipe Product or Day 4 custom Veo AI video ads + CBO scaling."
+        }
+      ],
+      "playbook": "workflow/CHECKS.md#step-7--learn-manage-manage-4-day-meta-algorithm-priming-end-of-day-3-kill-gate--day-4-veo-scale"
+    }
+  ],
+  "anytime": [
+    {
+      "label": "What's on the pipeline?",
+      "text": "What's on the pipeline and what's next for [product]? Tell me its step, whether its gate passed, and what needs my decision."
+    },
+    {
+      "label": "Sync Live Meta & Shopify Now",
+      "text": "Run a live Meta and Shopify sync right now and show me the reconciled Day-by-Day and Lifetime numbers in Manage."
+    },
+    {
+      "label": "Run Numbers-First Kalodata US Sweep",
+      "text": "Run a Numbers-First Reverse Engineering sweep across our 200-Keyword Q4 Bible on Kalodata US (>=5 active US viral videos across >=3 US creators)."
+    },
+    {
+      "label": "Audit Launchroom Hubs & Docs",
+      "text": "Audit our Launchroom Hubs (copy, creatives, winners, research, store, team) and update any outdated rules."
+    },
+    {
+      "label": "Fix something in Launchroom",
+      "text": "Fix [what's wrong] in Launchroom, rebuild os/dist, and verify with os.mjs doctor."
+    },
+    {
+      "label": "Cancel & Wipe a failed product",
+      "text": "Cancel and wipe [product] cleanly so it leaves our active pipeline and resets templates.ts to base-theme.json."
+    }
+  ]
+}
