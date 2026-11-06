@@ -1,0 +1,378 @@
+/* Support center (October 2): Help center doors, trust signals, contact
+   form, Track my order, the product page's help strip and the footer's
+   support block. Phone first; every colour from tokens. */
+
+/* ---------- Help center doors ---------- */
+.help-hub-cards {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 28px;
+}
+.help-hub-card {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 14px;
+  min-height: 72px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color 0.2s,
+    scale var(--motion-fast, 140ms) ease-out;
+}
+.help-hub-card:hover {
+  border-color: var(--ink);
+}
+.help-hub-card:active {
+  scale: 0.98;
+}
+.help-hub-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--orange) 35%, var(--paper));
+}
+.help-hub-card strong {
+  display: block;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.help-hub-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+@media (min-width: 900px) {
+  .help-hub-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .help-hub-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Trust signals ---------- */
+.trust-signals {
+  margin: 0 0 36px;
+  padding: 18px;
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--yellow) 45%, var(--paper));
+}
+.trust-signals ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.trust-signals li {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+.trust-signals strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.trust-signals strong a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.trust-signals small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.trust-promise {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 17px;
+  line-height: 1.35;
+}
+@media (min-width: 900px) {
+  .trust-signals ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- FAQ on the help center ---------- */
+.help-faq {
+  margin: 0 0 12px;
+}
+.help-faq h2 {
+  margin-bottom: 18px;
+}
+.help-faq-group {
+  margin-bottom: 22px;
+}
+.help-faq-group h3 {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Contact panel and form ---------- */
+.help-contact-panel {
+  scroll-margin-top: 96px;
+}
+.help-contact-panel .button-primary {
+  margin-top: 14px;
+}
+.contact-form-title {
+  margin: 28px 0 12px;
+  font-size: 20px;
+}
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+.contact-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.contact-form label small {
+  display: inline;
+  margin: 0;
+  font-weight: 400;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  /* 16px keeps iOS from zooming in on focus. */
+  font: inherit;
+  font-size: 16px;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 1px;
+}
+.contact-form .button-primary {
+  justify-content: space-between;
+  width: 100%;
+}
+.contact-form > small {
+  margin-top: 0;
+}
+@media (min-width: 900px) {
+  .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contact-form-message,
+  .contact-form .button-primary,
+  .contact-form > small {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Track my order ---------- */
+.track-notice {
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent-text);
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--orange) 20%, var(--paper));
+  font-size: 14px;
+  line-height: 1.5;
+}
+.track-form {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.track-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.track-form input {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+.track-form input:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 1px;
+}
+.track-form .button-primary {
+  width: 100%;
+}
+.track-result {
+  margin-bottom: 28px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+}
+.track-result.is-found {
+  border-color: var(--ink);
+}
+.track-result ul {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+.track-result li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 600;
+}
+.track-result a {
+  color: var(--ink);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+.track-help {
+  margin-bottom: 28px;
+}
+.track-help h2 {
+  margin-bottom: 12px;
+}
+.track-help p + p {
+  margin-top: 10px;
+}
+.track-help a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 900px) {
+  .track-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+  }
+  .track-form .button-primary {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- "Questions? We're here" on the product page ---------- */
+.questions-strip {
+  display: grid;
+  gap: 14px;
+  margin: 0 5% 48px;
+  padding: 20px;
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--orange) 24%, var(--paper));
+}
+.questions-strip strong {
+  display: block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  line-height: 1.2;
+}
+.questions-strip span {
+  color: var(--muted);
+  font-size: 14px;
+}
+.questions-strip-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.questions-strip-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  border-radius: 99px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: scale var(--motion-fast, 140ms) ease-out;
+}
+.questions-strip-link:active {
+  scale: 0.96;
+}
+@media (min-width: 900px) {
+  .questions-strip {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    max-width: 1240px;
+    margin: 0 auto 64px;
+    padding: 24px 28px;
+  }
+}
+
+/* ---------- Footer support block ---------- */
+.footer-support {
+  display: flex;
+  flex-direction: column;
+}
+.footer-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .help-hub-card:active,
+  .questions-strip-link:active {
+    scale: none;
+  }
+}
+.footer-top > .footer-support > a {
+  display: block;
+  margin-bottom: 12px;
+  color: color-mix(in oklab, var(--line) 85%, var(--paper));
+  font-size: 12px;
+}
+.footer-top > .footer-support > a:hover {
+  text-decoration: underline;
+}
+.footer-trust li {
+  color: color-mix(in oklab, var(--ink) 25%, var(--paper));
+}

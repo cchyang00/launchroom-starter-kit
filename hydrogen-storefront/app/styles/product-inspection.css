@@ -1,0 +1,231 @@
+.inspection-trigger {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.inspection-dialog {
+  width: min(960px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 0;
+  margin: auto;
+  color: var(--ink);
+  background: var(--paper);
+  overflow: auto;
+}
+
+.inspection-dialog::backdrop {
+  background: color-mix(in srgb, var(--shade) 88%, transparent);
+}
+
+.inspection-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.inspection-heading h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.inspection-close {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.inspection-dialog figure {
+  margin: 0;
+}
+
+.inspection-dialog figure img {
+  display: block;
+  width: 100%;
+  height: min(72dvh, 760px);
+  object-fit: contain;
+  background: color-mix(in oklab, var(--ink) 4%, var(--paper));
+}
+
+.inspection-dialog figcaption {
+  padding: 14px 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.measurement-guide {
+  padding: 23px;
+  margin: 14px 0 22px;
+  background: color-mix(in oklab, var(--line) 37%, var(--paper));
+}
+
+.measurement-guide h3 {
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+
+.measurement-guide p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.measurement-diagram {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 12px auto;
+}
+
+.measurement-outline {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.measurement-seam {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 39%, var(--paper));
+  stroke-width: 1.2;
+}
+
+.measurement-line {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 1.7;
+}
+
+.measurement-label circle {
+  fill: var(--ink);
+}
+
+.measurement-label text {
+  fill: var(--paper);
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.measurement-steps {
+  margin: 0;
+}
+
+.measurement-steps > div {
+  padding: 13px 0;
+  border-top: 1px solid color-mix(in oklab, var(--ink) 18%, var(--paper));
+}
+
+.measurement-steps dt {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.measurement-steps dt span {
+  color: var(--accent-text);
+  font-size: 11px;
+}
+
+.measurement-steps dd {
+  margin: 5px 0 0 19px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.measurement-guide .measurement-limit {
+  margin-top: 12px;
+  font-size: 11px;
+}
+
+.measurement-help,
+.purchase-information a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.purchase-information {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.purchase-information details {
+  border-bottom: 1px solid var(--line);
+}
+
+.purchase-information summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 0;
+  min-height: 48px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.purchase-information summary::-webkit-details-marker {
+  display: none;
+}
+
+.purchase-information details[open] summary svg {
+  transform: rotate(45deg);
+}
+
+.purchase-information details > div {
+  padding: 0 0 16px;
+}
+
+.purchase-information p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.purchase-information p + p {
+  margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .inspection-trigger {
+    top: 9px;
+    left: 9px;
+    font-size: 10px;
+  }
+
+  .inspection-dialog {
+    width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+  }
+
+  .inspection-dialog figure img {
+    height: 65dvh;
+  }
+
+  .measurement-guide {
+    padding: 20px;
+  }
+}

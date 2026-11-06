@@ -1,0 +1,66 @@
+{
+  "tagline": "Thoughtfully designed essentials.\n30-day home trial.",
+  "aboutHero": {
+    "image": {
+      "src": "/images/wftn/hero-2.webp",
+      "alt": "Merrivy studio collection",
+      "caption": ""
+    }
+  },
+  "journal": {
+    "image": {
+      "src": "/images/wftn/hero-3.webp",
+      "alt": "Merrivy collection details"
+    }
+  },
+  "errorPage": {
+    "image": {
+      "src": "/images/wftn/hero-2.webp",
+      "alt": "Merrivy studio collection"
+    }
+  },
+  "setupScreen": {
+    "image": {
+      "src": "/images/wftn/hero-1.webp",
+      "alt": "Merrivy featured design",
+      "caption": "Merrivy Collection"
+    }
+  },
+  "support": {
+    "email": "support@merrivy.com",
+    "replyTime": "one business day",
+    "promise": "Thoughtful quality, transparent shipping, and a 30-day home trial on every order."
+  },
+  "about": {
+    "eyebrow": "The Merrivy point of view",
+    "heading": "Daily planning that\nfeels like a ritual",
+    "emphasis": "all year long.",
+    "intro": "You should never have to choose between a serious 12-month schedule and a book you actually love opening on your desk.",
+    "manifesto": {
+      "eyebrow": "Why the 2027 Grimoire Edition",
+      "heading": "Heavy cream paper.\nMonthly potion shelves.",
+      "emphasis": "Seven full columns.",
+      "paragraphs": [
+        "Every January starts with the same disappointment: standard big-box planners use thin 70 gsm white paper that ghosts with gel pens and sterile grey boxes that make your life feel like office paperwork.",
+        "Merrivy starts there, with a dated 2027 hardcover grimoire printed on 120 gsm vintage cream paper—complete with 12 laminated monthly tabs, potion-bottle habit trackers, Read / Watch / Listen logs, a snap-in bookmark ruler, and 4 gothic sticker sheets."
+      ]
+    },
+    "principles": [
+      {
+        "label": "01 / The paper",
+        "title": "Start with 120 gsm vintage cream stock.",
+        "text": "A planner should welcome your favorite gel pens, fineliners, and mild highlighters without bleeding into next week."
+      },
+      {
+        "label": "02 / The rituals",
+        "title": "Make daily habits visual.",
+        "text": "Color in a numbered apothecary potion bottle each night and track every book, show, and album at the start of every month."
+      },
+      {
+        "label": "03 / The promise",
+        "title": "Flip through it at home, or it goes back.",
+        "text": "30 days from delivery to inspect the hardcover, foil, tabs, and paper on your own desk."
+      }
+    ]
+  }
+}

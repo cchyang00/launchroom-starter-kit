@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+ul {
+  margin: 0;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+form {
+  max-width: 100%;
+}
+fieldset {
+  min-width: 0;
+}
+img {
+  max-width: 100%;
+}
+section {
+  padding: 0;
+}
+li {
+  margin: 0;
+}
+dialog:not([open]) {
+  display: none;
+}

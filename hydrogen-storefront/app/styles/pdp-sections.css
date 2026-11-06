@@ -1,0 +1,1526 @@
+/* Product page sections below the hero (October 1): sticky section nav,
+   Sound familiar, features + diagram, how to use, who it's for, guarantee,
+   specs and the bundle block. Phone first; every colour from tokens. */
+
+.pdp [data-template-section] > section,
+.pdp #reviews,
+.pdp #questions {
+  scroll-margin-top: 140px;
+}
+
+/* ---------- Sticky section nav ---------- */
+.pdp-section-nav {
+  position: fixed;
+  top: var(--pdp-nav-top, 70px);
+  right: 0;
+  left: 0;
+  z-index: 19;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--shade) 6%, transparent);
+  transform: translateY(-120%);
+  visibility: hidden;
+  transition:
+    transform 0.25s ease,
+    visibility 0.25s;
+}
+.pdp-section-nav.is-visible {
+  transform: none;
+  visibility: visible;
+}
+.pdp-section-nav-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.pdp-section-nav-row::-webkit-scrollbar {
+  display: none;
+}
+.pdp-section-nav a {
+  flex: none;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.pdp-section-nav a:hover {
+  border-color: color-mix(in oklab, var(--ink) 35%, var(--paper));
+}
+.pdp-section-nav a[aria-current] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+.pdp-section-nav a:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
+/* ---------- Sound familiar? ---------- */
+.pdp-problem {
+  padding: 88px 5%;
+  background: color-mix(in oklab, var(--yellow) 45%, var(--paper));
+}
+.pdp-problem-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.pdp-problem h2 {
+  margin: 8px 0 28px;
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height: 1;
+}
+.pdp-problem-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pdp-problem-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
+  border-radius: 14px;
+  background: var(--paper);
+  font-size: 17px;
+  line-height: 1.45;
+}
+.pdp-problem-mark {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--orange) 30%, transparent);
+}
+.pdp-problem-turn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 26px 0 0;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.pdp-problem-turn svg {
+  flex: none;
+  color: var(--accent-text);
+}
+
+/* ---------- Features ---------- */
+.pdp-features {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 96px 5%;
+}
+.pdp-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+.pdp-feature + .pdp-feature {
+  margin-top: 56px;
+}
+.pdp-feature.is-flipped .pdp-feature-media {
+  order: 2;
+}
+.pdp-feature-media {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  background: var(--pdp-soft);
+}
+.pdp-feature-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pdp-feature-number {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-text);
+}
+.pdp-feature-copy h3 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.05;
+}
+.pdp-feature-copy p {
+  max-width: 440px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Diagram: numbered pins on the picture, the legend beside or below. */
+.pdp-diagram {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 48px;
+  align-items: center;
+  margin: 72px 0 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--pdp-product-bg);
+}
+.pdp-diagram-media {
+  position: relative;
+}
+.pdp-diagram-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+.pdp-diagram-pin,
+.pdp-diagram-legend li > span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 700;
+}
+.pdp-diagram-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--paper) 80%, transparent);
+}
+.pdp-diagram figcaption strong {
+  display: block;
+  margin-bottom: 14px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 26px;
+}
+.pdp-diagram-legend {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pdp-diagram-legend li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.pdp-diagram-legend li > span {
+  flex: none;
+}
+
+/* ---------- How to use ---------- */
+.pdp-howto {
+  padding: 96px 5%;
+  background: var(--pdp-soft);
+}
+.pdp-howto .pdp-section-head {
+  max-width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.pdp-howto-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.pdp-howto-steps li {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--shade) 6%, transparent);
+}
+.pdp-howto-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--line);
+}
+.pdp-howto-media img,
+.pdp-howto-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pdp-howto-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--on-accent);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+}
+.pdp-howto-copy {
+  padding: 20px 22px 24px;
+}
+.pdp-howto-copy h3 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+.pdp-howto-copy p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ---------- Who it's for ---------- */
+.pdp-whofor {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 96px 5%;
+}
+.pdp-whofor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.pdp-whofor-grid.has-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.pdp-whofor-grid.has-2,
+.pdp-whofor-grid.has-1 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 760px;
+  margin: 0 auto;
+}
+.pdp-whofor-media {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 14px;
+  border-radius: 16px;
+  background: var(--pdp-soft);
+}
+.pdp-whofor-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pdp-whofor h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.pdp-whofor p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- Guarantee ---------- */
+.pdp-guarantee {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 72px 5%;
+}
+.pdp-guarantee-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 36px;
+  align-items: center;
+  padding: 36px 40px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: color-mix(in oklab, var(--orange) 14%, var(--paper));
+}
+.pdp-guarantee-seal {
+  display: grid;
+  place-content: center;
+  width: 132px;
+  height: 132px;
+  border: 3px dashed color-mix(in oklab, var(--accent-text) 55%, transparent);
+  border-radius: 50%;
+  background: var(--paper);
+  text-align: center;
+  color: var(--accent-text);
+}
+.pdp-guarantee-seal strong {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 50px;
+  line-height: 0.9;
+}
+.pdp-guarantee-seal span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.pdp-guarantee-copy h2 {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.02;
+}
+.pdp-guarantee-copy > p {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ---------- Specs ---------- */
+.pdp-specs {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 5%;
+  align-items: start;
+}
+.pdp-specs .pdp-section-head {
+  margin: 0;
+}
+.pdp-specs .pdp-section-head h2 {
+  font-size: clamp(34px, 4vw, 52px);
+}
+.pdp-specs-list details {
+  border-bottom: 1px solid var(--line);
+}
+.pdp-specs-list details:first-child {
+  border-top: 1px solid var(--line);
+}
+.pdp-specs-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  font-size: 17px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+.pdp-specs-list summary::-webkit-details-marker {
+  display: none;
+}
+.pdp-specs-list summary svg {
+  flex: none;
+  transition: transform 0.2s ease;
+}
+.pdp-specs-list details[open] summary svg {
+  transform: rotate(45deg);
+}
+.pdp-specs-list details p {
+  margin: -4px 0 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.pdp-specs > .pdp-fine-print {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+/* ---------- Bundle / add-on ---------- */
+.pdp-bundle {
+  padding: 96px 5%;
+  background: var(--pdp-soft);
+}
+.pdp-bundle-intro {
+  max-width: 520px;
+  margin: 14px auto 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.pdp-bundle-grid {
+  display: grid;
+  max-width: 560px;
+  margin: 0 auto;
+  gap: 22px;
+}
+.pdp-bundle-grid.has-addon {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  max-width: 1000px;
+}
+.pdp-bundle-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+.pdp-bundle-card.is-main {
+  border: 2px solid var(--ink);
+}
+.pdp-bundle-media {
+  position: relative;
+  overflow: hidden; /* lets aspect-ratio win over the square photo */
+  aspect-ratio: 16 / 11;
+  background: var(--pdp-product-bg);
+}
+.pdp-bundle-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.pdp-bundle-qty {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.pdp-bundle-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 24px 24px;
+}
+.pdp-bundle-copy h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 26px;
+}
+.pdp-bundle-copy p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.pdp-bundle-copy .pdp-bundle-variant {
+  color: var(--ink);
+  font-weight: 600;
+}
+.pdp-bundle-variant a,
+.pdp-bundle-price a {
+  margin-left: 6px;
+  color: var(--accent-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pdp-bundle-copy .pdp-bundle-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: 4px 0 8px;
+  color: var(--ink);
+}
+.pdp-bundle-price s {
+  color: var(--muted);
+  font-size: 16px;
+}
+.pdp-bundle-price strong {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 28px;
+}
+.pdp-bundle-price small {
+  width: 100%;
+  font-size: 13px;
+  color: var(--muted);
+}
+.pdp-bundle-addon-label {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: color-mix(in oklab, var(--yellow) 70%, var(--paper));
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pdp-bundle-card form {
+  margin-top: auto;
+}
+.pdp-bundle-card .add-to-bag {
+  width: 100%;
+}
+.pdp-bundle-card.is-addon .add-to-bag {
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 800px) {
+  .pdp [data-template-section] > section,
+  .pdp #reviews,
+  .pdp #questions {
+    scroll-margin-top: 126px;
+  }
+  .pdp-problem,
+  .pdp-features,
+  .pdp-howto,
+  .pdp-whofor,
+  .pdp-bundle {
+    padding: 56px 16px;
+  }
+  .pdp-problem h2 {
+    margin: 6px 0 20px;
+    font-size: 34px;
+  }
+  .pdp-problem-list {
+    gap: 8px;
+  }
+  .pdp-problem-list li {
+    padding: 13px 14px;
+    font-size: 16px;
+  }
+  .pdp-problem-turn {
+    margin-top: 20px;
+    font-size: 19px;
+  }
+  .pdp-features .pdp-section-head,
+  .pdp-howto .pdp-section-head,
+  .pdp-whofor .pdp-section-head,
+  .pdp-bundle .pdp-section-head {
+    margin-bottom: 24px;
+  }
+  .pdp-feature {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .pdp-feature + .pdp-feature {
+    margin-top: 36px;
+  }
+  .pdp-feature.is-flipped .pdp-feature-media {
+    order: 0;
+  }
+  .pdp-feature-media {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+  }
+  .pdp-feature-copy h3 {
+    margin-bottom: 8px;
+    font-size: 26px;
+  }
+  .pdp-feature-copy p {
+    font-size: 16px;
+  }
+  .pdp-diagram {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 40px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+  .pdp-diagram figcaption strong {
+    margin-bottom: 10px;
+    font-size: 21px;
+  }
+  .pdp-diagram-legend {
+    gap: 8px;
+  }
+  .pdp-diagram-legend li {
+    font-size: 15px;
+  }
+  .pdp-diagram-pin,
+  .pdp-diagram-legend li > span {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+  /* How to use: three rows, picture left, words right, all in view. */
+  .pdp-howto-steps {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .pdp-howto-steps li {
+    display: grid;
+    grid-template-columns: 124px minmax(0, 1fr);
+    align-items: center;
+    border-radius: 14px;
+  }
+  .pdp-howto-media {
+    height: 100%;
+    min-height: 124px;
+    aspect-ratio: auto;
+  }
+  .pdp-howto-number {
+    top: 8px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+  .pdp-howto-copy {
+    padding: 14px 16px;
+  }
+  .pdp-howto-copy h3 {
+    margin-bottom: 4px;
+    font-size: 19px;
+  }
+  .pdp-howto-copy p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .pdp-whofor-grid,
+  .pdp-whofor-grid.has-3,
+  .pdp-whofor-grid.has-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+  }
+  .pdp-whofor-grid.has-1 {
+    grid-template-columns: 1fr;
+  }
+  .pdp-whofor-media {
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+  .pdp-whofor h3 {
+    font-size: 16px;
+  }
+  .pdp-whofor p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .pdp-guarantee {
+    padding: 48px 16px;
+  }
+  .pdp-guarantee-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .pdp-guarantee-seal {
+    width: 104px;
+    height: 104px;
+    margin: 0 auto;
+  }
+  .pdp-guarantee-seal strong {
+    font-size: 40px;
+  }
+  .pdp-guarantee-copy h2 {
+    font-size: 30px;
+  }
+  .pdp-guarantee-copy > p {
+    font-size: 15px;
+  }
+  .pdp-specs {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 48px 16px;
+  }
+  .pdp-specs .pdp-section-head h2 {
+    font-size: 34px;
+  }
+  .pdp-specs-list summary {
+    padding: 16px 0;
+    font-size: 16px;
+  }
+  .pdp-bundle-grid.has-addon {
+    grid-template-columns: 1fr;
+  }
+  .pdp-bundle-copy {
+    padding: 18px;
+  }
+  .pdp-bundle-copy h3 {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdp-section-nav,
+  .pdp-specs-list summary svg {
+    transition: none;
+  }
+}
+
+/* ---------- Phone trim (October 1, job pdp-trim-2026-10-01) ----------
+   Owner: the phone page was too long. One shorter rhythm for every section
+   below the hero, at most three features as compact rows, and no repeats of
+   what the trust row, specs and delivery sections already say. */
+@media (max-width: 800px) {
+  .pdp .pdp-problem,
+  .pdp .pdp-features,
+  .pdp .pdp-howto,
+  .pdp .pdp-whofor,
+  .pdp .pdp-compare,
+  .pdp .pdp-box,
+  .pdp .pdp-guarantee,
+  .pdp .pdp-specs,
+  .pdp .pdp-bundle,
+  .pdp .pdp-promise,
+  .pdp .faq-section {
+    padding: 40px 16px;
+  }
+  .pdp .pdp-reviews-slider {
+    padding: 40px 0;
+  }
+  .pdp .pdp-section-head,
+  .pdp .pdp-features .pdp-section-head,
+  .pdp .pdp-howto .pdp-section-head,
+  .pdp .pdp-whofor .pdp-section-head,
+  .pdp .pdp-bundle .pdp-section-head,
+  .pdp .pdp-compare .pdp-section-head,
+  .pdp .pdp-reviews-slider .pdp-section-head {
+    margin-bottom: 18px;
+  }
+  .pdp .pdp-problem h2 {
+    margin-bottom: 16px;
+    font-size: 30px;
+  }
+  .pdp .pdp-problem-turn {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+
+  /* Hero depth: the trust row under Add to bag, the specs accordion and
+     delivery & returns already cover these on phones. */
+  .pdp-hero-more .pdp-trust,
+  .pdp-hero-more .purchase-information {
+    display: none;
+  }
+
+  /* Features: three compact rows, picture left and words right. */
+  .pdp-feature:nth-of-type(n + 4) {
+    display: none;
+  }
+  .pdp-feature,
+  .pdp-feature.is-flipped {
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .pdp-feature + .pdp-feature {
+    margin-top: 12px;
+  }
+  .pdp-feature-media {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+  .pdp-feature-number {
+    margin-bottom: 2px;
+    font-size: 13px;
+  }
+  .pdp-feature-copy h3 {
+    margin-bottom: 4px;
+    font-size: 19px;
+    line-height: 1.15;
+  }
+  .pdp-feature-copy p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .pdp-diagram {
+    margin-top: 24px;
+  }
+  /* Diagram: legend beside the picture so both read at once. */
+  .pdp .pdp-diagram {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+  .pdp .pdp-diagram figcaption strong {
+    margin-bottom: 8px;
+    font-size: 17px;
+  }
+  .pdp .pdp-diagram-legend {
+    gap: 6px;
+  }
+  .pdp .pdp-diagram-legend li {
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.25;
+  }
+  .pdp .pdp-diagram-pin,
+  .pdp .pdp-diagram-legend li > span {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  /* Guarantee: smaller seal beside the heading. */
+  .pdp .pdp-guarantee-card {
+    grid-template-columns: 76px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    padding: 20px 18px;
+    text-align: left;
+  }
+  .pdp .pdp-guarantee-seal {
+    width: 76px;
+    height: 76px;
+    margin: 0;
+    border-width: 2px;
+  }
+  .pdp .pdp-guarantee-seal strong {
+    font-size: 28px;
+  }
+  .pdp .pdp-guarantee-seal span {
+    font-size: 10px;
+  }
+  .pdp .pdp-guarantee-copy h2 {
+    font-size: 24px;
+  }
+
+  /* Who it's for: square pictures. */
+  .pdp-whofor-media {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Bundle: picture floats beside the words; the button spans the card. */
+  .pdp-bundle-card {
+    display: block;
+  }
+  .pdp-bundle-media {
+    float: left;
+    width: 96px;
+    aspect-ratio: 1 / 1;
+    margin: 14px 0 6px 14px;
+    border-radius: 10px;
+  }
+  .pdp-bundle-qty {
+    top: 6px;
+    left: 6px;
+    padding: 2px 8px;
+    font-size: 14px;
+  }
+  .pdp .pdp-bundle-copy {
+    display: block;
+    padding: 14px;
+  }
+  .pdp .pdp-bundle-card .pdp-bundle-copy > * + * {
+    margin-top: 6px;
+  }
+  .pdp .pdp-bundle-card .pdp-bundle-copy > :not(form) {
+    margin-left: 110px;
+  }
+  .pdp .pdp-bundle-addon-label {
+    display: block;
+    width: fit-content;
+  }
+  .pdp .pdp-bundle-copy h3 {
+    font-size: 20px;
+  }
+  .pdp-bundle-card form {
+    clear: both;
+    padding-top: 6px;
+  }
+
+  /* Delivery & returns: tighter cards. */
+  .pdp .pdp-promise-grid {
+    gap: 10px;
+  }
+  .pdp .pdp-promise-grid article {
+    grid-template-columns: 44px 1fr;
+    padding: 14px 16px;
+  }
+  .pdp .pdp-promise-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .pdp .pdp-promise-grid h3 {
+    font-size: 18px;
+  }
+
+  /* FAQ: heading above, questions collapsed. */
+  .pdp .faq-section > div:first-child {
+    margin-bottom: 14px;
+  }
+  .pdp .faq-section h2 {
+    margin-bottom: 10px;
+    font-size: 34px;
+  }
+  .pdp .faq-list summary {
+    padding: 15px 0;
+  }
+}
+
+/* ---------- October 3: section pictures, word-only steps, the fit check
+   and packs that are their own variants. Every colour from tokens. ---------- */
+.pdp-section-picture {
+  overflow: hidden;
+  max-width: 760px;
+  margin: 0 auto 28px;
+  border-radius: 20px;
+  background: var(--pdp-soft);
+}
+.pdp-section-picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* How it works without step pictures: numbered cards. */
+.pdp-howto.is-text-only .pdp-howto-steps li {
+  padding: 26px 24px 28px;
+}
+.pdp-howto-number.is-plain {
+  position: static;
+  margin: 0 0 14px;
+}
+.pdp-howto.is-text-only .pdp-howto-copy {
+  padding: 0;
+}
+
+/* Who it's for with one picture: picture beside the cards, cards as words. */
+.pdp-whofor.has-picture .pdp-whofor-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.pdp-whofor.has-picture .pdp-section-picture {
+  max-width: none;
+  margin: 0;
+}
+.pdp-whofor.has-picture .pdp-whofor-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  max-width: none;
+  margin: 0;
+}
+.pdp-whofor article.is-text {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+}
+.pdp-whofor article.is-text h3 {
+  font-size: 18px;
+}
+
+/* What's in the set: the picture beside the list. */
+.pdp-box.has-picture {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    'picture head'
+    'picture list'
+    'picture note';
+  max-width: 1120px;
+}
+.pdp-box.has-picture .pdp-box-head {
+  grid-area: head;
+}
+.pdp-box.has-picture .pdp-box-list {
+  grid-area: list;
+}
+.pdp-box.has-picture > .pdp-fine-print {
+  grid-area: note;
+}
+.pdp-box-picture {
+  grid-area: picture;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 20px;
+  background: var(--pdp-soft);
+}
+.pdp-box-picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Fit check: a short at-home guide before ordering. */
+.pdp-fitcheck {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px 5%;
+}
+.pdp-fitcheck-card {
+  padding: 36px 40px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: color-mix(in oklab, var(--yellow) 42%, var(--paper));
+}
+.pdp-fitcheck .pdp-section-head {
+  margin-bottom: 0;
+}
+.pdp-fitcheck-intro {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.pdp-fitcheck-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pdp-fitcheck-steps li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px;
+  border-radius: 14px;
+  background: var(--paper);
+}
+.pdp-fitcheck-number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+.pdp-fitcheck-steps h3 {
+  margin: 6px 0 6px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.pdp-fitcheck-steps p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.pdp-fitcheck-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+.pdp-fitcheck-note svg {
+  flex: none;
+}
+
+/* The shipping promise under the packs. */
+.pdp .pdp-ship-line {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 2px 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.pdp .pdp-ship-line svg {
+  flex: none;
+  color: var(--accent-text);
+}
+
+/* Packs that are their own variants: three cards, price under the name. */
+.pdp-hero .bundle-options.is-variant-packs {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.pdp .is-variant-packs .bundle-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin: 0;
+  padding: 10px 12px 11px;
+}
+.pdp .is-variant-packs .bundle-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+/* Name, then price: every card lines its price up at the same height. */
+.pdp .is-variant-packs .bundle-option > span {
+  flex: none;
+}
+.pdp .is-variant-packs .bundle-option:has(input:focus-visible) {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+.pdp .is-variant-packs .bundle-option > b {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.pdp .is-variant-packs .bundle-option > b small {
+  display: block;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .pdp .pdp-fitcheck {
+    padding: 40px 16px;
+  }
+  .pdp-fitcheck-card {
+    padding: 22px 18px;
+  }
+  .pdp-fitcheck-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .pdp-fitcheck-steps li {
+    padding: 14px;
+  }
+  .pdp-fitcheck-note {
+    font-size: 14px;
+  }
+  .pdp-whofor.has-picture .pdp-whofor-body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .pdp-whofor article.is-text {
+    padding: 14px 16px;
+  }
+  .pdp-section-picture {
+    margin-bottom: 18px;
+    border-radius: 16px;
+  }
+  .pdp-box.has-picture {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'head'
+      'picture'
+      'list'
+      'note';
+  }
+  .pdp-howto.is-text-only .pdp-howto-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .pdp-howto.is-text-only .pdp-howto-steps li {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+    padding: 16px;
+  }
+  .pdp-howto.is-text-only .pdp-howto-number.is-plain {
+    margin: 0;
+  }
+  .pdp-howto.is-text-only .pdp-howto-copy h3 {
+    font-size: 20px;
+  }
+  /* Phones hide the pack note; the shipping promise stays. */
+  .pdp-hero .pdp-ship-line {
+    display: flex;
+    margin: 0 0 8px;
+    font-size: 11.5px;
+  }
+  .pdp-hero .is-variant-packs .bundle-option {
+    gap: 0;
+    padding: 4px 10px 5px;
+    line-height: 1.2;
+  }
+  .pdp-hero .is-variant-packs .bundle-option > b small {
+    display: block;
+    margin: 0;
+    font-size: 10px;
+  }
+}
+
+/* ---------- October 3: Why bath lovers switch. Pull quotes from other
+   sellers' reviews of the same item type, set like an editorial page so they
+   never read as our reviews: serif type, no cards, no stars, no names, a
+   plain source line under each quote and a note at the foot. ---------- */
+.pdp-quotes {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 96px 5%;
+}
+.pdp-quotes .pdp-section-head {
+  margin-bottom: 36px;
+}
+.pdp-quotes-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 56px;
+  border-top: 1px solid var(--ink);
+}
+.pdp-quote {
+  margin: 0;
+  padding: 30px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+.pdp-quote.is-lead {
+  grid-column: 1 / -1;
+  padding: 40px 0 36px;
+  text-align: center;
+}
+.pdp-quote-mark {
+  display: block;
+  height: 0.48em;
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--accent-text);
+}
+.pdp-quote.is-lead .pdp-quote-mark {
+  font-size: 88px;
+}
+.pdp-quote blockquote {
+  margin: 0;
+}
+.pdp-quote blockquote p {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.42;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.pdp-quote.is-lead blockquote p {
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.pdp-quote figcaption {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.pdp-quote figcaption::before {
+  content: '— ';
+}
+.pdp-quotes-note {
+  max-width: 640px;
+  margin: 26px auto 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--muted);
+}
+@media (max-width: 800px) {
+  .pdp-quotes {
+    padding: 56px 16px;
+  }
+  .pdp-quotes .pdp-section-head {
+    margin-bottom: 24px;
+  }
+  .pdp-quotes-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pdp-quote,
+  .pdp-quote.is-lead {
+    padding: 22px 0 20px;
+  }
+  .pdp-quote-mark {
+    font-size: 48px;
+  }
+  .pdp-quote.is-lead .pdp-quote-mark {
+    font-size: 64px;
+  }
+  .pdp-quote blockquote p {
+    font-size: 18px;
+  }
+  .pdp-quote.is-lead blockquote p {
+    font-size: 22px;
+  }
+  .pdp-quote figcaption {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .pdp-quotes-note {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+}
+
+/* ---------- October 3: What a better soak does. The features slot with
+   words only: four soft cards (no pictures), then a small foot note for the
+   source of the one general fact. On phones every card shows (the picture rows
+   stop at three; these are short and read in one scroll). ---------- */
+.pdp-features.is-text-only {
+  max-width: 1040px;
+}
+.pdp-feature-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.pdp-feature.is-text {
+  display: block;
+  padding: 30px 30px 32px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: color-mix(in oklab, var(--orange) 16%, var(--paper));
+}
+.pdp-features.is-text-only .pdp-feature + .pdp-feature {
+  margin-top: 0;
+}
+.pdp-feature.is-text .pdp-feature-copy h3 {
+  margin-bottom: 10px;
+  font-size: clamp(24px, 2.4vw, 30px);
+}
+.pdp-feature.is-text .pdp-feature-copy p {
+  max-width: none;
+  font-size: 16px;
+  color: var(--ink);
+}
+.pdp-features-note {
+  max-width: 640px;
+  margin: 24px auto 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--muted);
+}
+.pdp-quotes-sub {
+  text-wrap: pretty;
+  max-width: 560px;
+  margin: 12px auto 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+/* "Why take more baths": a line under the title, a line after the cards, then the sources. */
+.pdp-whofor .pdp-whofor-intro {
+  text-wrap: pretty;
+  max-width: 560px;
+  margin: 12px auto 0;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--muted);
+}
+.pdp-whofor .pdp-whofor-outro {
+  text-wrap: pretty;
+  max-width: 620px;
+  margin: 28px auto 0;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--ink);
+}
+.pdp-whofor .pdp-whofor-note {
+  max-width: 680px;
+  margin: 20px auto 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--muted);
+}
+@media (max-width: 800px) {
+  .pdp-whofor .pdp-whofor-intro {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+  .pdp-whofor .pdp-whofor-outro {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .pdp-whofor .pdp-whofor-note {
+    margin-top: 16px;
+    font-size: 12px;
+  }
+  /* Words-only cards: one column on a phone, so each line has room to read. */
+  .pdp-whofor-grid.is-words,
+  .pdp-whofor-grid.is-words.has-3,
+  .pdp-whofor-grid.is-words.has-2 {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .pdp-feature-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .pdp-features.is-text-only .pdp-feature.is-text,
+  .pdp-features.is-text-only .pdp-feature.is-text:nth-of-type(n + 4) {
+    display: block;
+    padding: 18px 18px 20px;
+    border-radius: 16px;
+  }
+  .pdp-feature.is-text .pdp-feature-copy h3 {
+    margin-bottom: 6px;
+    font-size: 21px;
+    line-height: 1.15;
+  }
+  .pdp-feature.is-text .pdp-feature-copy p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .pdp-features-note {
+    margin-top: 18px;
+    font-size: 12px;
+  }
+  .pdp-quotes-sub {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+}
+
+/* Closing line and folded sources (owner, Oct 3: the centered wall read awkwardly). */
+.pdp-whofor .pdp-whofor-outro {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.pdp-whofor .pdp-sources {
+  max-width: 680px;
+  margin: 18px auto 0;
+  text-align: left;
+}
+.pdp-whofor .pdp-sources summary {
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  list-style: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pdp-whofor .pdp-sources summary::-webkit-details-marker { display: none; }
+.pdp-whofor .pdp-sources ol {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+.pdp-whofor .pdp-sources li,
+.pdp-whofor .pdp-sources p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+}
+.pdp-whofor .pdp-sources p { margin-top: 10px; }
+@media (max-width: 800px) {
+  .pdp-whofor .pdp-whofor-outro { font-size: 18px; }
+}

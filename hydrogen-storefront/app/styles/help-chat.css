@@ -1,0 +1,338 @@
+/* Help chat bubble and panel (October 2). Phone first; every colour from
+   tokens. Shows only while the chat is live (OPENROUTER_API_KEY set). */
+
+.help-chat-bubble {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--shade) 24%, transparent);
+  cursor: pointer;
+  animation: help-chat-pop 300ms var(--motion-ease, ease-out) both;
+}
+.help-chat-bubble:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 3px;
+}
+/* Sit above the sticky Add to bag bar, never over it, and step aside for
+   the sign-up offer. */
+body:has(.sticky-buy.is-visible) .help-chat-bubble {
+  bottom: calc(92px + env(safe-area-inset-bottom));
+}
+body:has(.signup-pop) .help-chat-bubble:not(.is-open) {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes help-chat-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+.help-chat-panel {
+  position: fixed;
+  right: 16px;
+  bottom: calc(84px + env(safe-area-inset-bottom));
+  z-index: 31;
+  display: flex;
+  flex-direction: column;
+  width: min(380px, calc(100vw - 32px));
+  height: min(560px, calc(100dvh - 120px));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 18px 50px color-mix(in srgb, var(--shade) 22%, transparent);
+  overflow: hidden;
+}
+.help-chat-panel[hidden] {
+  display: none;
+}
+.help-chat-panel.is-open {
+  animation: help-chat-in 240ms var(--motion-ease, ease-out);
+  transform-origin: bottom right;
+}
+body:has(.sticky-buy.is-visible) .help-chat-panel {
+  bottom: calc(160px + env(safe-area-inset-bottom));
+  height: min(560px, calc(100dvh - 200px));
+}
+@keyframes help-chat-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.97);
+  }
+}
+
+.help-chat-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in oklab, var(--orange) 22%, var(--paper));
+}
+.help-chat-head strong {
+  display: block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.help-chat-head span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.help-chat-head a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.help-chat-head button {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.help-chat-lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 14px 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.help-chat-line {
+  max-width: 86%;
+}
+.help-chat-line p {
+  margin: 0;
+  padding: 9px 12px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.help-chat-line.is-merrivy p {
+  border-bottom-left-radius: 4px;
+  background: color-mix(in oklab, var(--line) 70%, var(--paper));
+}
+.help-chat-line.is-merrivy p a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.help-chat-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.help-chat-action-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 1px solid var(--ink);
+  border-radius: 99px;
+  background: color-mix(in oklab, var(--orange) 22%, var(--paper));
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform 0.15s, background 0.15s;
+}
+.help-chat-action-pill:hover {
+  background: color-mix(in oklab, var(--orange) 38%, var(--paper));
+  transform: translateY(-1px);
+}
+.help-chat-line.is-shopper {
+  align-self: flex-end;
+}
+.help-chat-line.is-shopper p {
+  border-bottom-right-radius: 4px;
+  background: var(--ink);
+  color: var(--paper);
+}
+.help-chat-line p.help-chat-tracking {
+  margin-top: 4px;
+  background: color-mix(in oklab, var(--yellow) 60%, var(--paper));
+  font-weight: 600;
+}
+.help-chat-tracking a {
+  color: var(--ink);
+  text-decoration: underline;
+}
+.help-chat-line {
+  animation: help-chat-line-in 220ms ease-out both;
+}
+@keyframes help-chat-line-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+}
+.help-chat-line.is-typing p {
+  display: flex;
+  gap: 4px;
+  padding: 12px 14px;
+}
+.help-chat-line.is-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: help-chat-dot 1s ease-in-out infinite;
+}
+.help-chat-line.is-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.help-chat-line.is-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes help-chat-dot {
+  50% {
+    opacity: 0.3;
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.help-chat-starters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 14px 10px;
+}
+.help-chat-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid var(--ink);
+  border-radius: 99px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.help-chat-chip.is-link {
+  background: color-mix(in oklab, var(--orange) 22%, var(--paper));
+}
+.help-chat-cancel {
+  align-self: flex-start;
+  margin: 0 14px 8px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.help-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+}
+.help-chat-form input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  background: var(--white);
+  color: var(--ink);
+  /* 16px keeps iOS from zooming in on focus. */
+  font: inherit;
+  font-size: 16px;
+}
+.help-chat-form input:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 1px;
+}
+.help-chat-send {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--on-accent);
+  cursor: pointer;
+}
+.help-chat-send:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Phones: the panel becomes a sheet across the bottom of the screen. */
+@media (max-width: 600px) {
+  .help-chat-panel,
+  body:has(.sticky-buy.is-visible) .help-chat-panel {
+    right: 8px;
+    left: 8px;
+    bottom: calc(8px + env(safe-area-inset-bottom));
+    width: auto;
+    height: min(78dvh, 600px);
+  }
+  .help-chat-bubble.is-open {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .help-chat-bubble,
+  .help-chat-panel.is-open,
+  .help-chat-line,
+  .help-chat-line.is-typing span {
+    animation: none;
+  }
+}
+
+/* Phones: on the product's first screen the bubble waits, so it never sits
+   on Add to bag; it returns (above the sticky bar) once the hero scrolls
+   away. */
+@media (max-width: 760px) {
+  .help-chat-bubble {
+    transition:
+      opacity 0.2s,
+      scale var(--motion-fast, 140ms) ease-out;
+  }
+  body:has(.pdp-hero):not(:has(.sticky-buy.is-visible))
+    .help-chat-bubble:not(.is-open) {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

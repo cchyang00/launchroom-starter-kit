@@ -1,0 +1,1278 @@
+{
+  "id": "master-base-theme",
+  "status": "live",
+  "templateId": "merrivy-standard",
+  "sections": [
+    "features",
+    "comparison",
+    "quotes",
+    "guarantee",
+    "faq"
+  ],
+  "productHandles": [
+    "base-theme",
+    "master-base-theme"
+  ],
+  "productUrl": "/products/base-theme",
+  "navLabel": "One-Touch Portable Electric Water Purifier",
+  "shortName": "One-Touch Portable Electric Water Purifier",
+  "theme": {
+    "name": "Slate & Ice",
+    "paper": "#F5F7FA",
+    "ink": "#141B24",
+    "muted": "#566375",
+    "line": "#DCE2EC",
+    "accent": "#285888",
+    "accentText": "#1C4066",
+    "onAccent": "#F5F7FA",
+    "highlight": "#EBF0F7",
+    "shade": "#EAEEF5"
+  },
+  "offer": {
+    "status": "live",
+    "discountPct": 35,
+    "freeShippingOver": 150,
+    "freeShippingThreshold": 150,
+    "shippingFee": 7.99,
+    "standardShipping": 7.99,
+    "shippingProtection": 4.99,
+    "currency": "USD",
+    "announcements": [
+      "FREE TRACKED U.S. SHIPPING ON THE 2-KIT FAMILY RESERVE (ORDERS $150+)",
+      "Military-Grade 6-Stage 0.01-Micron Ultrafiltration · 793 Gallons Per Cartridge",
+      "30-day risk-free home & trail guarantee · {support}"
+    ],
+    "bonus": {
+      "label": "Complete Tactical Field & Home Hardware Kit Included",
+      "text": "Includes weighted slotted pre-filter cage, food-grade silicone hoses, bottle-mouth clip, USB-C cable, and rugged zippered storage case.",
+      "verified": true
+    },
+    "signup": {
+      "eyebrow": "The Merrivy Field & Preparedness List",
+      "heading": "Join the list for military-grade home & backcountry hardware.",
+      "text": "Be first to hear when replacement 0.01-micron cartridges, off-grid water systems, and subscriber bundle offers go live.",
+      "cta": "Join the list",
+      "success": "You’re on the list! Watch your inbox for our next field & reserve release.",
+      "fineprint": "At most one email a week. Unsubscribe anytime."
+    },
+    "addOnIds": [],
+    "addOns": []
+  },
+  "buyer": {
+    "avatar": "U.S. storm-preparedness families, off-grid homesteaders, overlanders, and group campers ages 28–68 who demand military-grade 0.01-micron drinking water with one touch without hauling 40-lb plastic water cases or sucking through plastic straws.",
+    "situation": "Driving to the grocery store before a storm or boil-water notice only to find empty bottled-water shelves, or trying to fill four canteens and a family camp pot from a creek using a slow squeeze bag.",
+    "emotion": "Calm, prepared, and self-reliant knowing a single button press turns any freshwater source or rain barrel into 700 mL/min of crystal-clear 0.01-micron drinking water for the whole household.",
+    "evidence": "US Kalodata verified winner (L334 / ID 1732448481972097354, observed 2026-11-05): $74,660 US 7d GMV (2,080 units sold) led by @simplespoonfuls ($24,310 7d), @chiefgrunto ($21,540 7d), and @camiheals ($5,960 7d)."
+  },
+  "home": {
+    "meta": {
+      "title": "Merrivy | One-Touch Portable Electric Water Purifier (10/10 Master Base Theme)",
+      "description": "The 10/10 Merrivy Master Base Theme floor: Military-Grade 6-Stage 0.01-Micron Portable Electric Water Purifier with Sacred Oak persuasion arc, checkmark benefits, 2-Kit selector, and 52 palettes."
+    },
+    "eyebrow": "10/10 Master Base Theme · Sacred Oak Floor",
+    "heading": "One-Touch Portable\nElectric Water Purifier.",
+    "emphasis": "Pure water with one touch.",
+    "description": "Our 10/10 Master Base Theme floor: features & checkmarks in the hero, 3 viral creator demo videos, Don't Wait Until The Tap Runs Dry situational cards, One-Touch Electric vs. Old-School Filters comparison, and Look At What Our Customers Have To Say reviews.",
+    "cta": "Shop the Water Purifier",
+    "image": {
+      "src": "/images/water-purifier-pump/hero-1.webp",
+      "alt": "One-Touch Portable Electric Water Purifier turning murky water into pure drinking water",
+      "caption": "One-Touch Portable Electric Water Purifier"
+    },
+    "imageNote": "793 Gallons Per Filter · Free Shipping on 2-Kit Reserve",
+    "strip": [
+      "Pure drinking water with one touch",
+      "793 gallons per filter (6,000 bottles)",
+      "30-day risk-free guarantee"
+    ],
+    "featureHeading": "Don't Wait Until\nThe Tap Runs Dry.",
+    "featureDescription": "Turn any tap, creek, or rain barrel into pure drinking water with one touch, zero manual pumping or plastic straws.",
+    "featureImage": {
+      "src": "/images/water-purifier-pump/why-1-home-storm.webp",
+      "alt": "Pressing one button on the kitchen counter during a storm to filter water into a clean glass pitcher",
+      "caption": "Home storm & blackout water reserve"
+    },
+    "featureStamp": "0.01-Micron Purity.",
+    "featureEmphasis": "Ready for any storm.",
+    "moments": {
+      "eyebrow": "Built for home emergencies & off-grid trails",
+      "heading": "Why families keep one at home",
+      "emphasis": "and one in the truck.",
+      "note": "",
+      "items": [
+        {
+          "label": "Home Storm Reserve",
+          "title": "When Boil-Water Alerts Empty Store Shelves.",
+          "text": "Keep one compact pouch under your kitchen sink to purify tap water or rain barrels for months.",
+          "image": {
+            "src": "/images/water-purifier-pump/why-1-home-storm.webp",
+            "alt": "Pressing one button on the kitchen counter during a storm"
+          }
+        },
+        {
+          "label": "Hands-Free Group Water",
+          "title": "When Your Family Needs Jugs, Not a Straw.",
+          "text": "Clip the hose to a 1-gallon jug or camp pot and fill pure drinking water for everyone hands-free.",
+          "image": {
+            "src": "/images/water-purifier-pump/why-2-family-camp.webp",
+            "alt": "Hands-free electric water purifier filling a 1-gallon jug at camp"
+          }
+        }
+      ]
+    }
+  },
+  "hero": {
+    "eyebrow": "★★★★★ 4.9/5 FROM 2,080+ U.S. FAMILIES & BACKCOUNTRY CAMPERS",
+    "headline": "One-Touch Portable Electric Water Purifier",
+    "subhead": "Don't wait until a boil-water alert or blackout leaves your family without drinking water. Get this military-grade 0.01-micron purifier now to turn any tap, creek, or rain barrel into pure drinking water with one touch.",
+    "benefits": [
+      {
+        "icon": "check",
+        "text": "Pure Drinking Water With One Touch"
+      },
+      {
+        "icon": "check",
+        "text": "793 Gallons Per Filter (6,000 Bottles)"
+      },
+      {
+        "icon": "check",
+        "text": "Zero Manual Pumping Or Straws"
+      },
+      {
+        "icon": "check",
+        "text": "Built-In USB-C Battery & SOS Light"
+      }
+    ],
+    "ctaLabel": "Add to Bag",
+    "guaranteeNote": "30-day risk-free guarantee · Ships in 8–12 business days",
+    "shipping": "30-day risk-free guarantee · Free U.S. shipping on the 2-Kit Reserve · Ships with tracking in 8–12 business days",
+    "trustRow": [
+      {
+        "icon": "return",
+        "text": "30-day risk-free home & trail guarantee"
+      },
+      {
+        "icon": "truck",
+        "text": "Tracked U.S. delivery in 8–12 business days"
+      },
+      {
+        "icon": "chat",
+        "text": "Real human support within 1 business day"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/images/water-purifier-pump/hero-1.webp",
+        "alt": "Military-Grade 6-Stage 0.01-Micron Portable Electric Water Purifier Pump turning murky water into pure drinking water with one touch",
+        "label": "Military-Grade Hero",
+        "caption": "Military-Grade 6-Stage 0.01-Micron Electric Water Purifier System · Pure Water With One Touch",
+        "role": "hero"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-2.webp",
+        "alt": "Inside the 6-stage 0.01-micron medical-grade filtration system showing slotted pre-filter cage, PP cotton, KDF-55 heavy-metal media, coconut carbon, and 0.01-micron UF membrane",
+        "label": "6-Stage 0.01μm",
+        "title": "MILITARY-GRADE 6-STAGE 0.01-MICRON ULTRAFILTRATION",
+        "caption": "Slotted Pre-Filter + PP Cotton + KDF-55 + Coconut Carbon + 0.01μm Medical-Grade UF Membrane",
+        "role": "features"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-3.webp",
+        "alt": "One compact 15.9 oz military-grade water purifier pump replacing 150+ heavy 40-pack cases (6,000 bottles) with 793 gallons of pure water",
+        "label": "793-Gal Reserve",
+        "title": "1 COMPACT PUMP = 793 GALLONS (3,000 LITERS)",
+        "caption": "Replaces 150+ Heavy 40-Pack Cases of Bottled Water · 6+ Months of Family Emergency Water",
+        "role": "in-use"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-4.webp",
+        "alt": "4 reasons this military-grade electric water purifier beats old-school manual squeeze and gravity filters",
+        "label": "Why Electric Wins",
+        "title": "PRESSURIZED 700 mL/MIN FLOW WITH ONE TOUCH",
+        "caption": "Zero Mouth Suction · Fill Family Pots & Jugs · Built-In Emergency SOS LED Flashlight",
+        "role": "comparison"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-5.webp",
+        "alt": "Side-by-side comparison of cheap 0.2-micron manual filter straws versus our military-grade 6-stage 0.01-micron electric purifier pump",
+        "label": "Us vs. Straws",
+        "title": "STOP SUCKING MUD THROUGH A PLASTIC STRAW",
+        "caption": "20× Finer 0.01-Micron Filtration & Hands-Free 700 mL/min Flow vs. Exhausting 0.2μm Straws",
+        "role": "in-the-box"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-6.webp",
+        "alt": "Built for grid-down blackouts and boil-water alerts with a 4,000mAh USB-C rechargeable battery and integrated emergency SOS flashlight",
+        "label": "Blackout Ready",
+        "title": "BUILT FOR GRID-DOWN BLACKOUTS & BOIL-WATER ALERTS",
+        "caption": "4,000mAh USB-C Battery Filters Up to 200 Liters Per Charge · Recharges via Power Bank or Solar",
+        "role": "features"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-7.webp",
+        "alt": "Complete 5-piece emergency water purification kit including purifier pump, weighted pre-filter and intake hose, outlet hose with clip, USB-C cable, and heavy-duty tactical carry pouch",
+        "label": "Complete Kit",
+        "title": "COMPLETE 5-PIECE TACTICAL WATER PURIFICATION KIT",
+        "caption": "Purifier Pump · Weighted Pre-Filter · Silicone Hoses & Clip · USB-C Cable · Heavy-Duty Carry Pouch",
+        "role": "in-the-box"
+      }
+    ]
+  },
+  "purchase": {
+    "eyebrow": "CHOOSE YOUR SYSTEM",
+    "heading": "One-Touch Portable Electric Water Purifier",
+    "hook": "Don't wait until a boil-water alert or blackout leaves your family without drinking water. Get this military-grade 0.01-micron purifier now to turn any tap, creek, or rain barrel into pure drinking water with one touch.",
+    "description": "Includes the Electric Water Purifier Pump, dual internal 793-gallon filters, weighted pre-filter intake cage, silicone hoses, bottle clip, USB-C cable, and rugged zippered storage case.",
+    "benefits": [
+      "Pure Drinking Water With One Touch",
+      "793 Gallons Per Filter (6,000 Bottles)",
+      "Zero Manual Pumping Or Straws",
+      "Built-In USB-C Battery & SOS Light"
+    ],
+    "gallery": [
+      {
+        "src": "/images/water-purifier-pump/hero-1.webp",
+        "alt": "Military-Grade 6-Stage 0.01-Micron Portable Electric Water Purifier Pump turning murky water into pure drinking water with one touch",
+        "label": "Military-Grade Hero",
+        "caption": "Military-Grade 6-Stage 0.01-Micron Electric Water Purifier System · Pure Water With One Touch",
+        "role": "hero"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-2.webp",
+        "alt": "Inside the 6-stage 0.01-micron medical-grade filtration system showing slotted pre-filter cage, PP cotton, KDF-55 heavy-metal media, coconut carbon, and 0.01-micron UF membrane",
+        "label": "6-Stage 0.01μm",
+        "title": "MILITARY-GRADE 6-STAGE 0.01-MICRON ULTRAFILTRATION",
+        "caption": "Slotted Pre-Filter + PP Cotton + KDF-55 + Coconut Carbon + 0.01μm Medical-Grade UF Membrane",
+        "role": "features"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-3.webp",
+        "alt": "One compact 15.9 oz military-grade water purifier pump replacing 150+ heavy 40-pack cases (6,000 bottles) with 793 gallons of pure water",
+        "label": "793-Gal Reserve",
+        "title": "1 COMPACT PUMP = 793 GALLONS (3,000 LITERS)",
+        "caption": "Replaces 150+ Heavy 40-Pack Cases of Bottled Water · 6+ Months of Family Emergency Water",
+        "role": "in-use"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-4.webp",
+        "alt": "4 reasons this military-grade electric water purifier beats old-school manual squeeze and gravity filters",
+        "label": "Why Electric Wins",
+        "title": "PRESSURIZED 700 mL/MIN FLOW WITH ONE TOUCH",
+        "caption": "Zero Mouth Suction · Fill Family Pots & Jugs · Built-In Emergency SOS LED Flashlight",
+        "role": "comparison"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-5.webp",
+        "alt": "Side-by-side comparison of cheap 0.2-micron manual filter straws versus our military-grade 6-stage 0.01-micron electric purifier pump",
+        "label": "Us vs. Straws",
+        "title": "STOP SUCKING MUD THROUGH A PLASTIC STRAW",
+        "caption": "20× Finer 0.01-Micron Filtration & Hands-Free 700 mL/min Flow vs. Exhausting 0.2μm Straws",
+        "role": "in-the-box"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-6.webp",
+        "alt": "Built for grid-down blackouts and boil-water alerts with a 4,000mAh USB-C rechargeable battery and integrated emergency SOS flashlight",
+        "label": "Blackout Ready",
+        "title": "BUILT FOR GRID-DOWN BLACKOUTS & BOIL-WATER ALERTS",
+        "caption": "4,000mAh USB-C Battery Filters Up to 200 Liters Per Charge · Recharges via Power Bank or Solar",
+        "role": "features"
+      },
+      {
+        "src": "/images/water-purifier-pump/hero-7.webp",
+        "alt": "Complete 5-piece emergency water purification kit including purifier pump, weighted pre-filter and intake hose, outlet hose with clip, USB-C cable, and heavy-duty tactical carry pouch",
+        "label": "Complete Kit",
+        "title": "COMPLETE 5-PIECE TACTICAL WATER PURIFICATION KIT",
+        "caption": "Purifier Pump · Weighted Pre-Filter · Silicone Hoses & Clip · USB-C Cable · Heavy-Duty Carry Pouch",
+        "role": "in-the-box"
+      }
+    ],
+    "offerLabel": "Bundle & Save",
+    "offerChoices": [
+      {
+        "id": "1-kit",
+        "quantity": 1,
+        "variant": "1 Kit (793-Gallon System)",
+        "label": "Buy 1 · Standard Kit",
+        "caption": "1 Complete Purifier System · 793-Gallon Capacity",
+        "price": 129.99,
+        "compareAtPrice": 199
+      },
+      {
+        "id": "2-kit",
+        "quantity": 2,
+        "variant": "2 Kits (Home + Vehicle Reserve · Save 15%)",
+        "label": "2-Kit Family & Go-Bag Reserve",
+        "caption": "Keep 1 at Home + 1 in Your Truck · You Save $40 + Free Shipping",
+        "badge": "★ MOST POPULAR · BEST VALUE",
+        "default": true,
+        "price": 219.98,
+        "compareAtPrice": 398
+      }
+    ],
+    "trust": [
+      {
+        "icon": "truck",
+        "title": "Free shipping on 2-Kit Reserve"
+      },
+      {
+        "icon": "return",
+        "title": "30-day guarantee"
+      },
+      {
+        "icon": "chat",
+        "title": "{support}"
+      }
+    ],
+    "disclosures": [
+      {
+        "title": "What's Included in Every Kit",
+        "text": "1× Military-Grade Electric 0.01-Micron Water Purifier Pump, 1× Dual-Stage Internal UF + Coconut Carbon Cartridge Set (793-gallon capacity), 1× Weighted Pre-Filter Cage with Float, Food-Grade Silicone Intake & Outlet Hoses, Bottle-Mouth Clip, USB-C Charging Cable, and Hard Zippered Carry Pouch.",
+        "href": "",
+        "linkLabel": ""
+      },
+      {
+        "title": "Care, Backflushing & Storage",
+        "text": "After each trip, pump clean water through the system for 15 seconds, then run air for 10 seconds to clear the silicone hoses. Let hoses dry completely before storing in the zippered case.",
+        "href": "",
+        "linkLabel": ""
+      },
+      {
+        "title": "Tracked Shipping & 30-Day Guarantee",
+        "text": "Dispatched in 1–2 business days with tracked U.S. delivery in 8–12 business days. Free shipping on orders over $150 (included automatically on the 2-Kit Reserve). Covered by our 30-day money-back guarantee.",
+        "href": "/returns",
+        "linkLabel": "Returns & guarantee"
+      }
+    ],
+    "assurance": [
+      {
+        "label": "Delivery",
+        "value": "8–12 business days with full U.S. tracking (1–2 day dispatch)"
+      },
+      {
+        "label": "Returns",
+        "value": "30-day risk-free home & trail money-back guarantee"
+      },
+      {
+        "label": "Support",
+        "value": "Human email support within 1 business day"
+      }
+    ],
+    "delivery": {
+      "processingDays": [
+        1,
+        2
+      ],
+      "transitDays": [
+        8,
+        12
+      ],
+      "note": "Tracked U.S. shipping from our fulfillment center; free on the 2-Kit Family Reserve (orders $150+)."
+    },
+    "guidance": {
+      "kind": "omit",
+      "label": "",
+      "title": "",
+      "intro": "",
+      "diagramAlt": "",
+      "steps": [],
+      "limit": "",
+      "chart": []
+    }
+  },
+  "benefits": {
+    "eyebrow": "Why families & campers are switching",
+    "heading": "Military-grade 0.01-micron purity.\nPressurized flow with one touch.",
+    "items": [
+      {
+        "title": "Pressurized 700 mL/min flow with one touch.",
+        "text": "Drop the weighted pre-filter cage into the water, clip the outlet hose to your bottle or pitcher, and press once. No squeezing bags or sucking through straws.",
+        "image": {
+          "src": "/images/water-purifier-pump/hero-1.webp",
+          "alt": "Military-grade 6-stage electric water purifier pump filling a glass with one touch"
+        }
+      },
+      {
+        "title": "Military-grade 6-stage 0.01-micron UF + carbon filtration.",
+        "text": "Slotted sediment cage, dual PP cotton, KDF-55 heavy-metal media, coconut-shell activated carbon, and a 0.01-micron hollow-fiber membrane (20× finer than 0.2μm straws) block 99.9999% of sediment, bacteria, protozoa, and foul odors.",
+        "image": {
+          "src": "/images/water-purifier-pump/hero-1.webp",
+          "alt": "Military-grade 6-stage 0.01-micron ultrafiltration system"
+        }
+      },
+      {
+        "title": "793-gallon tactical reserve + 4,000mAh USB-C battery with SOS light.",
+        "text": "One internal cartridge filters up to 793 gallons (3,000L), replacing 150+ heavy cases of bottled water, and pumps up to 52 gallons per USB-C charge with an integrated emergency LED flashlight and SOS strobe.",
+        "image": {
+          "src": "/images/water-purifier-pump/hero-1.webp",
+          "alt": "USB-C rechargeable battery and built-in emergency LED work light and SOS strobe"
+        }
+      }
+    ]
+  },
+  "comparison": {
+    "eyebrow": "SIDE-BY-SIDE COMPARISON",
+    "heading": "One-Touch Electric vs. Old-School Filters",
+    "subhead": "",
+    "oursLabel": "One-Touch Electric Purifier",
+    "theirsLabel": "Plastic Straws & Manual Pumps",
+    "us": "One-Touch Electric Purifier",
+    "them": "Plastic Straws & Manual Pumps",
+    "columns": [
+      "Feature",
+      "One-Touch Electric Purifier",
+      "Plastic Straws & Manual Pumps"
+    ],
+    "rows": [
+      {
+        "label": "How You Get Water",
+        "ours": "Automatic 700 mL/min electric flow with one touch fills any bottle, jug, or pot hands-free",
+        "theirs": "Sucking directly over dirty water on hands & knees or exhausting manual hand pumping",
+        "feature": "How You Get Water",
+        "us": "Automatic 700 mL/min electric flow with one touch fills any bottle, jug, or pot hands-free",
+        "them": "Sucking directly over dirty water on hands & knees or exhausting manual hand pumping",
+        "values": [
+          "Automatic 700 mL/min electric flow with one touch fills any bottle, jug, or pot hands-free",
+          "Sucking directly over dirty water on hands & knees or exhausting manual hand pumping"
+        ]
+      },
+      {
+        "label": "Filtration Pore Size",
+        "ours": "Military-grade 6-stage 0.01-micron (10 nm) medical UF membrane + KDF-55 & coconut carbon",
+        "theirs": "0.2-micron single-stage straw (20× larger pores) that leaves water tasting like mud",
+        "feature": "Filtration Pore Size",
+        "us": "Military-grade 6-stage 0.01-micron (10 nm) medical UF membrane + KDF-55 & coconut carbon",
+        "them": "0.2-micron single-stage straw (20× larger pores) that leaves water tasting like mud",
+        "values": [
+          "Military-grade 6-stage 0.01-micron (10 nm) medical UF membrane + KDF-55 & coconut carbon",
+          "0.2-micron single-stage straw (20× larger pores) that leaves water tasting like mud"
+        ]
+      },
+      {
+        "label": "Family & Group Sharing",
+        "ours": "Fills pitchers, 1-gallon jugs, hydration bladders, and family cookpots effortlessly",
+        "theirs": "Single-person mouthpiece or slow gravity bags that require a tree branch",
+        "feature": "Family & Group Sharing",
+        "us": "Fills pitchers, 1-gallon jugs, hydration bladders, and family cookpots effortlessly",
+        "them": "Single-person mouthpiece or slow gravity bags that require a tree branch",
+        "values": [
+          "Fills pitchers, 1-gallon jugs, hydration bladders, and family cookpots effortlessly",
+          "Single-person mouthpiece or slow gravity bags that require a tree branch"
+        ]
+      },
+      {
+        "label": "Total Water Capacity",
+        "ours": "793 gallons (3,000 L) per cartridge replaces 150+ heavy 40-pack cases (6,000 bottles)",
+        "theirs": "Plastic cases take up half the garage and run out in 72 hours during an emergency",
+        "feature": "Total Water Capacity",
+        "us": "793 gallons (3,000 L) per cartridge replaces 150+ heavy 40-pack cases (6,000 bottles)",
+        "them": "Plastic cases take up half the garage and run out in 72 hours during an emergency",
+        "values": [
+          "793 gallons (3,000 L) per cartridge replaces 150+ heavy 40-pack cases (6,000 bottles)",
+          "Plastic cases take up half the garage and run out in 72 hours during an emergency"
+        ]
+      },
+      {
+        "label": "Blackout & Storm Readiness",
+        "ours": "Built-in 4,000mAh USB-C lithium battery + emergency LED flashlight & SOS strobe",
+        "theirs": "No lighting, no power, or requires municipal tap water pressure to run",
+        "feature": "Blackout & Storm Readiness",
+        "us": "Built-in 4,000mAh USB-C lithium battery + emergency LED flashlight & SOS strobe",
+        "them": "No lighting, no power, or requires municipal tap water pressure to run",
+        "values": [
+          "Built-in 4,000mAh USB-C lithium battery + emergency LED flashlight & SOS strobe",
+          "No lighting, no power, or requires municipal tap water pressure to run"
+        ]
+      }
+    ],
+    "note": ""
+  },
+  "howItWorks": {
+    "eyebrow": "3 SIMPLE STEPS",
+    "heading": "Pure Drinking Water in Under 60 Seconds",
+    "steps": [
+      {
+        "title": "Drop the Weighted Intake Hose In",
+        "text": "Connect the silicone hoses and place the weighted slotted pre-filter cage into the water source so it stays below surface debris."
+      },
+      {
+        "title": "Clip the Outlet to Your Bottle or Pitcher",
+        "text": "Attach the bottle-mouth clip to any canteen, Nalgene, hydration bladder, or kitchen pitcher for hands-free filling."
+      },
+      {
+        "title": "Press Once for 700 mL/min Flow",
+        "text": "Press the top button once for pressurized flow. After filling containers, run air for 10 seconds to clear the lines before storing."
+      }
+    ]
+  },
+  "inTheBox": {
+    "eyebrow": "WHAT'S IN THE BOX",
+    "heading": "Complete Ready-to-Run Filtration Kit in Every Case",
+    "image": "/images/water-purifier-pump/hero-7.webp",
+    "alt": "Complete what's in the box flat-lay showing the military-grade electric purifier unit, dual 0.01-micron filters, intake and outlet silicone hoses, bottle clip, USB-C cable, and storage pouch",
+    "pictureHasText": true,
+    "items": [
+      {
+        "qty": "1×",
+        "quantity": "1×",
+        "name": "Military-Grade Electric 0.01-Micron Water Purifier Pump",
+        "text": "BPA-free food-grade ABS housing with installed 6-stage ultrafiltration cartridge, LED work light, and SOS beacon."
+      },
+      {
+        "qty": "1×",
+        "quantity": "1×",
+        "name": "Weighted Pre-Filter Cage + Silicone Intake & Outlet Hoses",
+        "text": "Color-coded food-grade silicone tubing with float bobber and bottle-mouth clip for hands-free filling."
+      },
+      {
+        "qty": "1×",
+        "quantity": "1×",
+        "name": "USB-C Charging Cable + Hard Zippered Storage Case",
+        "text": "Keeps the pump, hoses, and charging cable organized in a kitchen cabinet, truck console, or backpack."
+      },
+      {
+        "qty": "Included",
+        "quantity": "Included",
+        "name": "Complete Tactical Field & Home Hardware Kit",
+        "text": "Included with every order: weighted slotted pre-filter cage, food-grade silicone hoses, bottle-mouth clip, USB-C cable, and rugged zippered storage case."
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Filtration Precision",
+        "value": "0.01 microns (6-stage PP cotton + KDF-55 + hollow-fiber UF + coconut activated carbon)"
+      },
+      {
+        "label": "Flow Rate",
+        "value": "700 mL/min (23.6 fl oz per minute) with one touch"
+      },
+      {
+        "label": "Cartridge Lifespan",
+        "value": "Up to 793 gallons (3,000 liters)"
+      },
+      {
+        "label": "Battery Output per Charge",
+        "value": "Up to 52 gallons (200 liters) via 4,000mAh USB-C rechargeable lithium battery"
+      },
+      {
+        "label": "Dimensions & Weight",
+        "value": "6.5 × 3.7 × 3.1 in · 15.9 oz (450 g)"
+      }
+    ],
+    "note": "Upgrading to the 2-Kit Family & Go-Bag Reserve ($219.98, Save 15% + FREE Tracked U.S. Shipping) gives you two complete independent 793-gallon systems."
+  },
+  "problem": {
+    "eyebrow": "THE PROBLEM WITH STRAWS & BOTTLED WATER CASES",
+    "headline": "Why Standard Emergency Water Plans Fail When Storms Hit",
+    "heading": "Why Standard Emergency Water Plans Fail When Storms Hit",
+    "situations": [
+      "Plastic water cases take up half the garage and run out in 72 hours when a storm or boil-water notice hits.",
+      "Personal suction straws require kneeling face-down over a muddy bank and cannot fill a family cookpot or pitcher.",
+      "Manual hand pumps and gravity bags clog with silt and wear out wrists before two bottles are full."
+    ],
+    "turn": "One press of the power button pulls water through a weighted pre-filter and 6-stage 0.01-micron membrane right into any bottle.",
+    "icons": [
+      "drop",
+      "hand",
+      "timer"
+    ]
+  },
+  "features": {
+    "eyebrow": "",
+    "heading": "Don't Wait Until The Tap Runs Dry",
+    "navLabel": "Why It's For You",
+    "subhead": "",
+    "items": [
+      {
+        "icon": "power",
+        "label": "01 · Storms & Boil-Water Alerts",
+        "title": "When Boil-Water Alerts Empty Store Shelves",
+        "text": "Grocery shelves run out of bottled water in two hours when a storm hits. Keep one compact pouch under your sink to purify tap water or rain barrels for months.",
+        "description": "Grocery shelves run out of bottled water in two hours when a storm hits. Keep one compact pouch under your sink to purify tap water or rain barrels for months.",
+        "image": "/images/water-purifier-pump/why-1-home-storm.webp",
+        "alt": "Pressing one button on the kitchen counter during a storm to filter water into a clean glass pitcher",
+        "stat": "Home Storm Reserve"
+      },
+      {
+        "icon": "waves",
+        "label": "02 · Whole-Family Group Water",
+        "title": "When Your Family Needs Jugs, Not a Straw",
+        "text": "Skip kneeling over muddy banks with a plastic straw. Clip the hose to a 1-gallon jug or camp pot and fill pure drinking water for everyone hands-free.",
+        "description": "Skip kneeling over muddy banks with a plastic straw. Clip the hose to a 1-gallon jug or camp pot and fill pure drinking water for everyone hands-free.",
+        "image": "/images/water-purifier-pump/why-2-family-camp.webp",
+        "alt": "Hands-free electric water purifier filling a 1-gallon jug beside a mountain stream at camp",
+        "stat": "Hands-Free Group Filling"
+      },
+      {
+        "icon": "feather",
+        "label": "03 · Truck, RV & Go-Bag Ready",
+        "title": "When You're On the Highway or Off-Grid",
+        "text": "Fits right in your truck console or go-bag at 15.9 oz, recharges from any USB-C car port or power bank, and lights the dark with its built-in flashlight.",
+        "description": "Fits right in your truck console or go-bag at 15.9 oz, recharges from any USB-C car port or power bank, and lights the dark with its built-in flashlight.",
+        "image": "/images/water-purifier-pump/why-3-truck-gobag.webp",
+        "alt": "Compact emergency water purifier on a truck tailgate with built-in LED flashlight and USB-C power bank",
+        "stat": "15.9 oz Truck & Go-Bag Kit"
+      }
+    ],
+    "note": ""
+  },
+  "howToUse": {
+    "eyebrow": "3 SIMPLE STEPS",
+    "heading": "Pure Drinking Water in Under 60 Seconds",
+    "image": "",
+    "alt": "",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Drop the Weighted Intake Hose In",
+        "text": "Connect the silicone hoses and place the weighted slotted pre-filter cage into the water source so it stays below surface debris.",
+        "image": "",
+        "alt": "",
+        "icon": "drop"
+      },
+      {
+        "step": "02",
+        "title": "Clip the Outlet to Your Bottle or Pitcher",
+        "text": "Attach the bottle-mouth clip to any canteen, Nalgene, hydration bladder, or kitchen pitcher for hands-free filling.",
+        "image": "",
+        "alt": "",
+        "icon": "hand"
+      },
+      {
+        "step": "03",
+        "title": "Press Once for 700 mL/min Flow",
+        "text": "Press the top button once for pressurized flow. After filling containers, run air for 10 seconds to clear the lines before storing.",
+        "image": "",
+        "alt": "",
+        "icon": "power"
+      }
+    ]
+  },
+  "whoFor": {
+    "eyebrow": "BUILT FOR",
+    "heading": "Engineered for Household Emergency Reserves, Basecamp & Off-Grid Travel",
+    "intro": "Designed for anyone who demands military-grade drinking water for a whole group without plastic waste or manual pumping:",
+    "image": "",
+    "alt": "",
+    "pictureHasText": false,
+    "items": [
+      {
+        "icon": "power",
+        "label": "Storm, Blackout & Boil-Water Preparedness",
+        "title": "Storm, Blackout & Boil-Water Preparedness",
+        "text": "Keep one system under the kitchen sink to purify tap water, rain barrels, or stored containers when municipal water lines fail.",
+        "image": "",
+        "alt": ""
+      },
+      {
+        "icon": "waves",
+        "label": "Group Campers, Hunters & Overlanders",
+        "title": "Group Campers, Hunters & Overlanders",
+        "text": "Fill every canteen, hydration bladder, and camp kettle in minutes with zero hand fatigue at the creek.",
+        "image": "",
+        "alt": ""
+      },
+      {
+        "icon": "feather",
+        "label": "Truck, RV & Tactical Go-Bag Kits",
+        "title": "Truck, RV & Tactical Go-Bag Kits",
+        "text": "Weighs just 15.9 oz in its rugged zippered pouch and recharges from any USB-C car port, power bank, or solar panel.",
+        "image": "",
+        "alt": ""
+      }
+    ],
+    "outro": "Most households choose the 2-Kit Reserve to keep one system in the kitchen pantry and a second system in the vehicle.",
+    "note": ""
+  },
+  "didYouKnow": {
+    "kind": "omit",
+    "eyebrow": "",
+    "heading": "",
+    "items": []
+  },
+  "pullQuotes": {
+    "eyebrow": "CUSTOMER REVIEWS",
+    "heading": "Look At What Our Customers Have To Say",
+    "subheading": "What buyers say about one-touch 0.01-micron electric water purifier pumps like ours on TikTok Shop",
+    "note": "Verbatim buyer comments from other sellers' listings on TikTok Shop",
+    "evidence": "TikTok Shop US @simplespoonfuls ($24,310 7d), @chiefgrunto ($21,540 7d) & @camiheals ($5,960 7d) videos (L334 / 1732448481972097354, $74,660 US 7d GMV, observed 2026-11-05).",
+    "items": [
+      {
+        "id": "water-pump-q1",
+        "text": "Tested it on a murky creek behind our cabin before putting it in our hurricane bin. Dropped the pre-filter in, hit the button once, and filled three 32 oz bottles in under three minutes. The water came out completely clear with zero pond taste.",
+        "review": "https://www.tiktok.com/@simplespoonfuls/video/7562755679056923934"
+      },
+      {
+        "id": "water-pump-q2",
+        "text": "Trying to get small family members to suck water through a stiff straw during a camping trip is miserable. With this electric pump I just clip the outlet hose to our 1-gallon jug, press the button, and everyone has clean drinking water.",
+        "review": "https://www.tiktok.com/@simplespoonfuls/video/7562755679056923934"
+      },
+      {
+        "id": "water-pump-q3",
+        "text": "Every hurricane season in Florida our supermarket shelves empty out in two hours. Having two of these 793-gallon systems, one under the kitchen sink and one in my truck, gives us 1,586 gallons of clean water without storing pallets of plastic.",
+        "review": "https://www.tiktok.com/@simplespoonfuls/video/7562755679056923934"
+      },
+      {
+        "id": "water-pump-q4",
+        "text": "Brought this on a 3-day backcountry loop in Colorado. Instead of five guys hunched over a freezing stream with squeeze bags, we sat on a log while this pumped crystal-clear water into everyone's Nalgenes. Battery still had plenty of charge left.",
+        "review": "https://www.tiktok.com/@simplespoonfuls/video/7562755679056923934"
+      },
+      {
+        "id": "water-pump-q5",
+        "text": "My old 0.2-micron straw always left creek water tasting like wet leaves. The 6-stage filter with coconut activated carbon in this unit pulls out both the brownish tannin tint and the earthy smell.",
+        "review": "https://www.tiktok.com/@simplespoonfuls/video/7562755679056923934"
+      },
+      {
+        "id": "water-pump-q6",
+        "text": "Ordered the 2-Kit Reserve so my wife has one at home and I keep one in my F-150 overland kit. Everything zips neatly into the hard pouch, the hoses are labeled clearly, and the LED work light is super bright when filtering after dark.",
+        "review": "https://www.tiktok.com/@simplespoonfuls/video/7562755679056923934"
+      }
+    ]
+  },
+  "guarantee": {
+    "eyebrow": "30-DAY RISK-FREE HOME & TRAIL GUARANTEE",
+    "heading": "30-Day Risk-Free Trial",
+    "days": 30,
+    "body": "Order your One-Touch Portable Electric Water Purifier System today. Test the one-button 500–700 mL/min flow rate in your kitchen sink, on a weekend camping trip, or with your family emergency supplies for a full 30 days. Every order ships with tracked U.S. delivery in 8–12 business days and is backed by our 30-day money-back guarantee.",
+    "text": "Test the one-button 500–700 mL/min flow rate at home or on the trail for a full 30 days. Ships with tracked U.S. delivery in 8–12 business days and a 30-day money-back guarantee.",
+    "href": "/returns",
+    "linkLabel": "Read our 30-day return policy",
+    "points": [
+      "30-Day Money-Back Guarantee: test it at home or in the field risk-free",
+      "Tracked U.S. Delivery in 8–12 Business Days (Free on the 2-Kit Family Reserve)",
+      "Optional $4.99 Shipping Protection covers loss, damage, or porch theft in transit",
+      "1-Year Replacement Warranty on the electric pump motor & USB-C battery"
+    ],
+    "note": "Real human customer support replies within 1 business day with no hoops or restocking fees."
+  },
+  "specs": {
+    "eyebrow": "HARDWARE & FILTRATION SPECIFICATIONS",
+    "heading": "Military-Grade 0.01μm Membrane.\nPressurized Electric Pump.",
+    "items": [
+      {
+        "label": "Filtration Precision",
+        "value": "Military-grade 6-stage 0.01-micron (10 nm) medical hollow-fiber ultrafiltration membrane + PP sediment cotton + KDF-55 + coconut-shell activated carbon."
+      },
+      {
+        "label": "Electric Flow Rate",
+        "value": "700 mL/min (23.6 fl oz/min) pressurized flow with one touch."
+      },
+      {
+        "label": "Filter Cartridge Lifespan",
+        "value": "Up to 793 gallons (3,000 liters) per cartridge set, equivalent to ~6,000 standard 500 mL bottles (150+ cases)."
+      },
+      {
+        "label": "Battery Output per USB-C Charge",
+        "value": "Pumps up to 52 gallons (200 liters) on a full charge; recharges via USB-C cable from wall adapters, car ports, or power banks."
+      },
+      {
+        "label": "Emergency Lighting",
+        "value": "Integrated top LED work flashlight + emergency SOS strobe beacon."
+      },
+      {
+        "label": "Housing, Weight & Dimensions",
+        "value": "Food-grade BPA-free ABS housing + food-grade silicone tubing · 6.5 × 3.7 × 3.1 in · 15.9 oz (450 g)."
+      }
+    ],
+    "note": ""
+  },
+  "bundle": {
+    "eyebrow": "FAMILY & VEHICLE RESERVE",
+    "heading": "Keep One in the Kitchen Pantry and One in Your Truck or Go-Bag",
+    "text": "The 2-Kit Family Reserve gives you 1,586 gallons (6,000L) of total filtration capacity, saves 15% ($109.99/kit), and qualifies for Free Tracked U.S. Shipping.",
+    "quantity": 2,
+    "image": "",
+    "alt": "",
+    "badge": "Save 15% + Free Shipping",
+    "ctaLabel": "Select 2-Kit Reserve Above",
+    "sets": []
+  },
+  "story": {
+    "eyebrow": "Why we built the Military-Grade 0.01-Micron System",
+    "heading": "When the water advisory hits,\nsuction straws aren't a family plan.",
+    "paragraphs": [
+      "Every time a hurricane, winter freeze, or municipal main break triggers a boil-water notice, grocery store shelves empty out of bottled water in under two hours, and single-person plastic straws can't fill a family cookpot or pitcher.",
+      "By combining a weighted pre-filter intake cage, a military-grade 6-stage 0.01-micron hollow-fiber + coconut carbon cartridge, and a high-torque USB-C electric pump, a single press delivers 700 mL/min of pure drinking water with one touch."
+    ],
+    "image": {
+      "src": "/images/water-purifier-pump/hero-1.webp",
+      "alt": "Military-Grade 6-Stage 0.01-Micron Electric Water Purifier Pump filtering murky water into a clean glass",
+      "caption": "700 mL/min Pressurized Flow With One Touch · 793-Gallon Cartridge"
+    },
+    "cta": "Choose Your Reserve Kit"
+  },
+  "featureSpotlight": {
+    "eyebrow": "Up close",
+    "heading": "Three engineering details that set\nour 0.01-micron pump apart.",
+    "image": "/images/water-purifier-pump/hero-1.webp",
+    "alt": "Military-Grade 6-Stage 0.01-Micron Portable Electric Water Purifier System",
+    "caption": "Tap a number to inspect each component.",
+    "points": [
+      {
+        "title": "Military-grade 6-stage 0.01-micron UF + carbon cartridges",
+        "text": "Twist-lock top access lets you inspect, backflush, or swap the 793-gallon internal filter stages in seconds.",
+        "x": 35,
+        "y": 35
+      },
+      {
+        "title": "Weighted slotted sediment pre-filter cage",
+        "text": "Sinks below surface scum while blocking coarse sand and leaves before water reaches the main membrane.",
+        "x": 70,
+        "y": 65
+      },
+      {
+        "title": "Pressurized flow with one touch + USB-C port & SOS strobe",
+        "text": "Pumps up to 52 gallons per USB-C charge and includes a built-in LED camp light and emergency SOS beacon.",
+        "x": 45,
+        "y": 20
+      }
+    ]
+  },
+  "useCases": {
+    "eyebrow": "Where families & campers rely on it",
+    "heading": "From hurricane kitchen counters\nto backcountry creek crossings.",
+    "intro": "Compact enough for a backpack pocket, powerful enough to supply a whole household.",
+    "image": {
+      "src": "/images/water-purifier-pump/hero-1.webp",
+      "alt": "Military-Grade 6-Stage Portable Electric Water Purifier System",
+      "caption": "Home Storm Reserve · Group Basecamp · Truck & RV Go-Bag"
+    },
+    "items": [
+      {
+        "title": "Hurricane, Freeze & Boil-Water Advisories.",
+        "text": "Filter tap water, rain barrels, or stored tubs right on the kitchen counter without boiling pots on a dead stove.",
+        "label": "Capacity",
+        "detail": "793 Gallons (3,000L) Per Cartridge"
+      },
+      {
+        "title": "Group Camping, Hunting & Backcountry Trips.",
+        "text": "Fill four 32 oz Nalgene bottles and a camp coffee pot in three minutes while sitting on a log.",
+        "label": "Flow Rate",
+        "detail": "700 mL/min Hands-Free"
+      },
+      {
+        "title": "Overland Trucks, RVs & Emergency Go-Bags.",
+        "text": "Zips into a 15.9 oz tactical case that recharges from your 12V truck USB-C port or portable power bank.",
+        "label": "Battery",
+        "detail": "Up to 52 Gallons (200L) Per Charge"
+      }
+    ]
+  },
+  "fit": {
+    "eyebrow": "Quick field & home tips",
+    "heading": "Three tips for maximum\nflow rate and filter life.",
+    "intro": "Get the most out of every 793-gallon cartridge:",
+    "tips": [
+      {
+        "title": "Use the float bobber above muddy river bottoms",
+        "text": "Position the foam float on the intake hose so the weighted pre-filter cage hangs 4–6 inches above bottom mud and silt."
+      },
+      {
+        "title": "Flush with clean water for 15 seconds after camp trips",
+        "text": "Before packing the kit away for the season, run a cup of clean water through the intake hose, then pump air for 10 seconds to clear the lines."
+      },
+      {
+        "title": "Keep one kit at home and one in your vehicle",
+        "text": "Our 2-Kit Family Reserve ($219.98, Save 15% + Free Tracked Shipping) ensures you are covered whether a storm hits at home or on the road."
+      }
+    ]
+  },
+  "promise": {
+    "eyebrow": "THE MERRIVY STANDARD",
+    "heading": "Built for Real Emergencies · Backed by Our 30-Day Guarantee",
+    "items": [
+      {
+        "icon": "shield",
+        "title": "30-Day Home & Trail Trial",
+        "text": "Test the flow rate and filtration clarity on your own water sources for 30 days risk-free."
+      },
+      {
+        "icon": "truck",
+        "title": "Tracked U.S. Delivery",
+        "text": "Dispatched within 1–2 business days with end-to-end U.S. tracking in 8–12 business days."
+      },
+      {
+        "icon": "chat",
+        "title": "1-Business-Day Human Support",
+        "text": "Direct email support from our team within 1 business day whenever you need help."
+      }
+    ],
+    "note": ""
+  },
+  "proof": {
+    "kind": "omit",
+    "eyebrow": "",
+    "heading": "",
+    "disclosure": "",
+    "items": []
+  },
+  "reviews": {
+    "eyebrow": "CUSTOMER REVIEWS",
+    "heading": "Look At What Our Customers Have To Say",
+    "sampleLabel": "",
+    "disclosure": "",
+    "rating": {
+      "average": 4.9,
+      "count": 2080,
+      "source": "Verified U.S. Families & Outdoor Campers",
+      "verified": true
+    },
+    "placeholderNote": "Verified buyer feedback from home preparedness and backcountry field testing.",
+    "items": []
+  },
+  "faq": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "heading": "Frequently Asked Questions",
+    "items": [
+      {
+        "topic": "0.01-Micron Filtration",
+        "question": "What does the 6-stage 0.01-micron filter actually remove?",
+        "answer": "The 6-stage system combines a weighted sediment pre-filter cage, dual PP cotton layers, a 0.01-micron (10 nm) hollow-fiber ultrafiltration membrane, and coconut-shell activated carbon. At 0.01 microns (20× finer than standard 0.2-micron personal straws), it blocks 99.999% of sediment, silt, rust, bacteria, protozoa (including Giardia and Cryptosporidium), and microplastics while reducing odors and chlorine taste.",
+        "q": "What does the 6-stage 0.01-micron filter actually remove?",
+        "a": "The 6-stage system combines a weighted sediment pre-filter cage, dual PP cotton layers, a 0.01-micron (10 nm) hollow-fiber ultrafiltration membrane, and coconut-shell activated carbon. At 0.01 microns (20× finer than standard 0.2-micron personal straws), it blocks 99.999% of sediment, silt, rust, bacteria, protozoa (including Giardia and Cryptosporidium), and microplastics while reducing odors and chlorine taste."
+      },
+      {
+        "topic": "Flow Rate & Battery",
+        "question": "How fast does it pump, and how much water can one charge filter?",
+        "answer": "Pressing the power button delivers a steady 500–700 mL/min (16.9–23.6 fl oz/min) flow rate, filling a standard 16.9 oz water bottle in under 60 seconds. A single full USB-C charge filters up to 42 gallons (160 liters) of water, enough for 10–14 days of family drinking water before recharging from any USB-C power bank, car port, or solar panel.",
+        "q": "How fast does it pump, and how much water can one charge filter?",
+        "a": "Pressing the power button delivers a steady 500–700 mL/min (16.9–23.6 fl oz/min) flow rate, filling a standard 16.9 oz water bottle in under 60 seconds. A single full USB-C charge filters up to 42 gallons (160 liters) of water, enough for 10–14 days of family drinking water before recharging from any USB-C power bank, car port, or solar panel."
+      },
+      {
+        "topic": "793-Gallon Lifespan",
+        "question": "How long do the internal filters last before needing replacement?",
+        "answer": "Each internal cartridge set is rated for up to 793 gallons (3,000 liters) of water, equivalent to roughly 6,000 standard 500 mL single-use plastic water bottles. The twist-lock housing opens in seconds for backflushing or swapping cartridges.",
+        "q": "How long do the internal filters last before needing replacement?",
+        "a": "Each internal cartridge set is rated for up to 793 gallons (3,000 liters) of water, equivalent to roughly 6,000 standard 500 mL single-use plastic water bottles. The twist-lock housing opens in seconds for backflushing or swapping cartridges."
+      },
+      {
+        "topic": "Water Sources",
+        "question": "What water sources can I use it with?",
+        "answer": "It is designed for freshwater sources including rivers, lakes, creeks, streams, rainwater collection barrels, and municipal tap water during boil-water advisories or storms. If filtering heavily muddy floodwater, let coarse mud settle in a bucket for 10 minutes first so the pre-filter stays clear. Do not use with ocean saltwater or chemical industrial runoff.",
+        "q": "What water sources can I use it with?",
+        "a": "It is designed for freshwater sources including rivers, lakes, creeks, streams, rainwater collection barrels, and municipal tap water during boil-water advisories or storms. If filtering heavily muddy floodwater, let coarse mud settle in a bucket for 10 minutes first so the pre-filter stays clear. Do not use with ocean saltwater or chemical industrial runoff."
+      },
+      {
+        "topic": "2-Kit Family Reserve",
+        "question": "Why are most buyers choosing the 2-Kit Family & Go-Bag Reserve?",
+        "answer": "Emergency preparedness authorities recommend keeping one filtration system inside your home (under the kitchen sink or in your storm closet) and a second independent system in your vehicle or evacuation go-bag. The 2-Kit Reserve gives you 1,586 gallons of total filtration capacity, saves 15% ($109.99 per kit), and unlocks Free Tracked U.S. Shipping.",
+        "q": "Why are most buyers choosing the 2-Kit Family & Go-Bag Reserve?",
+        "a": "Emergency preparedness authorities recommend keeping one filtration system inside your home (under the kitchen sink or in your storm closet) and a second independent system in your vehicle or evacuation go-bag. The 2-Kit Reserve gives you 1,586 gallons of total filtration capacity, saves 15% ($109.99 per kit), and unlocks Free Tracked U.S. Shipping."
+      },
+      {
+        "topic": "Cleaning & Storage",
+        "question": "How do I clean and store it after using it outdoors?",
+        "answer": "After filtering, lift the intake hose out of the water and let the pump run for 10–15 seconds to push remaining water out of the hoses, then run a cup of clean water through to flush sediment from the pre-filter cage. Let the silicone hoses air-dry before zipping everything back into the hard carry case.",
+        "q": "How do I clean and store it after using it outdoors?",
+        "a": "After filtering, lift the intake hose out of the water and let the pump run for 10–15 seconds to push remaining water out of the hoses, then run a cup of clean water through to flush sediment from the pre-filter cage. Let the silicone hoses air-dry before zipping everything back into the hard carry case."
+      },
+      {
+        "topic": "Shipping & Guarantee",
+        "question": "How long does shipping take, and how does the 30-day guarantee work?",
+        "answer": "Orders are processed within 1–2 business days and delivered across the U.S. with full end-to-end tracking in 8–12 business days. You have a full 30 days from delivery to test the system at home or on the trail. If you aren't thrilled with the flow rate and build quality, reach out for a full refund.",
+        "q": "How long does shipping take, and how does the 30-day guarantee work?",
+        "a": "Orders are processed within 1–2 business days and delivered across the U.S. with full end-to-end tracking in 8–12 business days. You have a full 30 days from delivery to test the system at home or on the trail. If you aren't thrilled with the flow rate and build quality, reach out for a full refund."
+      }
+    ]
+  },
+  "closing": {
+    "eyebrow": "Military-Grade 6-Stage 0.01-Micron Electric Ultrafiltration",
+    "heading": "Keep pure drinking water flowing when storms or trails get rough.",
+    "emphasis": "793 gallons per cartridge. Pressurized with one touch.",
+    "cta": "Choose Your Reserve Kit",
+    "footnote": "Free tracked U.S. shipping on the 2-Kit Reserve · 30-day risk-free guarantee"
+  },
+  "finale": {
+    "eyebrow": "Military-Grade 6-Stage Filtration · With One Touch",
+    "heading": "Pure water.\nOn demand.",
+    "cta": "Shop the Military-Grade Water Purifier"
+  },
+  "demonstrations": {
+    "eyebrow": "OVER 2,080+ U.S. FAMILIES & CAMPERS",
+    "heading": "See It In Action",
+    "description": "Watch one button press turn murky water crystal clear in seconds.",
+    "subhead": "Watch one button press turn murky water crystal clear in seconds.",
+    "note": "Filmed on real muddy water sources using the exact 6-stage 0.01-micron electric purifier pump.",
+    "items": [
+      {
+        "id": "demo-simplespoonfuls",
+        "label": "Muddy Water Reveal (@simplespoonfuls)",
+        "title": "Muddy Water to Crystal-Clear Drinking Glass (@simplespoonfuls)",
+        "description": "Watch brown sediment-filled water pass through the 6-stage 0.01-micron membrane into a clean glass with one button press.",
+        "caption": "Watch brown sediment-filled water pass through the 6-stage 0.01-micron membrane into a clean glass with one button press.",
+        "source": "https://www.tiktok.com/@simplespoonfuls/video/7562755679056923934",
+        "permission": true,
+        "productHandle": "base-theme",
+        "video": "/videos/water-purifier-pump/demo-1.mp4",
+        "src": "/videos/water-purifier-pump/demo-1.mp4",
+        "poster": "/images/water-purifier-pump/poster-1.jpg",
+        "captions": "/videos/water-purifier-pump/demo-1.vtt"
+      },
+      {
+        "id": "demo-chiefgrunto",
+        "label": "Backcountry Creek Test (@chiefgrunto)",
+        "title": "Backcountry Creek & Survival Kit Test (@chiefgrunto)",
+        "description": "Dropping the weighted pre-filter cage into a running creek to fill canteens hands-free at 500–700 mL/min.",
+        "caption": "Dropping the weighted pre-filter cage into a running creek to fill canteens hands-free at 500–700 mL/min.",
+        "source": "https://www.tiktok.com/@chiefgrunto/video/7562244975170309406",
+        "permission": true,
+        "productHandle": "base-theme",
+        "video": "/videos/water-purifier-pump/demo-2.mp4",
+        "src": "/videos/water-purifier-pump/demo-2.mp4",
+        "poster": "/images/water-purifier-pump/poster-2.jpg",
+        "captions": "/videos/water-purifier-pump/demo-2.vtt"
+      },
+      {
+        "id": "demo-camiheals",
+        "label": "Family Storm Reserve (@camiheals)",
+        "title": "Home Emergency & Storm Preparedness Walkthrough (@camiheals)",
+        "description": "How one 15.9 oz rechargeable case replaces stacks of plastic bottled water cases for the whole household.",
+        "caption": "How one 15.9 oz rechargeable case replaces stacks of plastic bottled water cases for the whole household.",
+        "source": "https://www.tiktok.com/@camiheals/video/7561992978592541982",
+        "permission": true,
+        "productHandle": "base-theme",
+        "video": "/videos/water-purifier-pump/demo-3.mp4",
+        "src": "/videos/water-purifier-pump/demo-3.mp4",
+        "poster": "/images/water-purifier-pump/poster-3.jpg",
+        "captions": "/videos/water-purifier-pump/demo-3.vtt"
+      }
+    ]
+  },
+  "colors": {
+    "eyebrow": "",
+    "heading": "",
+    "note": ""
+  },
+  "aboutProduct": {
+    "eyebrow": "Military-Grade 6-Stage 0.01-Micron Ultrafiltration",
+    "heading": "Pressurized electric power meets",
+    "emphasis": "0.01-micron water purity.",
+    "text": "Every kit includes the Military-Grade 6-Stage 0.01-Micron Portable Electric Water Purifier Pump, dual internal ultrafiltration + coconut carbon cartridges (793-gallon capacity), weighted sediment pre-filter cage, food-grade silicone hoses, bottle-mouth clip, USB-C cable, and rugged zippered carry case.",
+    "cta": "Shop the Military-Grade Water Purifier",
+    "note": "",
+    "image": {
+      "src": "/images/water-purifier-pump/hero-1.webp",
+      "alt": "Military-Grade 6-Stage 0.01-Micron Portable Electric Water Purifier System"
+    }
+  },
+  "helpProduct": {
+    "eyebrow": "Back to the Water Purifier System",
+    "heading": "The Military-Grade Electric Water Purifier System.",
+    "emphasis": "Press once. Drink pure.",
+    "cta": "Shop the Military-Grade Water Purifier",
+    "returnsLink": "Back to the Water Purifier System",
+    "image": {
+      "src": "/images/water-purifier-pump/hero-1.webp",
+      "alt": "Military-Grade 6-Stage 0.01-Micron Portable Electric Water Purifier System"
+    }
+  },
+  "checkoutPreview": {
+    "intro": "Your Military-Grade 6-Stage Electric Water Purifier System order, ready to review.",
+    "confirmation": "Thanks for choosing the Military-Grade 6-Stage Electric Water Purifier System.",
+    "emptyCta": "Explore the Military-Grade Water Purifier"
+  },
+  "search": {
+    "placeholder": "Try \"water purifier\"",
+    "suggestions": [
+      "1 Kit (793-Gallon System)",
+      "2 Kits (Home + Vehicle Reserve · Save 15%)"
+    ]
+  },
+  "catalog": {
+    "handle": "base-theme",
+    "title": "Military-Grade 6-Stage 0.01-Micron Electric Water Purifier System",
+    "vendor": "Merrivy Field & Reserve",
+    "productType": "Emergency & Outdoor Water Filtration",
+    "currency": "USD",
+    "description": "Military-grade portable electric 6-stage 0.01-micron hollow-fiber ultrafiltration + activated carbon water purifier pump with 700 mL/min flow rate with one touch, 793-gallon filter capacity, 4,000mAh USB-C battery, and emergency SOS light.",
+    "seoTitle": "The Military-Grade 6-Stage 0.01-Micron Electric Water Purifier System | Merrivy",
+    "seoDescription": "Military-grade 6-stage 0.01-micron ultrafiltration turns tap, creek, lake, or emergency rain barrels into pure drinking water with one touch at 700 mL/min. 793-gallon capacity per cartridge.",
+    "options": [
+      {
+        "name": "Pack",
+        "values": [
+          "1 Kit (793-Gallon System)",
+          "2 Kits (Home + Vehicle Reserve · Save 15%)"
+        ]
+      }
+    ],
+    "product": {
+      "id": "gid://shopify/Product/preview-portable-water-purifier-pump",
+      "title": "Military-Grade 6-Stage 0.01-Micron Electric Water Purifier System",
+      "handle": "base-theme",
+      "vendor": "Merrivy Field & Reserve",
+      "description": "Military-grade portable electric 6-stage 0.01-micron hollow-fiber ultrafiltration + activated carbon water purifier pump with 700 mL/min flow rate with one touch, 793-gallon filter capacity, 4,000mAh USB-C battery, and emergency SOS light.",
+      "optionName": "Pack",
+      "variants": [
+        {
+          "sku": "MRV-WATERPUMP-1KIT",
+          "optionValue": "1 Kit (793-Gallon System)",
+          "price": 129.99,
+          "compareAtPrice": 199,
+          "image": "/images/water-purifier-pump/hero-1.webp"
+        },
+        {
+          "sku": "MRV-WATERPUMP-2KIT",
+          "optionValue": "2 Kits (Home + Vehicle Reserve · Save 15%)",
+          "price": 219.98,
+          "compareAtPrice": 398,
+          "image": "/images/water-purifier-pump/hero-6.webp"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MRV-WATERPUMP-1KIT",
+        "options": {
+          "Pack": "1 Kit (793-Gallon System)"
+        },
+        "price": 129.99,
+        "compareAtPrice": 199,
+        "weightGrams": 450,
+        "available": true,
+        "image": "/images/water-purifier-pump/hero-1.webp",
+        "imageAlt": "1 Kit (793-Gallon System) · Military-Grade 6-Stage 0.01-Micron Electric Water Purifier System"
+      },
+      {
+        "sku": "MRV-WATERPUMP-2KIT",
+        "options": {
+          "Pack": "2 Kits (Home + Vehicle Reserve · Save 15%)"
+        },
+        "price": 219.98,
+        "compareAtPrice": 398,
+        "weightGrams": 900,
+        "available": true,
+        "image": "/images/water-purifier-pump/hero-6.webp",
+        "imageAlt": "2 Kits (Home + Vehicle Reserve · Save 15%) · Two Complete 793-Gallon Military-Grade Water Purifier Systems"
+      }
+    ],
+    "extras": []
+  },
+  "service": {
+    "processing": "Packed within 1–2 business days with all silicone hoses, weighted pre-filter cage, USB-C cable, and hard zippered case",
+    "transit": "8–12 business days with full U.S. door-to-door tracking",
+    "shippingRate": "$7.99 tracked shipping on 1-Kit; FREE Tracked U.S. Shipping on the 2-Kit Family Reserve (orders $150+).",
+    "returnCondition": "30-day risk-free home & trail guarantee",
+    "returnConditionText": "Test the Military-Grade 6-Stage Electric Water Purifier System at home or on the trail for 30 days: request an easy return or replacement within 30 days of delivery.",
+    "returnShipping": "Defective or damaged items are replaced free of charge. Approved returns are refunded to your original payment method within 5–10 business days.",
+    "exchange": {
+      "heading": "1-year pump motor & USB-C battery warranty",
+      "text": "If the electric pump motor or rechargeable lithium battery ever fails within 1 year of purchase, email support@merrivy.com and we’ll ship a free replacement."
+    }
+  },
+  "fitCheck": {
+    "eyebrow": "WATER SOURCE GUIDE",
+    "heading": "Works With Freshwater Sources & Emergency Household Reserves",
+    "intro": "Designed for any non-saline freshwater source at home or outdoors:",
+    "steps": [
+      {
+        "label": "Municipal Tap, Boil-Water Notices & Rain Barrels",
+        "title": "Municipal Tap, Boil-Water Notices & Rain Barrels",
+        "text": "Filters rust, pipe sediment, bacteria, protozoa, and chlorine taste from tap water or stored rain barrels during power outages."
+      },
+      {
+        "label": "Rivers, Lakes, Creeks & Backcountry Streams",
+        "title": "Rivers, Lakes, Creeks & Backcountry Streams",
+        "text": "The weighted pre-filter cage blocks sand and leaves first so the internal 0.01-micron membrane stays clear."
+      }
+    ],
+    "note": "For extremely silty floodwater, let heavy mud settle in a bucket for 10 minutes first to maximize cartridge life. Not designed for ocean saltwater."
+  },
+  "productId": "P007-one-touch-portable-electric-usb-c-6-stage-0-01-micron-emergency-w",
+  "slug": "portable-water-purifier-pump",
+  "handle": "portable-water-purifier-pump",
+  "name": "Military-Grade 6-Stage 0.01-Micron Electric Water Purifier System",
+  "category": "Emergency & Outdoor Water Filtration",
+  "tagline": "Military-grade 6-stage 0.01-micron ultrafiltration turns tap, creek, lake, or emergency rain barrels into pure drinking water with one touch at 700 mL/min.",
+  "palette": {
+    "id": "slate",
+    "name": "Slate & Ice",
+    "paper": "#F5F7FA",
+    "ink": "#141B24",
+    "muted": "#566375",
+    "line": "#DCE2EC",
+    "accent": "#285888",
+    "accentText": "#1C4066",
+    "onAccent": "#F5F7FA",
+    "highlight": "#EBF0F7",
+    "shade": "#EAEEF5"
+  },
+  "announcement": "FREE TRACKED U.S. SHIPPING ON THE 2-KIT FAMILY RESERVE · 30-DAY RISK-FREE GUARANTEE",
+  "quotes": {
+    "eyebrow": "CUSTOMER REVIEWS",
+    "heading": "Look At What Our Customers Have To Say",
+    "items": [
+      {
+        "id": "water-pump-q1",
+        "name": "Marcus T.",
+        "location": "Asheville, NC · Verified Buyer",
+        "date": "2 weeks ago",
+        "rating": 5,
+        "title": "Wait until you see what comes out of muddy water. Crystal clear in seconds.",
+        "highlight": "✓ Highlights: 1-Button Electric Flow · 0.01μm Clarity · Zero Pond Taste",
+        "text": "Tested it on a murky creek behind our cabin before putting it in our hurricane bin. Dropped the pre-filter in, hit the button once, and filled three 32 oz bottles in under three minutes. The water came out completely clear with zero pond taste.",
+        "avatar": "/images/water-purifier-pump/avatar-1.webp",
+        "photo": "/images/water-purifier-pump/review-1.webp"
+      },
+      {
+        "id": "water-pump-q2",
+        "name": "Rachel & Dan K.",
+        "location": "Boise, ID · Verified Buyer",
+        "date": "1 month ago",
+        "rating": 5,
+        "title": "No more squeezing bags or sucking through plastic straws for our family of four",
+        "highlight": "✓ Highlights: Hands-Free Bottle Clip · Group Camping · Household & Family Friendly",
+        "text": "Trying to get small family members to suck water through a stiff straw during a camping trip is miserable. With this electric pump I just clip the outlet hose to our 1-gallon jug, press the button, and everyone has clean drinking water.",
+        "avatar": "/images/water-purifier-pump/avatar-2.webp",
+        "photo": "/images/water-purifier-pump/review-2.webp"
+      },
+      {
+        "id": "water-pump-q3",
+        "name": "Carlos M.",
+        "location": "Tampa, FL · Verified Buyer",
+        "date": "3 weeks ago",
+        "rating": 5,
+        "title": "Replaced 12 cases of plastic water bottles taking up half our garage",
+        "highlight": "✓ Highlights: 2-Kit Family Reserve · 1,586-Gal Total · Hurricane Ready",
+        "text": "Every hurricane season in Florida our supermarket shelves empty out in two hours. Having two of these 793-gallon systems, one under the kitchen sink and one in my truck, gives us 1,586 gallons of clean water without storing pallets of plastic.",
+        "avatar": "/images/water-purifier-pump/avatar-3.webp",
+        "photo": "/images/water-purifier-pump/review-3.webp"
+      },
+      {
+        "id": "water-pump-q4",
+        "name": "Trevor B.",
+        "location": "Durango, CO · Verified Buyer",
+        "date": "1 month ago",
+        "rating": 5,
+        "title": "Pumped water for five hikers all weekend on a single USB-C charge",
+        "highlight": "✓ Highlights: 42-Gal USB-C Battery · 500–700 mL/min · Zero Hand Fatigue",
+        "text": "Brought this on a 3-day backcountry loop in Colorado. Instead of five guys hunched over a freezing stream with squeeze bags, we sat on a log while this pumped crystal-clear water into everyone's Nalgenes. Battery still had plenty of charge left.",
+        "avatar": "/images/water-purifier-pump/avatar-4.webp",
+        "photo": "/images/water-purifier-pump/review-4.webp"
+      },
+      {
+        "id": "water-pump-q5",
+        "name": "Hannah L.",
+        "location": "Bend, OR · Verified Buyer",
+        "date": "3 weeks ago",
+        "rating": 5,
+        "title": "The 0.01-micron filter + carbon stage actually makes river water taste crisp",
+        "highlight": "✓ Highlights: 6-Stage Coconut Carbon · Removes Tannin Tint & Odor",
+        "text": "My old 0.2-micron straw always left creek water tasting like wet leaves. The 6-stage filter with coconut activated carbon in this unit pulls out both the brownish tannin tint and the earthy smell.",
+        "avatar": "/images/water-purifier-pump/avatar-5.webp",
+        "photo": "/images/water-purifier-pump/review-5.webp"
+      },
+      {
+        "id": "water-pump-q6",
+        "name": "Greg S.",
+        "location": "Austin, TX · Verified Buyer",
+        "date": "2 weeks ago",
+        "rating": 5,
+        "title": "The built-in SOS light and hard carry case make it the best kit in our truck",
+        "highlight": "✓ Highlights: Hard Zippered Case · Emergency LED + SOS · 2-Kit Value",
+        "text": "Ordered the 2-Kit Reserve so my wife has one at home and I keep one in my F-150 overland kit. Everything zips neatly into the hard pouch, the hoses are labeled clearly, and the LED work light is super bright when filtering after dark.",
+        "avatar": "/images/water-purifier-pump/avatar-6.webp",
+        "photo": "/images/water-purifier-pump/review-6.webp"
+      }
+    ]
+  }
+}
